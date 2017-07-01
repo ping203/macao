@@ -17,6 +17,7 @@
 #include <native_ui/touch_handle.h>
 #include <native_ui/parser.h>
 #include <native_ui/preferences.h>
+#include <native_ui/manager.h>
 #include <smartfox/data.h>
 #include <cherry/stdio.h>
 #include <native_ui/view.h>
