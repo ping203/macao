@@ -1,0 +1,129 @@
+<html>
+        <head>
+                <link href="config.css" type="text/css" rel="stylesheet" />
+        </head>
+        <body style="overflow:hidden">
+                <script>
+                var sp = {
+                        x : 0,
+                        y : 0
+                };
+
+                var wp = {
+                        x : 0,
+                        y : 0
+                };
+
+                var touch = 0;
+
+                var bg = {
+                        x : 0,
+                        y : 0
+                };
+
+                var mv = {
+                        x : 0,
+                        y : 0
+                };
+
+                var off = {
+                        x : 0,
+                        y : 0
+                };
+
+                var ctg = null;
+                var ft = null;
+
+                function handleStart(evt) {
+                        var text = document.getElementById("text");
+                        text.innerHTML = "TEST TEST";
+                        text.style["max-width"] = "50px";
+                        console.log("text size : " + text.offsetWidth + ", " + text.offsetHeight);
+                        var target = document.getElementById("div");
+                        if(ctg != null) {
+                                target = ctg;
+                        } else {
+                                ctg = target;
+                                ft = document.createElement('div');
+                                ft.style["position"] = "absolute";
+                                ft.style["width"] = "100%";
+                                ft.style["height"] = "100%";
+                                ft.addEventListener("mousedown", handleStart, false);
+                                ft.addEventListener("mouseup", handleEnd, false);
+                                ft.addEventListener("mouseout", handleCancel, false);
+                                ft.addEventListener("mousemove", handleMove, false);
+                                document.getElementById("root").appendChild(ft);
+                        }
+                        sp.x = evt.pageX - target.offsetLeft;
+                        sp.y = evt.pageY - target.offsetTop;
+                        wp.x = evt.pageX;
+                        wp.y = evt.pageY;
+
+                        bg.x = sp.x;
+                        bg.y = sp.y;
+                        mv.x = sp.x;
+                        mv.y = sp.y;
+                        touch = 1;
+                }
+                function handleMove(evt) {
+                        if(ctg == null) return;
+                        var target = ctg;
+                        var v = {};
+                        v.x = sp.x + evt.pageX - wp.x;
+                        v.y = sp.y + evt.pageY - wp.y;
+
+                        off.x = v.x - mv.x;
+                        off.y = v.y - mv.y;
+
+                        mv.x = v.x;
+                        mv.y = v.y;
+
+                        if(touch == 1) {
+                                target.style.left = (target.offsetLeft + off.x) + 'px';
+                                target.style.top = (target.offsetTop + off.y) + 'px';
+                                //target.style["transform"] = "perspective(600px) " + "rotateX(" + (target.offsetLeft + off.x) + "deg)";
+                        }
+                }
+                function handleEnd(evt) {
+                        if(evt.target == ft) {
+                                console.log("up");
+                                touch = 0;
+                                ctg = null;
+                                ft.remove();
+                                ft = null;
+                        }
+                }
+                function handleCancel(evt) {
+                        if(evt.target == ft) {
+                                console.log('cancel');
+                                touch = 0;
+                                ctg = null;
+                                ft.remove();
+                                ft = null;
+                        }
+                }
+                </script>
+
+                <div id="root">
+
+                        <div id="div" style="overflow:auto; position: absolute; border-radius: 25px; clip: rect(0px, 500px, 190px, 0px);background-color:#0000FF; width: 500px; height: 500px; transform: perspective( 600px );transform-origin: 50% 100%;">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg"
+                                        style=" position: absolute;">
+                        </div>
+                        <!-- <input style="position:absolute; width: 500px; height:50px; border-radius: 10px;
+                                border-style:solid; border-width:0px;
+                                background-color: #FF0000;
+                                font-size: 20px" type="password">
+                        </input> -->
+                        <p id="text" style="position:absolute">Test Text</p>
+                </div>
+                <script>
+                        console.log("test");
+                        var d = document.getElementById("div");
+                        d.addEventListener("mousedown", handleStart, false);
+                        d.addEventListener("mouseup", handleEnd, false);
+                        d.addEventListener("mouseout", handleCancel, false);
+                        d.addEventListener("mousemove", handleMove, false);
+                </script>
+        </body>
+</html>
