@@ -1,6 +1,9 @@
 <html>
         <head>
                 <link href="config.css" type="text/css" rel="stylesheet" />
+                <script src="jslib/config.js"></script>
+                <script src="jslib/functions.js"></script>
+                <script src="jslib/view.js"></script>
         </head>
         <body style="overflow:hidden">
                 <script>
@@ -34,15 +37,59 @@
                 var ctg = null;
                 var ft = null;
 
+                var helper = new native_helper();
+                var vh = new view_helper();
+
+                function testStart(evt)
+                {
+                        var v = vh.view_alloc();
+
+                        vh.view_set_size(v, 200, 200);
+                        vh.view_set_position(v, 200,200);
+                        vh.view_set_anchor(v, 0.5, 0.5);
+                        vh.view_set_color(v, 1, 0, 0, 0);
+                        vh.view_set_border(v, 25);
+                        vh.view_set_border_color(v, 0, 1, 0, 0);
+                        vh.view_set_alpha(v, 0.5);
+
+                        var v2 = vh.label_alloc();
+                        v.appendChild(v2);
+                        vh.view_set_text(v2, "Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World ");
+                        vh.view_set_size(v2, 350, 400);
+                        vh.view_set_position(v2, 200, 200);
+                        vh.view_set_anchor(v2, 0.5, 0.5);
+                        vh.view_set_color(v2, 0, 1, 1, 0);
+                        vh.view_set_text_color(v2, 0, 0, 0, 0);
+                        vh.view_set_border(v2, 25);
+                        vh.view_set_clip(v2, 1);
+                        vh.view_set_text_align(v2, 2);
+                        vh.view_set_alpha(v2, 0.85);
+                        vh.view_set_rotation(v2, 45, 0, 0);
+                        document.getElementById("root").appendChild(v);
+                        evt.stopPropagation();
+                }
+
+                function testEnd(evt) {
+                        evt.stopPropagation();
+                }
+
                 function handleStart(evt) {
-                        var text = document.getElementById("text");
-                        text.innerHTML = "TEST TEST";
-                        text.style["max-width"] = "50px";
-                        console.log("text size : " + text.offsetWidth + ", " + text.offsetHeight);
-                        var target = document.getElementById("div");
+
+                        var tt = document.getElementById("text");
+                        console.log("tt size : " + tt.offsetWidth + ", " + tt.offsetHeight);
+                        tt.innerHTML = "oaidushgfoai duhfoiuasdfh uiahdsfoui ashdoif ahsdoui hfads";
+                        console.log("tt size : " + tt.offsetWidth + ", " + tt.offsetHeight);
+                        var target = evt.target;
+
+                        var nv = helper.find_view(target);
+
+                        console.log(nv);
+
                         if(ctg != null) {
                                 target = ctg;
                         } else {
+                                console.log(target);
+                                console.log("target size : " + target.offsetWidth + ", " + target.offsetHeight);
                                 ctg = target;
                                 ft = document.createElement('div');
                                 ft.style["position"] = "absolute";
@@ -85,45 +132,88 @@
                         }
                 }
                 function handleEnd(evt) {
-                        if(evt.target == ft) {
-                                console.log("up");
+                        console.log("up");
+                        if(ft != null) {
                                 touch = 0;
                                 ctg = null;
                                 ft.remove();
                                 ft = null;
                         }
+
                 }
                 function handleCancel(evt) {
                         if(evt.target == ft) {
                                 console.log('cancel');
                                 touch = 0;
                                 ctg = null;
-                                ft.remove();
-                                ft = null;
+                                if(ft != null) {
+                                        ft.remove();
+                                        ft = null;
+                                }
                         }
                 }
                 </script>
 
                 <div id="root">
 
-                        <div id="div" style="overflow:auto; position: absolute; border-radius: 25px; clip: rect(0px, 500px, 190px, 0px);background-color:#0000FF; width: 500px; height: 500px; transform: perspective( 600px );transform-origin: 50% 100%;">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg"
-                                        style=" position: absolute;">
+                        <div id="div" style="
+                                overflow-y: hidden;
+                                overflow-x: hidden;
+                                position: absolute;
+                                border-radius: 25px;
+                                clip: rect(0px, 500px, 190px, 0px);
+                                background-color:#0000FF;
+                                width: 500px; height: 500px;
+                                transform: perspective( 600px );transform-origin: 50% 100%;">
+                                <div id="img" style="
+                                        position: absolute;
+                                        overflow-y: hidden;
+                                        overflow-x: hidden;
+                                        border-radius: 25px;
+                                        clip: rect(0px, 200px, 200px, 0px);
+                                        width:200px;
+                                        height:200px;">
+                                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg"
+                                                style="overflow:auto; position: absolute">
+                                </div>
                         </div>
-                        <!-- <input style="position:absolute; width: 500px; height:50px; border-radius: 10px;
+                        <input id="input" style="position:absolute; width: 500px; height:50px; border-radius: 10px;
                                 border-style:solid; border-width:0px;
                                 background-color: #FF0000;
                                 font-size: 20px" type="password">
-                        </input> -->
-                        <p id="text" style="position:absolute">Test Text</p>
+                        </input>
+                        <div id="text" class="noselect" style="position:absolute;">
+                                Test Text
+                        </div>
+
                 </div>
                 <script>
-                        console.log("test");
                         var d = document.getElementById("div");
                         d.addEventListener("mousedown", handleStart, false);
                         d.addEventListener("mouseup", handleEnd, false);
                         d.addEventListener("mouseout", handleCancel, false);
                         d.addEventListener("mousemove", handleMove, false);
+                </script>
+                <script>
+                        var d2 = document.getElementById("img");
+                        d2.addEventListener("mousedown", testStart, true);
+                        d2.addEventListener("mouseup", testEnd, false);
+                        d2.addEventListener("mouseout", testEnd, false);
+                        d2.addEventListener("mousemove", testEnd, false);
+                </script>
+                <script>
+                        var d2 = document.getElementById("text");
+                        d2.addEventListener("mousedown", handleStart, false);
+                        d2.addEventListener("mouseup", handleEnd, false);
+                        d2.addEventListener("mouseout", handleCancel, false);
+                        d2.addEventListener("mousemove", handleMove, false);
+                </script>
+                <script>
+                        var d2 = document.getElementById("input");
+                        d2.addEventListener("mousedown", handleStart, false);
+                        d2.addEventListener("mouseup", handleEnd, false);
+                        d2.addEventListener("mouseout", handleCancel, false);
+                        d2.addEventListener("mousemove", handleMove, false);
                 </script>
         </body>
 </html>

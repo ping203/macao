@@ -1,0 +1,1 @@
+/home/manh/Downloads/emsdk_portable/emscripten/master/emar rc libkernel.a  @CMakeFiles/kernel.dir/objects1.rsp
