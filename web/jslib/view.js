@@ -43,10 +43,29 @@ view_helper.prototype.base_alloc = function()
                 width : 0,
                 height : 0
         };
+        view.native_ptr = 0;
+        view.can_touch  = 0;
+        view.addEventListener("mousedown", function(e){
+                native_helper_shared.mousedown(e);
+        }, false);
+        view.addEventListener("mousemove", function(e){
+                native_helper_shared.mousemove(e);
+        }, false);
+        view.addEventListener("mouseup", function(e){
+                native_helper_shared.mouseup(e);
+        }, false);
+        view.addEventListener("mouseout", function(e){
+                native_helper_shared.mousecancel(e);
+        }, false);
 
         __register_shared_object(view);
 
         return view;
+}
+
+view_helper.prototype.view_set_native_ptr = function(v, p)
+{
+        view.native_ptr = p;
 }
 
 view_helper.prototype.view_alloc = function()
@@ -66,7 +85,6 @@ view_helper.prototype.image_alloc = function()
         v.custom_content.style["height"] = "100%";
         v.custom_content.style["overflow-x"] = "hidden";
         v.custom_content.style["overflow-y"] = "hidden";
-        v.custom_content.src = "anhchup.png";
         v.appendChild(v.custom_content);
         this.view_set_clip(v, 1);
         return v;
@@ -85,6 +103,13 @@ view_helper.prototype.view_free = function(v)
 {
         __remove_shared_object(v);
         v.remove();
+}
+
+view_helper.prototype.view_set_image = function(v, p)
+{
+        if(v.native_type == native_type.IMAGE) {
+                v.custom_content.src = p;
+        }
 }
 
 view_helper.prototype.view_set_font_size = function(v, s)
@@ -236,6 +261,11 @@ view_helper.prototype.view_set_alpha = function(v, a)
         v.style["opacity"] = a + "";
 }
 
+view_helper.prototype.view_set_visible = function(v, f)
+{
+        v.style["visibility"] = f == 1 ? "visible" : "hidden";
+}
+
 view_helper.prototype.view_set_clip = function(v, b)
 {
         if(b == 1) {
@@ -245,4 +275,20 @@ view_helper.prototype.view_set_clip = function(v, b)
                 v.style["overflow-x"] = "initial";
                 v.style["overflow-y"] = "initial";
         }
+}
+
+view_helper.prototype.view_set_user_interaction = function(v, e)
+{
+        v.can_touch = e;
+}
+
+view_helper.prototype.view_remove_from_parent = function(v)
+{
+        v.remove();
+}
+
+view_helper.prototype.view_add_child = function(v, c)
+{
+        c.remove();
+        v.appendChild(c);
 }

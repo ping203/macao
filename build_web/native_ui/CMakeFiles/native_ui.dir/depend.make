@@ -1460,3 +1460,23 @@ native_ui/CMakeFiles/native_ui.dir/src/shared/view_controller.c.o: /home/manh/Do
 native_ui/CMakeFiles/native_ui.dir/src/shared/view_controller.c.o: /home/manh/Documents/manh/native_ui/include/native_ui/view_controller.h
 native_ui/CMakeFiles/native_ui.dir/src/shared/view_controller.c.o: /home/manh/Documents/manh/native_ui/src/shared/view_controller.c
 
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/../cherry/include/cherry/array.h
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/../cherry/include/cherry/bytes.h
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/../cherry/include/cherry/list.h
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/../cherry/include/cherry/lock.h
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/../cherry/include/cherry/map.h
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/../cherry/include/cherry/math/types.h
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/../cherry/include/cherry/platform.h
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/../cherry/include/cherry/stdarg.h
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/../cherry/include/cherry/stddef.h
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/../cherry/include/cherry/stdint.h
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/../cherry/include/cherry/stdio.h
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/../cherry/include/cherry/stdlib.h
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/../cherry/include/cherry/string.h
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/../cherry/include/cherry/types.h
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/../cherry/smartfox/include/smartfox/data.h
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/../cherry/smartfox/include/smartfox/types.h
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/include/native_ui/types.h
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/include/native_ui/view.h
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/src/web/custom/view_web.c
+

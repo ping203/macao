@@ -28,3 +28,5 @@ make -C build_web
 
 #clear temp data
 rm -rf data
+
+cp build_web/macao* web

@@ -10,8 +10,20 @@
 cherry/types.h
 -
 
+/home/manh/Documents/manh/native_ui/../cherry/include/cherry/bytes.h
+cherry/types.h
+-
+
 /home/manh/Documents/manh/native_ui/../cherry/include/cherry/list.h
 cherry/types.h
+-
+
+/home/manh/Documents/manh/native_ui/../cherry/include/cherry/lock.h
+cherry/types.h
+-
+errno.h
+-
+Windows.h
 -
 
 /home/manh/Documents/manh/native_ui/../cherry/include/cherry/map.h
@@ -1726,5 +1738,31 @@ cherry/array.h
 cherry/stdio.h
 -
 cherry/map.h
+-
+
+/home/manh/Documents/manh/native_ui/src/web/custom/view_web.c
+cherry/platform.h
+-
+pthread.h
+-
+cherry/lock.h
+-
+cherry/list.h
+-
+cherry/stdio.h
+-
+smartfox/data.h
+-
+cherry/bytes.h
+-
+cherry/string.h
+-
+cherry/array.h
+-
+cherry/map.h
+-
+emscripten.h
+-
+native_ui/view.h
 -
 

@@ -52,9 +52,9 @@
                         vh.view_set_border_color(v, 0, 1, 0, 0);
                         vh.view_set_alpha(v, 0.5);
 
-                        var v2 = vh.label_alloc();
-                        v.appendChild(v2);
-                        vh.view_set_text(v2, "Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World ");
+                        var v2 = vh.image_alloc();
+                        // vh.view_set_text(v2, "Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World ");
+                        vh.view_set_image(v2, "anhchup.png");
                         vh.view_set_size(v2, 350, 400);
                         vh.view_set_position(v2, 200, 200);
                         vh.view_set_anchor(v2, 0.5, 0.5);
@@ -66,6 +66,10 @@
                         vh.view_set_alpha(v2, 0.85);
                         vh.view_set_rotation(v2, 45, 0, 0);
                         document.getElementById("root").appendChild(v);
+                        vh.view_add_child(v, v2);
+                        vh.view_set_visible(v, 0);
+                        vh.view_set_visible(v, 1);
+                        vh.view_set_user_interaction(v, 1);
                         evt.stopPropagation();
                 }
 
@@ -74,7 +78,7 @@
                 }
 
                 function handleStart(evt) {
-
+                        _test_native_code();
                         var tt = document.getElementById("text");
                         console.log("tt size : " + tt.offsetWidth + ", " + tt.offsetHeight);
                         tt.innerHTML = "oaidushgfoai duhfoiuasdfh uiahdsfoui ashdoif ahsdoui hfads";
@@ -154,17 +158,70 @@
                 }
                 </script>
 
+                <div class="emscripten_border" style="display:none">
+                        <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+                </div>
+
+                <script type='text/javascript'>
+                        var Module = {
+                                preRun: [],
+                                postRun: [],
+                                print: (function() {
+                                        return function(text) {
+                                                console.log(text);
+                                        };
+                                })(),
+                                printErr: function(text) {
+                                        console.error(text);
+                                },
+                                canvas: (function() {
+                                        var canvas = document.getElementById('canvas');
+
+                                        // As a default initial behavior, pop up an alert when webgl context is lost. To make your
+                                        // application robust, you may want to override this behavior before shipping!
+                                        // See http://www.khronos.org/registry/webgl/specs/latest/1.0/#5.15.2
+                                        canvas.addEventListener("webglcontextlost", function(e) { alert('WebGL context lost. You will need to reload the page.'); e.preventDefault(); }, false);
+
+                                        return canvas;
+                                })(),
+                                setStatus: function(text) {
+                                },
+                                totalDependencies: 0,
+                                monitorRunDependencies: function(left) {
+                                        if(left == 0) {
+                                                // finish loading
+                                        }
+                                }
+                        };
+                        window.onerror = function(event) {
+
+                        };
+                </script>
+                <script>
+
+                        (function() {
+                                var memoryInitializer = 'macao.html.mem';
+                                if (typeof Module['locateFile'] === 'function') {
+                                        memoryInitializer = Module['locateFile'](memoryInitializer);
+                                } else if (Module['memoryInitializerPrefixURL']) {
+                                        memoryInitializer = Module['memoryInitializerPrefixURL'] + memoryInitializer;
+                                }
+                                var xhr = Module['memoryInitializerRequest'] = new XMLHttpRequest();
+                                xhr.open('GET', memoryInitializer, true);
+                                xhr.responseType = 'arraybuffer';
+                                xhr.send(null);
+                        })();
+
+                        var script = document.createElement('script');
+                        script.src = "macao.js";
+                        document.body.appendChild(script);
+
+                </script>
+
                 <div id="root">
 
                         <div id="div" style="
-                                overflow-y: hidden;
-                                overflow-x: hidden;
-                                position: absolute;
-                                border-radius: 25px;
-                                clip: rect(0px, 500px, 190px, 0px);
-                                background-color:#0000FF;
-                                width: 500px; height: 500px;
-                                transform: perspective( 600px );transform-origin: 50% 100%;">
+                                position: absolute;">
                                 <div id="img" style="
                                         position: absolute;
                                         overflow-y: hidden;

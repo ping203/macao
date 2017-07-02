@@ -1961,6 +1961,33 @@ src/shared/view_controller.c.s:
 	cd /home/manh/Documents/manh/macao/build_web && $(MAKE) -f native_ui/CMakeFiles/native_ui.dir/build.make native_ui/CMakeFiles/native_ui.dir/src/shared/view_controller.c.s
 .PHONY : src/shared/view_controller.c.s
 
+src/web/custom/view_web.o: src/web/custom/view_web.c.o
+
+.PHONY : src/web/custom/view_web.o
+
+# target to build an object file
+src/web/custom/view_web.c.o:
+	cd /home/manh/Documents/manh/macao/build_web && $(MAKE) -f native_ui/CMakeFiles/native_ui.dir/build.make native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o
+.PHONY : src/web/custom/view_web.c.o
+
+src/web/custom/view_web.i: src/web/custom/view_web.c.i
+
+.PHONY : src/web/custom/view_web.i
+
+# target to preprocess a source file
+src/web/custom/view_web.c.i:
+	cd /home/manh/Documents/manh/macao/build_web && $(MAKE) -f native_ui/CMakeFiles/native_ui.dir/build.make native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.i
+.PHONY : src/web/custom/view_web.c.i
+
+src/web/custom/view_web.s: src/web/custom/view_web.c.s
+
+.PHONY : src/web/custom/view_web.s
+
+# target to generate assembly for a file
+src/web/custom/view_web.c.s:
+	cd /home/manh/Documents/manh/macao/build_web && $(MAKE) -f native_ui/CMakeFiles/native_ui.dir/build.make native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.s
+.PHONY : src/web/custom/view_web.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2174,6 +2201,9 @@ help:
 	@echo "... src/shared/view_controller.o"
 	@echo "... src/shared/view_controller.i"
 	@echo "... src/shared/view_controller.s"
+	@echo "... src/web/custom/view_web.o"
+	@echo "... src/web/custom/view_web.i"
+	@echo "... src/web/custom/view_web.s"
 .PHONY : help
 
 

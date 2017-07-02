@@ -67,6 +67,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/native_ui.dir/src/shared/touch.c.o"
   "CMakeFiles/native_ui.dir/src/shared/file.c.o"
   "CMakeFiles/native_ui.dir/src/shared/font.c.o"
+  "CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o"
   "libnative_ui.pdb"
   "libnative_ui.a"
 )

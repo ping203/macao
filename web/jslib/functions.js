@@ -1,6 +1,6 @@
 function native_helper()
 {
-
+        this.alloc();
 }
 
 native_helper.prototype.alloc = function()
@@ -23,7 +23,7 @@ native_helper.prototype.alloc = function()
 
 native_helper.prototype.find_view = function(v)
 {
-        if(v.is_native !== undefined) return v;
+        if(v.is_native !== undefined && v.can_touch == 1) return v;
 
         if(v.parentElement !== undefined && v.parentElement != null) return this.find_view(v.parentElement);
 
@@ -51,7 +51,10 @@ native_helper.prototype.mousedown = function(e)
                         this.wp.x = e.pageX;
                         this.wp.y = e.pageY;
 
+                        _js_nview_touch_began(this.ctg.native_ptr);
+
                         this.tch = 1;
+                        e.stopPropagation();
                 }
         }
 }
@@ -63,7 +66,9 @@ native_helper.prototype.mousemove = function(e)
                 v.x = this.ep.x + e.pageX - this.wp.x;
                 v.y = this.ep.y + e.pageY - this.wp.y;
 
+                _js_nview_touch_moved(this.ctg.native_ptr);
 
+                e.stopPropagation();
         }
 }
 
@@ -74,7 +79,12 @@ native_helper.prototype.mouseup = function(e)
                 v.x = this.ep.x + e.pageX - this.wp.x;
                 v.y = this.ep.y + e.pageY - this.wp.y;
 
-
+                _js_nview_touch_ended(this.ctg.native_ptr);
+                this.ctg = null;
+                this.tch = 0;
+                this.ovl.remove();
+                this.ovl = null;
+                e.stopPropagation();
         }
 }
 
@@ -86,6 +96,13 @@ native_helper.prototype.mousecancel = function(e)
                 v.x = this.ep.x + e.pageX - this.wp.x;
                 v.y = this.ep.y + e.pageY - this.wp.y;
 
-
+                _js_nview_touch_cancelled(this.ctg.native_ptr);
+                this.ctg = null;
+                this.tch = 0;
+                this.ovl.remove();
+                this.ovl = null;
+                e.stopPropagation();
         }
 }
+
+var native_helper_shared = new native_helper();

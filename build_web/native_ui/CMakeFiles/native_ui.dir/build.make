@@ -1757,6 +1757,31 @@ native_ui/CMakeFiles/native_ui.dir/src/shared/font.c.o.provides: native_ui/CMake
 native_ui/CMakeFiles/native_ui.dir/src/shared/font.c.o.provides.build: native_ui/CMakeFiles/native_ui.dir/src/shared/font.c.o
 
 
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: native_ui/CMakeFiles/native_ui.dir/flags.make
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: native_ui/CMakeFiles/native_ui.dir/includes_C.rsp
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o: /home/manh/Documents/manh/native_ui/src/web/custom/view_web.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/manh/Documents/manh/macao/build_web/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o"
+	cd /home/manh/Documents/manh/macao/build_web/native_ui && /home/manh/Downloads/emsdk_portable/emscripten/master/emcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o   -c /home/manh/Documents/manh/native_ui/src/web/custom/view_web.c
+
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/native_ui.dir/src/web/custom/view_web.c.i"
+	cd /home/manh/Documents/manh/macao/build_web/native_ui && /home/manh/Downloads/emsdk_portable/emscripten/master/emcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/manh/Documents/manh/native_ui/src/web/custom/view_web.c > CMakeFiles/native_ui.dir/src/web/custom/view_web.c.i
+
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/native_ui.dir/src/web/custom/view_web.c.s"
+	cd /home/manh/Documents/manh/macao/build_web/native_ui && /home/manh/Downloads/emsdk_portable/emscripten/master/emcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/manh/Documents/manh/native_ui/src/web/custom/view_web.c -o CMakeFiles/native_ui.dir/src/web/custom/view_web.c.s
+
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o.requires:
+
+.PHONY : native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o.requires
+
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o.provides: native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o.requires
+	$(MAKE) -f native_ui/CMakeFiles/native_ui.dir/build.make native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o.provides.build
+.PHONY : native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o.provides
+
+native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o.provides.build: native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o
+
+
 # Object files for target native_ui
 native_ui_OBJECTS = \
 "CMakeFiles/native_ui.dir/src/android/jni_env_droid.c.o" \
@@ -1826,7 +1851,8 @@ native_ui_OBJECTS = \
 "CMakeFiles/native_ui.dir/src/shared/action.c.o" \
 "CMakeFiles/native_ui.dir/src/shared/touch.c.o" \
 "CMakeFiles/native_ui.dir/src/shared/file.c.o" \
-"CMakeFiles/native_ui.dir/src/shared/font.c.o"
+"CMakeFiles/native_ui.dir/src/shared/font.c.o" \
+"CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o"
 
 # External object files for target native_ui
 native_ui_EXTERNAL_OBJECTS =
@@ -1899,10 +1925,11 @@ native_ui/libnative_ui.a: native_ui/CMakeFiles/native_ui.dir/src/shared/action.c
 native_ui/libnative_ui.a: native_ui/CMakeFiles/native_ui.dir/src/shared/touch.c.o
 native_ui/libnative_ui.a: native_ui/CMakeFiles/native_ui.dir/src/shared/file.c.o
 native_ui/libnative_ui.a: native_ui/CMakeFiles/native_ui.dir/src/shared/font.c.o
+native_ui/libnative_ui.a: native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o
 native_ui/libnative_ui.a: native_ui/CMakeFiles/native_ui.dir/build.make
 native_ui/libnative_ui.a: native_ui/CMakeFiles/native_ui.dir/objects1.rsp
 native_ui/libnative_ui.a: native_ui/CMakeFiles/native_ui.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/manh/Documents/manh/macao/build_web/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Linking C static library libnative_ui.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/manh/Documents/manh/macao/build_web/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Linking C static library libnative_ui.a"
 	cd /home/manh/Documents/manh/macao/build_web/native_ui && $(CMAKE_COMMAND) -P CMakeFiles/native_ui.dir/cmake_clean_target.cmake
 	cd /home/manh/Documents/manh/macao/build_web/native_ui && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/native_ui.dir/link.txt --verbose=$(VERBOSE)
 
@@ -1979,6 +2006,7 @@ native_ui/CMakeFiles/native_ui.dir/requires: native_ui/CMakeFiles/native_ui.dir/
 native_ui/CMakeFiles/native_ui.dir/requires: native_ui/CMakeFiles/native_ui.dir/src/shared/touch.c.o.requires
 native_ui/CMakeFiles/native_ui.dir/requires: native_ui/CMakeFiles/native_ui.dir/src/shared/file.c.o.requires
 native_ui/CMakeFiles/native_ui.dir/requires: native_ui/CMakeFiles/native_ui.dir/src/shared/font.c.o.requires
+native_ui/CMakeFiles/native_ui.dir/requires: native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o.requires
 
 .PHONY : native_ui/CMakeFiles/native_ui.dir/requires
 

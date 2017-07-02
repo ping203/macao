@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/math/types.h
+cherry/types.h
+-
+
 /home/manh/Documents/manh/macao/web/../../cherry/include/cherry/platform.h
 TargetConditionals.h
 /home/manh/Documents/manh/macao/web/../../cherry/include/cherry/TargetConditionals.h
@@ -60,7 +64,25 @@ cherry/platform.h
 intrin.h
 -
 
+/home/manh/Documents/manh/macao/web/../../native_ui/include/native_ui/types.h
+cherry/types.h
+-
+cherry/math/types.h
+-
+pthread.h
+-
+jni.h
+-
+
+/home/manh/Documents/manh/macao/web/../../native_ui/include/native_ui/view.h
+native_ui/types.h
+-
+
 /home/manh/Documents/manh/macao/web/main.c
 cherry/stdio.h
+-
+emscripten.h
+-
+native_ui/view.h
 -
 

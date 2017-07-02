@@ -1,8 +1,8 @@
 /*
  * shared objects for native management
  */
-var __shared_object_holder__    = {};
-var __shared_object_id__        = 0;
+var __shared_object_holder__    = __shared_object_holder__ || {};
+var __shared_object_id__        = __shared_object_id__ || 0;
 
 function __register_shared_object(obj)
 {

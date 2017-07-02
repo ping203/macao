@@ -72,6 +72,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/manh/Documents/manh/native_ui/src/shared/touch_handle.c" "/home/manh/Documents/manh/macao/build_web/native_ui/CMakeFiles/native_ui.dir/src/shared/touch_handle.c.o"
   "/home/manh/Documents/manh/native_ui/src/shared/view.c" "/home/manh/Documents/manh/macao/build_web/native_ui/CMakeFiles/native_ui.dir/src/shared/view.c.o"
   "/home/manh/Documents/manh/native_ui/src/shared/view_controller.c" "/home/manh/Documents/manh/macao/build_web/native_ui/CMakeFiles/native_ui.dir/src/shared/view_controller.c.o"
+  "/home/manh/Documents/manh/native_ui/src/web/custom/view_web.c" "/home/manh/Documents/manh/macao/build_web/native_ui/CMakeFiles/native_ui.dir/src/web/custom/view_web.c.o"
   )
 set(CMAKE_C_COMPILER_ID "Clang")
 
