@@ -1,6 +1,6 @@
 <touch key="open"/>
 <controller name="root_view_controller"/>
-<view width="match_parent" height="match_parent" type="relative" align="center" hash="first_image" scale="1">
+<view width="match_parent" height="match_parent" type="relative" align="center" hash="first_image" clip="true">
         <link src="res/layout/welcome/welcome.xml" />
         <!-- <link src="res/layout/welcome/welcome.xml"/>
         <!-- &lt;!&ndash; <link src="res/layout/room.xml"/> &ndash;&gt; -->

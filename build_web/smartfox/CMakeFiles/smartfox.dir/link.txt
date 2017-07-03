@@ -1,1 +1,0 @@
-/home/manh/Downloads/emsdk_portable/emscripten/master/emar rc libsmartfox.a  @CMakeFiles/smartfox.dir/objects1.rsp

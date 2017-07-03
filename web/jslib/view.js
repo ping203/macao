@@ -1,3 +1,8 @@
+var touch_capable = 'ontouchstart' in window ||
+         window.DocumentTouch && document instanceof window.DocumentTouch ||
+         navigator.maxTouchPoints > 0 ||
+         window.navigator.msMaxTouchPoints > 0;
+
 var native_type = {
         VIEW            : 0,
         IMAGE           : 1,
@@ -10,9 +15,261 @@ var native_type = {
 
 function view_helper()
 {
-
+        this.alloc();
 }
 
+view_helper.prototype.alloc = function()
+{
+        this.ep = {
+                x : 0,
+                y : 0
+        };
+
+        this.wp = {
+                x : 0,
+                y : 0
+        };
+
+        this.tch = 0;
+
+        this.ctg = null;
+        this.ovl = null;
+}
+
+view_helper.prototype.view_get_offset_window_left = function(v)
+{
+        var result = 0;
+        var o = v;
+        while(o != undefined && o != null) {
+                result += o.offsetLeft;
+                o = o.parentElement;
+        }
+        return result;
+}
+
+
+view_helper.prototype.view_get_offset_window_top = function(v)
+{
+        var result = 0;
+        var o = v;
+        while(o != undefined && o != null) {
+                result += o.offsetTop;
+                o = o.parentElement;
+        }
+        return result;
+}
+
+view_helper.prototype.find_view = function(v)
+{
+        if(v.is_native !== undefined && v.can_touch == 1) return v;
+
+        if(v.parentElement !== undefined && v.parentElement != null) return this.find_view(v.parentElement);
+
+        return null;
+}
+
+view_helper.prototype.process_down = function(e, x, y)
+{
+        if(this.ctg == null) {
+                this.ctg = this.find_view(e.target);
+                if(this.ctg != null) {
+                        this.tch = 1;
+                        e.stopPropagation();
+
+                        this.ovl = document.createElement('div');
+                        this.ovl.style["position"] = "absolute";
+                        this.ovl.style["width"] = "100%";
+                        this.ovl.style["height"] = "100%";
+                        var self = this;
+                        if(!touch_capable) {
+                                if (window.PointerEvent) {
+                                        this.ovl.addEventListener("pointerdown", function(e){
+                                                self.pointerdown(e);
+                                        }, false);
+                                        this.ovl.addEventListener("pointermove", function(e){
+                                                self.pointermove(e);
+                                        }, false);
+                                        this.ovl.addEventListener("pointerup", function(e){
+                                                self.pointerup(e);
+                                        }, false);
+                                        this.ovl.addEventListener("pointerout", function(e){
+                                                self.pointercancel(e);
+                                        }, false);
+                                } else {
+                                        this.ovl.addEventListener("mousedown", function(e){
+                                                self.mousedown(e);
+                                        }, false);
+                                        this.ovl.addEventListener("mousemove", function(e){
+                                                self.mousemove(e);
+                                        }, false);
+                                        this.ovl.addEventListener("mouseup", function(e){
+                                                self.mouseup(e);
+                                        }, false);
+                                        this.ovl.addEventListener("mouseout", function(e){
+                                                self.mousecancel(e);
+                                        }, false);
+                                }
+                        } else {
+                                this.ovl.addEventListener("touchstart", function(e){
+                                        self.touchstart(e);
+                                }, false);
+                                this.ovl.addEventListener("touchmove", function(e){
+                                        self.touchmove(e);
+                                }, false);
+                                this.ovl.addEventListener("touchend", function(e){
+                                        self.touchup(e);
+                                }, false);
+                                this.ovl.addEventListener("touchcancel", function(e){
+                                        self.touchcancel(e);
+                                }, false);
+                        }
+
+
+                        document.getElementById("root").appendChild(this.ovl);
+                        this.ep.x = x- this.view_get_offset_window_left(this.ctg);
+                        this.ep.y = y - this.view_get_offset_window_top(this.ctg);
+                        this.wp.x = x;
+                        this.wp.y = y;
+
+                        _js_nview_touch_began(this.ctg.native_ptr, this.ep.x, this.ep.y);
+                }
+        }
+}
+
+view_helper.prototype.process_move = function(e, x, y)
+{
+        if(this.tch == 1 && this.ctg != null) {
+                var v = {};
+                v.x = this.ep.x + x - this.wp.x;
+                v.y = this.ep.y + y - this.wp.y;
+
+                _js_nview_touch_moved(this.ctg.native_ptr, v.x, v.y);
+
+                e.stopPropagation();
+        }
+}
+
+view_helper.prototype.process_up = function(e, x, y)
+{
+        if(this.tch == 1 && this.ctg != null) {
+                var v = {};
+                v.x = this.ep.x + x - this.wp.x;
+                v.y = this.ep.y + y - this.wp.y;
+
+                _js_nview_touch_ended(this.ctg.native_ptr, v.x, v.y);
+                this.ctg = null;
+                this.tch = 0;
+                this.ovl.remove();
+                this.ovl = null;
+                e.stopPropagation();
+        }
+}
+
+view_helper.prototype.process_cancel = function(e, x, y)
+{
+        if(this.tch == 1 && this.ctg != null
+                /*
+                 * browser on mobile and desktop behaves very different
+                 */
+                && ((e.target == this.ovl && !touch_capable) || touch_capable)) {
+                var v = {};
+                v.x = this.ep.x + x - this.wp.x;
+                v.y = this.ep.y + y - this.wp.y;
+
+                _js_nview_touch_cancelled(this.ctg.native_ptr, v.x, v.y);
+                this.ctg = null;
+                this.tch = 0;
+                this.ovl.remove();
+                this.ovl = null;
+                e.stopPropagation();
+        }
+}
+
+view_helper.prototype.touchstart = function(e)
+{
+        e.preventDefault();
+        var touches = e.changedTouches;
+        for (var i = 0; i < touches.length; i++) {
+                this.process_down(e, touches[i].pageX, touches[i].pageY);
+        }
+}
+
+view_helper.prototype.touchmove = function(e)
+{
+        e.preventDefault();
+        var touches = e.changedTouches;
+        for (var i = 0; i < touches.length; i++) {
+                this.process_move(e, touches[i].pageX, touches[i].pageY);
+        }
+}
+
+view_helper.prototype.touchup = function(e)
+{
+        e.preventDefault();
+        var touches = e.changedTouches;
+        for (var i = 0; i < touches.length; i++) {
+                this.process_up(e, touches[i].pageX, touches[i].pageY);
+        }
+}
+
+view_helper.prototype.touchcancel = function(e)
+{
+        e.preventDefault();
+        var touches = e.changedTouches;
+        for (var i = 0; i < touches.length; i++) {
+                this.process_cancel(e, touches[i].pageX, touches[i].pageY);
+        }
+}
+
+view_helper.prototype.pointerdown = function(e)
+{
+        e.preventDefault();
+        this.process_down(e, e.pageX, e.pageY);
+}
+
+view_helper.prototype.pointermove = function(e)
+{
+        e.preventDefault();
+        this.process_move(e, e.pageX, e.pageY);
+}
+
+view_helper.prototype.pointerup = function(e)
+{
+        e.preventDefault();
+        this.process_up(e, e.pageX, e.pageY);
+}
+
+
+view_helper.prototype.pointercancel = function(e)
+{
+        e.preventDefault();
+        this.process_cancel(e, e.pageX, e.pageY);
+}
+
+view_helper.prototype.mousedown = function(e)
+{
+        this.process_down(e, e.pageX, e.pageY);
+}
+
+view_helper.prototype.mousemove = function(e)
+{
+        this.process_move(e, e.pageX, e.pageY);
+}
+
+view_helper.prototype.mouseup = function(e)
+{
+        this.process_up(e, e.pageX, e.pageY);
+}
+
+
+view_helper.prototype.mousecancel = function(e)
+{
+        this.process_cancel(e, e.pageX, e.pageY);
+}
+
+/*
+ * view base definitions
+ */
 view_helper.prototype.base_alloc = function()
 {
         var view = document.createElement('div');
@@ -20,11 +277,14 @@ view_helper.prototype.base_alloc = function()
         view.style["position"] = "absolute";
         view.style["width"]     = "0px";
         view.style["height"]     = "0px";
+
+        view.style["perspective"] = "1000px";
+        view.style["-webkit-perspective"] = "1000px";
+
         view.native_anchor = {
                 x : 0.5,
                 y : 0.5
         };
-        view.style["transform"] = "perspective(600px)";
         view.style["transform-origin"] = "50% 50%";
         view.native_pos = {
                 x : 0,
@@ -45,19 +305,56 @@ view_helper.prototype.base_alloc = function()
         };
         view.native_ptr = 0;
         view.can_touch  = 0;
-        view.addEventListener("mousedown", function(e){
-                native_helper_shared.mousedown(e);
-        }, false);
-        view.addEventListener("mousemove", function(e){
-                native_helper_shared.mousemove(e);
-        }, false);
-        view.addEventListener("mouseup", function(e){
-                native_helper_shared.mouseup(e);
-        }, false);
-        view.addEventListener("mouseout", function(e){
-                native_helper_shared.mousecancel(e);
-        }, false);
+        view.native_visible = 1;
+        view.native_alpha = 1;
 
+        var self = this;
+        if(!touch_capable) {
+                if (window.PointerEvent) {
+                        view.addEventListener("pointerdown", function(e){
+                                self.pointerdown(e);
+                        }, false);
+                        view.addEventListener("pointermove", function(e){
+                                self.pointermove(e);
+                        }, false);
+                        view.addEventListener("pointerup", function(e){
+                                self.pointerup(e);
+                        }, false);
+                        view.addEventListener("pointerout", function(e){
+                                self.pointercancel(e);
+                        }, false);
+                } else {
+                        view.addEventListener("mousedown", function(e){
+                                self.mousedown(e);
+                        }, false);
+                        view.addEventListener("mousemove", function(e){
+                                self.mousemove(e);
+                        }, false);
+                        view.addEventListener("mouseup", function(e){
+                                self.mouseup(e);
+                        }, false);
+                        view.addEventListener("mouseout", function(e){
+                                self.mousecancel(e);
+                        }, false);
+                }
+        } else {
+                view.addEventListener("touchstart", function(e){
+                        self.touchstart(e);
+                }, false);
+                view.addEventListener("touchmove", function(e){
+                        self.touchmove(e);
+                }, false);
+                view.addEventListener("touchend", function(e){
+                        self.touchup(e);
+                }, false);
+                view.addEventListener("touchcancel", function(e){
+                        self.touchcancel(e);
+                }, false);
+        }
+
+        view.free = function() {
+                self.view_free(view);
+        };
         __register_shared_object(view);
 
         return view;
@@ -65,7 +362,7 @@ view_helper.prototype.base_alloc = function()
 
 view_helper.prototype.view_set_native_ptr = function(v, p)
 {
-        view.native_ptr = p;
+        v.native_ptr = p;
 }
 
 view_helper.prototype.view_alloc = function()
@@ -83,10 +380,43 @@ view_helper.prototype.image_alloc = function()
         v.custom_content.style["position"] = "absolute";
         v.custom_content.style["width"] = "100%";
         v.custom_content.style["height"] = "100%";
-        v.custom_content.style["overflow-x"] = "hidden";
-        v.custom_content.style["overflow-y"] = "hidden";
+        // v.custom_content.style["overflow-x"] = "hidden";
+        // v.custom_content.style["overflow-y"] = "hidden";
+        v.custom_content.style["overflow"] = "hidden";
         v.appendChild(v.custom_content);
         this.view_set_clip(v, 1);
+
+        var self = this;
+        var view = v.custom_content;
+        if (window.PointerEvent) {
+                view.addEventListener("pointerdown", function(e){
+                        self.mousedown(e);
+                }, false);
+                view.addEventListener("pointermove", function(e){
+                        self.mousemove(e);
+                }, false);
+                view.addEventListener("pointerup", function(e){
+                        self.mouseup(e);
+                }, false);
+                view.addEventListener("pointerout", function(e){
+                        self.mousecancel(e);
+                }, false);
+        } else {
+                view.addEventListener("mousedown", function(e){
+                        self.mousedown(e);
+                }, false);
+                view.addEventListener("mousemove", function(e){
+                        self.mousemove(e);
+                }, false);
+                view.addEventListener("mouseup", function(e){
+                        self.mouseup(e);
+                }, false);
+                view.addEventListener("mouseout", function(e){
+                        self.mousecancel(e);
+                }, false);
+        }
+
+
         return v;
 }
 
@@ -157,14 +487,19 @@ view_helper.prototype.view_set_text = function(v, t)
 
 view_helper.prototype.request_transform = function(v)
 {
-        var t = "perspective(600px) "
+        var xx = v.native_pos.x - v.native_size.width * v.native_anchor.x;
+        var yy = v.native_pos.y - v.native_size.height * v.native_anchor.y;
+
+        var t = "translate3d(" + xx + "px," + yy +"px, 0px) "
                 + "rotateX(" + (v.native_rotation.x) + "deg) "
                 + "rotateY(" + (v.native_rotation.y) + "deg) "
                 + "rotateZ(" + (v.native_rotation.z) + "deg) "
                 + "scale(" + v.native_scale.x + "," + v.native_scale.y + ") ";
         v.style["transform"] = t;
-        v.style["-ms-transform"] = t;
         v.style["-webkit-transform"] = t;
+        v.style["-ms-transform"] = t;
+        v.style["-moz-transform"] = t;
+        v.style["-o-transform"] = t;
 }
 
 view_helper.prototype.view_calculate_size = function(v)
@@ -201,8 +536,21 @@ view_helper.prototype.view_set_position = function(v, x, y)
 {
         v.native_pos.x = x;
         v.native_pos.y = y;
-        v.style.left = (x - v.native_size.width * v.native_anchor.x) + "px";
-        v.style.top = (y - v.native_size.height * v.native_anchor.y) + "px";
+        // v.style.left = (x - v.native_size.width * v.native_anchor.x) + "px";
+        // v.style.top = (y - v.native_size.height * v.native_anchor.y) + "px";
+        var xx = x - v.native_size.width * v.native_anchor.x;
+        var yy = y - v.native_size.height * v.native_anchor.y;
+
+        var t = "translate3d(" + xx + "px," + yy +"px, 0px) "
+                + "rotateX(" + (v.native_rotation.x) + "deg) "
+                + "rotateY(" + (v.native_rotation.y) + "deg) "
+                + "rotateZ(" + (v.native_rotation.z) + "deg) "
+                + "scale(" + v.native_scale.x + "," + v.native_scale.y + ") ";
+        v.style["transform"] = t;
+        v.style["-webkit-transform"] = t;
+        v.style["-ms-transform"] = t;
+        v.style["-moz-transform"] = t;
+        v.style["-o-transform"] = t;
 }
 
 view_helper.prototype.view_set_rotation = function(v, x, y, z)
@@ -217,7 +565,11 @@ view_helper.prototype.view_set_anchor = function(v, x, y)
 {
         v.native_anchor.x = x;
         v.native_anchor.y = y;
-        v.style["transform-origin"] = (x * 100) + "%" + (y * 100) + "%";
+        var or = (x * 100) + "%" + (y * 100) + "%";
+        v.style["transform-origin"] = or;
+        v.style["-webkit-transform-origin"] = or;
+        v.style["-moz-transform-origin"] = or;
+        v.style["-o-transform-origin"] = or;
         this.view_set_position(v, v.native_pos.x, v.native_pos.y);
         this.request_transform(v);
 }
@@ -234,7 +586,7 @@ view_helper.prototype.view_set_color = function(v, r, g, b, a)
         if(r >= 0) {
                 v.style["background-color"] = "rgb(" + (r * 255) + ", " + (g * 255) + ", " + (b * 255) +")";
         } else {
-                v.style["background-color"] = "transparent";
+                v.style["background-color"] = undefined;
         }
 }
 
@@ -245,9 +597,9 @@ view_helper.prototype.view_set_border_color = function(v, r, g, b ,a)
                 v.style["border-width"]  = 2 + "pt";
                 v.style["border-style"] = "solid";
         } else {
-                v.style["border-color"] = "transparent";
-                v.style["border-width"]  = 2 + "pt";
-                v.style["border-style"] = "none";
+                v.style["border-color"] = undefined;
+                v.style["border-width"]  = undefined;
+                v.style["border-style"] = undefined;
         }
 }
 
@@ -258,22 +610,37 @@ view_helper.prototype.view_set_border = function(v, b)
 
 view_helper.prototype.view_set_alpha = function(v, a)
 {
-        v.style["opacity"] = a + "";
+        v.native_alpha = a;
+
+        var b = v.native_visible == 1 ? 1 : 0;
+        var r = a * b;
+        if(r > 0) {
+                v.style["opacity"] = (a * b) + "";
+        }
+        else v.style["opacity"] = undefined;
 }
 
 view_helper.prototype.view_set_visible = function(v, f)
 {
-        v.style["visibility"] = f == 1 ? "visible" : "hidden";
+        v.native_visible = f;
+        this.view_set_alpha(v, v.native_alpha);
+        if(f == 1) {
+                v.style["display"] = "initial";
+        } else {
+                v.style["display"] = "none";
+        }
 }
 
 view_helper.prototype.view_set_clip = function(v, b)
 {
         if(b == 1) {
-                v.style["overflow-x"] = "hidden";
-                v.style["overflow-y"] = "hidden";
+                // v.style["overflow-x"] = "hidden";
+                // v.style["overflow-y"] = "hidden";
+                v.style["overflow"] = "hidden";
         } else {
-                v.style["overflow-x"] = "initial";
-                v.style["overflow-y"] = "initial";
+                v.style["overflow"] = "initital";
+                // v.style["overflow-x"] = "initial";
+                // v.style["overflow-y"] = "initial";
         }
 }
 
@@ -292,3 +659,5 @@ view_helper.prototype.view_add_child = function(v, c)
         c.remove();
         v.appendChild(c);
 }
+
+var view_helper_shared = new view_helper();

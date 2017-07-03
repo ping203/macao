@@ -7,7 +7,7 @@
 #include <native_ui/view.h>
 #include <native_ui/parser.h>
 #include <native_ui/manager.h>
-#import <native_ui/view_controller.h>
+#include <native_ui/view_controller.h>
 #include <smartfox/data.h>
 #include <macao/exec.h>
 

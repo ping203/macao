@@ -7,8 +7,8 @@ var __shared_object_id__        = __shared_object_id__ || 0;
 function __register_shared_object(obj)
 {
         if(obj.__soi__ == undefined) {
-                obj.__soi__                             = __shared_object_id__;
                 __shared_object_id__                    += 1;
+                obj.__soi__                             = __shared_object_id__;
                 __shared_object_holder__[obj.__soi__]   = obj;
         }
 }
@@ -29,7 +29,7 @@ function __shared_object_get(id)
 function __shared_object_free(id)
 {
         var obj = __shared_object_holder__[id];
-        if(obj != null && obj != undefined) {
+        if(obj != null && obj != undefined && obj.free != null && obj.free != undefined) {
                 obj.free();
         }
 }

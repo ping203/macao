@@ -1,12 +1,11 @@
 <html>
         <head>
-                <link href="config.css" type="text/css" rel="stylesheet" />
+                <!-- <link href="config.css" type="text/css" rel="stylesheet" /> -->
                 <script src="jslib/config.js"></script>
-                <script src="jslib/functions.js"></script>
                 <script src="jslib/view.js"></script>
         </head>
         <body style="overflow:hidden">
-                <script>
+                <!-- <script>
                 var sp = {
                         x : 0,
                         y : 0
@@ -37,7 +36,6 @@
                 var ctg = null;
                 var ft = null;
 
-                var helper = new native_helper();
                 var vh = new view_helper();
 
                 function testStart(evt)
@@ -156,12 +154,42 @@
                                 }
                         }
                 }
-                </script>
+                </script> -->
 
                 <div class="emscripten_border" style="display:none">
-                        <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+                        <canvas class="emscripten" id="canvas" style="display:none" oncontextmenu="event.preventDefault()"></canvas>
                 </div>
 
+                <div id="root" style="
+                        position:absolute;
+                        width : 100%;
+                        height : 100%;
+                ">
+
+                        <!-- <div id="div" style="
+                                position: absolute;">
+                                <div id="img" style="
+                                        position: absolute;
+                                        overflow-y: hidden;
+                                        overflow-x: hidden;
+                                        border-radius: 25px;
+                                        clip: rect(0px, 200px, 200px, 0px);
+                                        width:200px;
+                                        height:200px;">
+                                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg"
+                                                style="overflow:auto; position: absolute">
+                                </div>
+                        </div>
+                        <input id="input" style="position:absolute; width: 500px; height:50px; border-radius: 10px;
+                                border-style:solid; border-width:0px;
+                                background-color: #FF0000;
+                                font-size: 20px" type="password">
+                        </input>
+                        <div id="text" class="noselect" style="position:absolute;">
+                                Test Text
+                        </div> -->
+
+                </div>
                 <script type='text/javascript'>
                         var Module = {
                                 preRun: [],
@@ -189,7 +217,6 @@
                                 totalDependencies: 0,
                                 monitorRunDependencies: function(left) {
                                         if(left == 0) {
-                                                // finish loading
                                         }
                                 }
                         };
@@ -216,61 +243,13 @@
                         script.src = "macao.js";
                         document.body.appendChild(script);
 
-                </script>
+                        window.addEventListener('resize', function(event){
+                                if( _macao_resize != undefined && _macao_resize != null) {
+                                        var root = document.getElementById("root");
+                                        _macao_resize(root.offsetWidth, root.offsetHeight);
+                                }
+                        });
 
-                <div id="root">
-
-                        <div id="div" style="
-                                position: absolute;">
-                                <div id="img" style="
-                                        position: absolute;
-                                        overflow-y: hidden;
-                                        overflow-x: hidden;
-                                        border-radius: 25px;
-                                        clip: rect(0px, 200px, 200px, 0px);
-                                        width:200px;
-                                        height:200px;">
-                                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg"
-                                                style="overflow:auto; position: absolute">
-                                </div>
-                        </div>
-                        <input id="input" style="position:absolute; width: 500px; height:50px; border-radius: 10px;
-                                border-style:solid; border-width:0px;
-                                background-color: #FF0000;
-                                font-size: 20px" type="password">
-                        </input>
-                        <div id="text" class="noselect" style="position:absolute;">
-                                Test Text
-                        </div>
-
-                </div>
-                <script>
-                        var d = document.getElementById("div");
-                        d.addEventListener("mousedown", handleStart, false);
-                        d.addEventListener("mouseup", handleEnd, false);
-                        d.addEventListener("mouseout", handleCancel, false);
-                        d.addEventListener("mousemove", handleMove, false);
-                </script>
-                <script>
-                        var d2 = document.getElementById("img");
-                        d2.addEventListener("mousedown", testStart, true);
-                        d2.addEventListener("mouseup", testEnd, false);
-                        d2.addEventListener("mouseout", testEnd, false);
-                        d2.addEventListener("mousemove", testEnd, false);
-                </script>
-                <script>
-                        var d2 = document.getElementById("text");
-                        d2.addEventListener("mousedown", handleStart, false);
-                        d2.addEventListener("mouseup", handleEnd, false);
-                        d2.addEventListener("mouseout", handleCancel, false);
-                        d2.addEventListener("mousemove", handleMove, false);
-                </script>
-                <script>
-                        var d2 = document.getElementById("input");
-                        d2.addEventListener("mousedown", handleStart, false);
-                        d2.addEventListener("mouseup", handleEnd, false);
-                        d2.addEventListener("mouseout", handleCancel, false);
-                        d2.addEventListener("mousemove", handleMove, false);
                 </script>
         </body>
 </html>

@@ -53,7 +53,7 @@ static void exec_data_free(struct exec_data *p)
 static struct exec_data *exec_data_alloc(struct nexec *controller)
 {
         struct exec_data *p     = smalloc(sizeof(struct exec_data), exec_data_free);
-        p->degree               = 0;
+        p->degree_expanded      = (union vec4){0, 0, 0, 0};
         p->can_rotate           = 0;
         p->current_part         = 0;
         naction_key_init(&p->action_key);
@@ -178,6 +178,7 @@ static void touch_3d(struct nexec *p, struct nview *s, u8 t)
                         break;
                 case NATIVE_UI_TOUCH_MOVED:
                 case NATIVE_UI_TOUCH_ENDED:
+                case NATIVE_UI_TOUCH_CANCELLED:
                 {
                         if(!data->can_rotate) {
                                 if(t == NATIVE_UI_TOUCH_MOVED) {
@@ -236,7 +237,7 @@ static void touch_3d(struct nexec *p, struct nview *s, u8 t)
                                 data->degree += 360;
                         }
                         struct mov_area m = process_3d(p);
-                        if(t == NATIVE_UI_TOUCH_ENDED) {
+                        if(t == NATIVE_UI_TOUCH_ENDED || t == NATIVE_UI_TOUCH_CANCELLED) {
                                 data->can_rotate = 0;
                                 struct naction *act = NULL;
                                 if(
@@ -246,7 +247,7 @@ static void touch_3d(struct nexec *p, struct nview *s, u8 t)
                                         data->current_part = m.part;
                                         act = naction_alloc(&data->degree_expanded,
                                                 vec4_sub((union vec4){
-                                                        .x = m.part * 90
+                                                        m.part * 90, 0, 0, 0
                                                 }, data->degree_expanded),
                                                 0.15, NATIVE_UI_EASE_CUBIC_OUT, 0,
                                                 (nactionf)process_action, p);
@@ -254,7 +255,7 @@ static void touch_3d(struct nexec *p, struct nview *s, u8 t)
                                         data->current_part = m.part + 1;
                                         act = naction_alloc(&data->degree_expanded,
                                                 vec4_sub((union vec4){
-                                                        .x = (m.part+1) * 90
+                                                        (m.part+1) * 90, 0, 0, 0
                                                 }, data->degree_expanded),
                                                 0.15, NATIVE_UI_EASE_CUBIC_OUT, 0,
                                                 (nactionf)process_action, p);

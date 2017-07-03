@@ -47,12 +47,14 @@ add_subdirectory(../../native_ui ../${OUT}/native_ui)
 include_directories(../../cherry/include)
 include_directories(../../cherry/smartfox/include)
 include_directories(../../native_ui/include)
-include_directories(include)
+include_directories(../include)
 
 set(PROJECT_LINK_LIBS kernel xml native_ui smartfox)
 
+file(GLOB_RECURSE SOURCES "../src/*.c")
+
 set(CMAKE_EXECUTABLE_SUFFIX ".html")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -s TOTAL_MEMORY=134217728 --use-preload-plugins --preload-file ../data@")
-add_executable(macao main.c)
+add_executable(macao main.c ${SOURCES})
 add_dependencies(macao ${PROJECT_LINK_LIBS})
 target_link_libraries(macao ${PROJECT_LINK_LIBS})

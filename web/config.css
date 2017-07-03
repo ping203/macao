@@ -1,25 +1,26 @@
+div {
+        /*-webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;*/
+}
+
 img{
     -khtml-user-select: none;
     -o-user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
-    pointer-events: none
-}
+    pointer-events: none;
 
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-}
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
 
-.clip-ellipse {
-  clip-path: ellipse(60px 40px at center);
-}
-.clip-polygon {
-  clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    /*-webkit-backface-visibility: hidden;
+   -moz-backface-visibility: hidden;
+   -ms-backface-visibility: hidden;
+   backface-visibility: hidden;*/
 }

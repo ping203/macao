@@ -1,1 +1,0 @@
-/home/manh/Downloads/emsdk_portable/emscripten/master/emcc   -s TOTAL_MEMORY=134217728 --use-preload-plugins --preload-file ../data@ -DNDEBUG -O2  -O2 @CMakeFiles/macao.dir/objects1.rsp  -o macao.html @CMakeFiles/macao.dir/linklibs.rsp

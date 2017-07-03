@@ -1,73 +1,54 @@
-#include <cherry/stdio.h>
 #include <emscripten.h>
+#include <emscripten/html5.h>
+#include <cherry/stdio.h>
+#include <cherry/list.h>
+#include <cherry/map.h>
+#include <cherry/string.h>
+#include <cherry/math/math.h>
 #include <native_ui/view.h>
+#include <native_ui/parser.h>
+#include <native_ui/manager.h>
+#include <native_ui/view_controller.h>
+#include <smartfox/data.h>
+#include <macao/exec.h>
 
-static u8 __view_touched = 0;
-static u8 __view_touched_move = 0;
-static u8 __view_touched_end = 0;
-
-pthread_mutex_t __shared_nview_touch_lock;
-
-EMSCRIPTEN_KEEPALIVE
-void js_nview_touch_began(struct nview *v)
-{
-        if(__view_touched || !v) return;
-
-        __view_touched = 1;
-
-        // nview_touch_began(v, (union vec2){x, y});
-}
+static struct nview *root = NULL;
 
 EMSCRIPTEN_KEEPALIVE
-void js_nview_touch_moved(struct nview *v)
+void macao_resize(int width, int height)
 {
-        // debug("touch %f %f\n", x, y);
-        debug("native touch\n");
-        if(!__view_touched || !v) return;
-
-        // nview_touch_moved(v, (union vec2){x, y});
-}
-
-EMSCRIPTEN_KEEPALIVE
-void js_nview_touch_ended(struct nview *v)
-{
-        if(!__view_touched || !v) return;
-
-        if(__view_touched_end == 0) {
-                __view_touched_end = 1;
-                // nview_touch_ended(v, (union vec2){x, y});
-        }
-        __view_touched_end = 0;
-        __view_touched = 0;
-}
-
-EMSCRIPTEN_KEEPALIVE
-void js_nview_touch_cancelled(struct nview *v)
-{
-        if(!__view_touched || !v) return;
-
-        if(__view_touched_end == 0) {
-                __view_touched_end = 1;
-                // nview_touch_cancelled(v, (union vec2){x, y});
-        }
-        __view_touched_end = 0;
-        __view_touched = 0;
-}
-
-EMSCRIPTEN_KEEPALIVE
-void test_native_code()
-{
-        native_ui_test();
+        nview_set_size(root, (union vec2){(float)width, (float)height});
+        nview_set_position(root, (union vec2){root->size.width / 2, root->size.height/2});
+        nview_update_layout(root);
 }
 
 static void do_frame()
 {
-
+        nmanager_update(nmanager_shared(), 1.0f / 60);
 }
 
 int main(int argc, char **argv)
 {
-        debug("Macao Web\n");
+        nexec_set_fnf(mc_nexec_alloc);
+        root = nview_alloc();
+        nview_set_layout_type(root, NATIVE_UI_LAYOUT_RELATIVE);
+        nview_set_user_interaction_enabled(root, 1);
+
+        struct nparser *parser = nparser_alloc();
+        nparser_parse_file(parser, "res/layout/root.xml", NULL);
+
+        struct nview *view = (struct nview *)
+                ((char *)parser->view.next - offsetof(struct nview, parser));
+
+        nview_add_child(root, view);
+
+        EM_ASM_({
+                var obj =  __shared_object_get($0);
+                var rt = document.getElementById("root");
+                rt.appendChild(obj);
+                _macao_resize(rt.offsetWidth, rt.offsetHeight);
+        }, root->ptr);
+
         emscripten_set_main_loop(do_frame, 0, 1);
         return 0;
 }

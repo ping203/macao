@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/array.h
+D:/manh/native_ui/../cherry/include/cherry/array.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/bytes.h
+D:/manh/native_ui/../cherry/include/cherry/bytes.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/list.h
+D:/manh/native_ui/../cherry/include/cherry/list.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/lock.h
+D:/manh/native_ui/../cherry/include/cherry/lock.h
 cherry/types.h
 -
 errno.h
@@ -26,23 +26,23 @@ errno.h
 Windows.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/map.h
+D:/manh/native_ui/../cherry/include/cherry/map.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/math/mat3.h
+D:/manh/native_ui/../cherry/include/cherry/math/mat3.h
 cherry/math/types.h
 -
 math.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/math/mat4.h
+D:/manh/native_ui/../cherry/include/cherry/math/mat4.h
 cherry/math/types.h
 -
 math.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/math/math.h
+D:/manh/native_ui/../cherry/include/cherry/math/math.h
 cherry/math/types.h
 -
 cherry/math/vec2.h
@@ -62,7 +62,7 @@ cherry/stdlib.h
 time.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/math/quat.h
+D:/manh/native_ui/../cherry/include/cherry/math/quat.h
 cherry/math/mat4.h
 -
 cherry/math/vec4.h
@@ -70,51 +70,51 @@ cherry/math/vec4.h
 math.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/math/types.h
+D:/manh/native_ui/../cherry/include/cherry/math/types.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/math/vec2.h
+D:/manh/native_ui/../cherry/include/cherry/math/vec2.h
 cherry/math/types.h
 -
 math.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/math/vec3.h
+D:/manh/native_ui/../cherry/include/cherry/math/vec3.h
 cherry/math/types.h
 -
 math.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/math/vec4.h
+D:/manh/native_ui/../cherry/include/cherry/math/vec4.h
 cherry/math/types.h
 -
 math.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/memory.h
+D:/manh/native_ui/../cherry/include/cherry/memory.h
 stddef.h
 -
 string.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/platform.h
+D:/manh/native_ui/../cherry/include/cherry/platform.h
 TargetConditionals.h
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/TargetConditionals.h
+D:/manh/native_ui/../cherry/include/cherry/TargetConditionals.h
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/stdarg.h
+D:/manh/native_ui/../cherry/include/cherry/stdarg.h
 stdarg.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/stddef.h
+D:/manh/native_ui/../cherry/include/cherry/stddef.h
 stddef.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/stdint.h
+D:/manh/native_ui/../cherry/include/cherry/stdint.h
 stdint.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/stdio.h
+D:/manh/native_ui/../cherry/include/cherry/stdio.h
 stdio.h
 -
 cherry/types.h
@@ -132,19 +132,19 @@ android/asset_manager.h
 android/asset_manager_jni.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/stdlib.h
+D:/manh/native_ui/../cherry/include/cherry/stdlib.h
 stdlib.h
 -
 locale.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/string.h
+D:/manh/native_ui/../cherry/include/cherry/string.h
 cherry/types.h
 -
 string.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/types.h
+D:/manh/native_ui/../cherry/include/cherry/types.h
 cherry/stdint.h
 -
 cherry/stddef.h
@@ -158,79 +158,75 @@ cherry/platform.h
 intrin.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/xml/types.h
+D:/manh/native_ui/../cherry/include/cherry/xml/types.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/include/cherry/xml/xml.h
+D:/manh/native_ui/../cherry/include/cherry/xml/xml.h
 cherry/xml/types.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/smartfox/include/smartfox/data.h
+D:/manh/native_ui/../cherry/smartfox/include/smartfox/data.h
 smartfox/types.h
 -
 
-/home/manh/Documents/manh/native_ui/../cherry/smartfox/include/smartfox/types.h
+D:/manh/native_ui/../cherry/smartfox/include/smartfox/types.h
 cherry/types.h
 -
 cherry/platform.h
 -
 
-/home/manh/Documents/manh/native_ui/include/native_ui/action.h
+D:/manh/native_ui/include/native_ui/action.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/include/native_ui/align.h
+D:/manh/native_ui/include/native_ui/align.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/include/native_ui/data.h
+D:/manh/native_ui/include/native_ui/data.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/include/native_ui/device.h
+D:/manh/native_ui/include/native_ui/device.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/include/native_ui/file.h
+D:/manh/native_ui/include/native_ui/file.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/include/native_ui/font.h
+D:/manh/native_ui/include/native_ui/font.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/include/native_ui/image.h
+D:/manh/native_ui/include/native_ui/image.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/include/native_ui/manager.h
+D:/manh/native_ui/include/native_ui/manager.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/include/native_ui/parser.h
+D:/manh/native_ui/include/native_ui/parser.h
 native_ui/types.h
 -
 cherry/xml/types.h
 -
 
-/home/manh/Documents/manh/native_ui/include/native_ui/preferences.h
+D:/manh/native_ui/include/native_ui/preferences.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/include/native_ui/test.h
+D:/manh/native_ui/include/native_ui/touch.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/include/native_ui/touch.h
+D:/manh/native_ui/include/native_ui/touch_handle.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/include/native_ui/touch_handle.h
-native_ui/types.h
--
-
-/home/manh/Documents/manh/native_ui/include/native_ui/types.h
+D:/manh/native_ui/include/native_ui/types.h
 cherry/types.h
 -
 cherry/math/types.h
@@ -240,27 +236,27 @@ pthread.h
 jni.h
 -
 
-/home/manh/Documents/manh/native_ui/include/native_ui/view.h
+D:/manh/native_ui/include/native_ui/view.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/include/native_ui/view_controller.h
+D:/manh/native_ui/include/native_ui/view_controller.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/include/native_ui/view_layout_controller.h
+D:/manh/native_ui/include/native_ui/view_layout_controller.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/src/android/custom/imageview.h
+D:/manh/native_ui/src/android/custom/imageview.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/src/android/custom/imageview_custom_android.c
+D:/manh/native_ui/src/android/custom/imageview_custom_android.c
 cherry/platform.h
 -
 imageview.h
-/home/manh/Documents/manh/native_ui/src/android/custom/imageview.h
+D:/manh/native_ui/src/android/custom/imageview.h
 native_ui/types.h
 -
 cherry/memory.h
@@ -268,15 +264,15 @@ cherry/memory.h
 cherry/stdio.h
 -
 
-/home/manh/Documents/manh/native_ui/src/android/custom/label.h
+D:/manh/native_ui/src/android/custom/label.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/src/android/custom/label_custom_android.c
+D:/manh/native_ui/src/android/custom/label_custom_android.c
 cherry/platform.h
 -
 label.h
-/home/manh/Documents/manh/native_ui/src/android/custom/label.h
+D:/manh/native_ui/src/android/custom/label.h
 native_ui/types.h
 -
 cherry/memory.h
@@ -284,15 +280,15 @@ cherry/memory.h
 cherry/stdio.h
 -
 
-/home/manh/Documents/manh/native_ui/src/android/custom/textfield.h
+D:/manh/native_ui/src/android/custom/textfield.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/src/android/custom/textfield_custom_android.c
+D:/manh/native_ui/src/android/custom/textfield_custom_android.c
 cherry/platform.h
 -
 textfield.h
-/home/manh/Documents/manh/native_ui/src/android/custom/textfield.h
+D:/manh/native_ui/src/android/custom/textfield.h
 native_ui/types.h
 -
 cherry/memory.h
@@ -302,17 +298,17 @@ cherry/string.h
 cherry/stdio.h
 -
 util.h
-/home/manh/Documents/manh/native_ui/src/android/custom/util.h
+D:/manh/native_ui/src/android/custom/util.h
 
-/home/manh/Documents/manh/native_ui/src/android/custom/textview.h
+D:/manh/native_ui/src/android/custom/textview.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/src/android/custom/textview_custom_android.c
+D:/manh/native_ui/src/android/custom/textview_custom_android.c
 cherry/platform.h
 -
 textview.h
-/home/manh/Documents/manh/native_ui/src/android/custom/textview.h
+D:/manh/native_ui/src/android/custom/textview.h
 native_ui/types.h
 -
 cherry/memory.h
@@ -320,31 +316,31 @@ cherry/memory.h
 cherry/stdio.h
 -
 util.h
-/home/manh/Documents/manh/native_ui/src/android/custom/util.h
+D:/manh/native_ui/src/android/custom/util.h
 
-/home/manh/Documents/manh/native_ui/src/android/custom/util.h
+D:/manh/native_ui/src/android/custom/util.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/src/android/custom/util_custom_android.c
+D:/manh/native_ui/src/android/custom/util_custom_android.c
 cherry/platform.h
 -
 util.h
-/home/manh/Documents/manh/native_ui/src/android/custom/util.h
+D:/manh/native_ui/src/android/custom/util.h
 cherry/memory.h
 -
 cherry/string.h
 -
 
-/home/manh/Documents/manh/native_ui/src/android/custom/view.h
+D:/manh/native_ui/src/android/custom/view.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/src/android/custom/view_custom_android.c
+D:/manh/native_ui/src/android/custom/view_custom_android.c
 cherry/platform.h
 -
 view.h
-/home/manh/Documents/manh/native_ui/src/android/custom/view.h
+D:/manh/native_ui/src/android/custom/view.h
 native_ui/types.h
 -
 cherry/memory.h
@@ -352,7 +348,7 @@ cherry/memory.h
 cherry/stdio.h
 -
 
-/home/manh/Documents/manh/native_ui/src/android/device_droid.c
+D:/manh/native_ui/src/android/device_droid.c
 cherry/platform.h
 -
 native_ui/device.h
@@ -368,15 +364,15 @@ cherry/array.h
 cherry/map.h
 -
 custom/util.h
-/home/manh/Documents/manh/native_ui/src/android/custom/util.h
+D:/manh/native_ui/src/android/custom/util.h
 
-/home/manh/Documents/manh/native_ui/src/android/font_droid.c
+D:/manh/native_ui/src/android/font_droid.c
 cherry/platform.h
 -
 native_ui/font.h
 -
 
-/home/manh/Documents/manh/native_ui/src/android/image_droid.c
+D:/manh/native_ui/src/android/image_droid.c
 cherry/platform.h
 -
 native_ui/image.h
@@ -394,7 +390,7 @@ cherry/map.h
 cherry/string.h
 -
 
-/home/manh/Documents/manh/native_ui/src/android/image_view_droid.c
+D:/manh/native_ui/src/android/image_view_droid.c
 cherry/platform.h
 -
 native_ui/view.h
@@ -428,7 +424,7 @@ cherry/stdio.h
 cherry/math/math.h
 -
 
-/home/manh/Documents/manh/native_ui/src/android/jni_env_droid.c
+D:/manh/native_ui/src/android/jni_env_droid.c
 cherry/platform.h
 -
 native_ui/types.h
@@ -440,7 +436,7 @@ cherry/array.h
 pthread.h
 -
 
-/home/manh/Documents/manh/native_ui/src/android/label_droid.c
+D:/manh/native_ui/src/android/label_droid.c
 cherry/platform.h
 -
 native_ui/view.h
@@ -474,11 +470,11 @@ cherry/stdio.h
 cherry/math/math.h
 -
 custom/label.h
-/home/manh/Documents/manh/native_ui/src/android/custom/label.h
+D:/manh/native_ui/src/android/custom/label.h
 custom/util.h
-/home/manh/Documents/manh/native_ui/src/android/custom/util.h
+D:/manh/native_ui/src/android/custom/util.h
 
-/home/manh/Documents/manh/native_ui/src/android/textfield_droid.c
+D:/manh/native_ui/src/android/textfield_droid.c
 cherry/platform.h
 -
 native_ui/view.h
@@ -512,9 +508,9 @@ cherry/stdio.h
 cherry/math/math.h
 -
 custom/textfield.h
-/home/manh/Documents/manh/native_ui/src/android/custom/textfield.h
+D:/manh/native_ui/src/android/custom/textfield.h
 
-/home/manh/Documents/manh/native_ui/src/android/view_droid.c
+D:/manh/native_ui/src/android/view_droid.c
 cherry/platform.h
 -
 native_ui/view.h
@@ -544,17 +540,17 @@ cherry/map.h
 cherry/math/math.h
 -
 custom/view.h
-/home/manh/Documents/manh/native_ui/src/android/custom/view.h
+D:/manh/native_ui/src/android/custom/view.h
 custom/imageview.h
-/home/manh/Documents/manh/native_ui/src/android/custom/imageview.h
+D:/manh/native_ui/src/android/custom/imageview.h
 custom/textfield.h
-/home/manh/Documents/manh/native_ui/src/android/custom/textfield.h
+D:/manh/native_ui/src/android/custom/textfield.h
 custom/textview.h
-/home/manh/Documents/manh/native_ui/src/android/custom/textview.h
+D:/manh/native_ui/src/android/custom/textview.h
 custom/label.h
-/home/manh/Documents/manh/native_ui/src/android/custom/label.h
+D:/manh/native_ui/src/android/custom/label.h
 
-/home/manh/Documents/manh/native_ui/src/shared/action.c
+D:/manh/native_ui/src/shared/action.c
 native_ui/action.h
 -
 cherry/list.h
@@ -568,7 +564,7 @@ cherry/array.h
 cherry/stdio.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/data.c
+D:/manh/native_ui/src/shared/data.c
 native_ui/data.h
 -
 cherry/memory.h
@@ -586,7 +582,7 @@ cherry/list.h
 native_ui/image.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/file.c
+D:/manh/native_ui/src/shared/file.c
 native_ui/file.h
 -
 cherry/stdio.h
@@ -596,7 +592,7 @@ cherry/string.h
 cherry/memory.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/font.c
+D:/manh/native_ui/src/shared/font.c
 native_ui/font.h
 -
 cherry/memory.h
@@ -608,7 +604,7 @@ cherry/array.h
 cherry/map.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/image.c
+D:/manh/native_ui/src/shared/image.c
 native_ui/image.h
 -
 cherry/memory.h
@@ -622,9 +618,9 @@ cherry/map.h
 cherry/string.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/layout/absolute.c
+D:/manh/native_ui/src/shared/layout/absolute.c
 controller.h
-/home/manh/Documents/manh/native_ui/src/shared/layout/controller.h
+D:/manh/native_ui/src/shared/layout/controller.h
 native_ui/view.h
 -
 native_ui/view_layout_controller.h
@@ -634,7 +630,7 @@ cherry/list.h
 cherry/math/math.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/layout/align.c
+D:/manh/native_ui/src/shared/layout/align.c
 native_ui/align.h
 -
 cherry/memory.h
@@ -644,13 +640,13 @@ cherry/string.h
 cherry/math/math.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/layout/controller.h
+D:/manh/native_ui/src/shared/layout/controller.h
 native_ui/types.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/layout/horizontal.c
+D:/manh/native_ui/src/shared/layout/horizontal.c
 controller.h
-/home/manh/Documents/manh/native_ui/src/shared/layout/controller.h
+D:/manh/native_ui/src/shared/layout/controller.h
 native_ui/view.h
 -
 native_ui/view_layout_controller.h
@@ -660,47 +656,9 @@ cherry/list.h
 cherry/math/math.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/layout/relative.c
+D:/manh/native_ui/src/shared/layout/relative.c
 controller.h
-/home/manh/Documents/manh/native_ui/src/shared/layout/controller.h
-native_ui/view.h
--
-native_ui/view_layout_controller.h
--
-cherry/list.h
--
-cherry/math/math.h
--
-cherry/stdio.h
--
-
-/home/manh/Documents/manh/native_ui/src/shared/layout/size_horizontal.c
-controller.h
-/home/manh/Documents/manh/native_ui/src/shared/layout/controller.h
-native_ui/view.h
--
-native_ui/view_layout_controller.h
--
-cherry/list.h
--
-cherry/math/math.h
--
-
-/home/manh/Documents/manh/native_ui/src/shared/layout/size_vertical.c
-controller.h
-/home/manh/Documents/manh/native_ui/src/shared/layout/controller.h
-native_ui/view.h
--
-native_ui/view_layout_controller.h
--
-cherry/list.h
--
-cherry/math/math.h
--
-
-/home/manh/Documents/manh/native_ui/src/shared/layout/vertical.c
-controller.h
-/home/manh/Documents/manh/native_ui/src/shared/layout/controller.h
+D:/manh/native_ui/src/shared/layout/controller.h
 native_ui/view.h
 -
 native_ui/view_layout_controller.h
@@ -712,7 +670,45 @@ cherry/math/math.h
 cherry/stdio.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/layout/view_layout_controller.c
+D:/manh/native_ui/src/shared/layout/size_horizontal.c
+controller.h
+D:/manh/native_ui/src/shared/layout/controller.h
+native_ui/view.h
+-
+native_ui/view_layout_controller.h
+-
+cherry/list.h
+-
+cherry/math/math.h
+-
+
+D:/manh/native_ui/src/shared/layout/size_vertical.c
+controller.h
+D:/manh/native_ui/src/shared/layout/controller.h
+native_ui/view.h
+-
+native_ui/view_layout_controller.h
+-
+cherry/list.h
+-
+cherry/math/math.h
+-
+
+D:/manh/native_ui/src/shared/layout/vertical.c
+controller.h
+D:/manh/native_ui/src/shared/layout/controller.h
+native_ui/view.h
+-
+native_ui/view_layout_controller.h
+-
+cherry/list.h
+-
+cherry/math/math.h
+-
+cherry/stdio.h
+-
+
+D:/manh/native_ui/src/shared/layout/view_layout_controller.c
 native_ui/view_layout_controller.h
 -
 cherry/memory.h
@@ -724,9 +720,9 @@ native_ui/view.h
 cherry/math/math.h
 -
 controller.h
-/home/manh/Documents/manh/native_ui/src/shared/layout/controller.h
+D:/manh/native_ui/src/shared/layout/controller.h
 
-/home/manh/Documents/manh/native_ui/src/shared/listview.c
+D:/manh/native_ui/src/shared/listview.c
 native_ui/view.h
 -
 native_ui/view_layout_controller.h
@@ -752,7 +748,7 @@ cherry/stdio.h
 cherry/math/math.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/native_ui_manager.c
+D:/manh/native_ui/src/shared/native_ui_manager.c
 native_ui/manager.h
 -
 native_ui/action.h
@@ -769,16 +765,18 @@ cherry/stdio.h
 -
 cherry/math/math.h
 -
+pthread.h
+-
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/types.h
 -
 cherry/xml/types.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_align.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_align.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -802,9 +800,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_alpha.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_alpha.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -828,9 +826,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_anchor.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_anchor.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -854,9 +852,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_border.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_border.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -880,9 +878,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_clip.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_clip.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -906,9 +904,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_color.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_color.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -932,9 +930,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_hash.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_hash.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -958,9 +956,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_height.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_height.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -982,9 +980,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_intercept.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_intercept.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1008,9 +1006,9 @@ cherry/xml/xml.h
 cherry/stdio.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_margin.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_margin.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1032,9 +1030,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_padding.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_padding.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1056,9 +1054,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_rotation.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_rotation.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1080,9 +1078,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_round.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_round.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1106,9 +1104,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_scale.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_scale.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1132,9 +1130,9 @@ cherry/stdio.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_touch_common.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_touch_common.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1158,9 +1156,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_type.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_type.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1182,9 +1180,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_visible.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_visible.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1208,9 +1206,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_width.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_width.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1236,9 +1234,9 @@ cherry/stdlib.h
 cherry/stdio.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_x.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_x.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1260,9 +1258,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate_y.c
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate_y.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1284,15 +1282,15 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/delegate/delegate.h
 native_ui/types.h
 -
 cherry/xml/types.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate_controller.c
+D:/manh/native_ui/src/shared/parser/delegate/delegate_controller.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1316,9 +1314,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate_image.c
+D:/manh/native_ui/src/shared/parser/delegate/delegate_image.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1340,9 +1338,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate_label.c
+D:/manh/native_ui/src/shared/parser/delegate/delegate_label.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1366,9 +1364,9 @@ cherry/stdio.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate_link.c
+D:/manh/native_ui/src/shared/parser/delegate/delegate_link.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1396,9 +1394,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate_listview.c
+D:/manh/native_ui/src/shared/parser/delegate/delegate_listview.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1420,9 +1418,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate_pageview.c
+D:/manh/native_ui/src/shared/parser/delegate/delegate_pageview.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1444,9 +1442,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate_template.c
+D:/manh/native_ui/src/shared/parser/delegate/delegate_template.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1472,9 +1470,9 @@ cherry/xml/xml.h
 cherry/stdio.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate_textfield.c
+D:/manh/native_ui/src/shared/parser/delegate/delegate_textfield.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1496,9 +1494,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate_textview.c
+D:/manh/native_ui/src/shared/parser/delegate/delegate_textview.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1520,9 +1518,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate_touch.c
+D:/manh/native_ui/src/shared/parser/delegate/delegate_touch.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1548,9 +1546,9 @@ cherry/list.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate_view.c
+D:/manh/native_ui/src/shared/parser/delegate/delegate_view.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1574,15 +1572,15 @@ cherry/stdio.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/end_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/end_delegate/delegate.h
 native_ui/types.h
 -
 cherry/xml/types.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/end_delegate/delegate_template_end.c
+D:/manh/native_ui/src/shared/parser/end_delegate/delegate_template_end.c
 delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/end_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/end_delegate/delegate.h
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1608,7 +1606,7 @@ cherry/xml/xml.h
 cherry/stdio.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/parser/parser.c
+D:/manh/native_ui/src/shared/parser/parser.c
 native_ui/parser.h
 -
 native_ui/view.h
@@ -1640,13 +1638,13 @@ cherry/xml/xml.h
 cherry/stdio.h
 -
 delegate/delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/delegate/delegate.h
 common_delegate/delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/common_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/common_delegate/delegate.h
 end_delegate/delegate.h
-/home/manh/Documents/manh/native_ui/src/shared/parser/end_delegate/delegate.h
+D:/manh/native_ui/src/shared/parser/end_delegate/delegate.h
 
-/home/manh/Documents/manh/native_ui/src/shared/preferences.c
+D:/manh/native_ui/src/shared/preferences.c
 native_ui/preferences.h
 -
 smartfox/data.h
@@ -1664,13 +1662,7 @@ cherry/memory.h
 native_ui/file.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/test.c
-native_ui/test.h
--
-cherry/stdio.h
--
-
-/home/manh/Documents/manh/native_ui/src/shared/touch.c
+D:/manh/native_ui/src/shared/touch.c
 native_ui/touch.h
 -
 cherry/memory.h
@@ -1678,7 +1670,7 @@ cherry/memory.h
 cherry/list.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/touch_handle.c
+D:/manh/native_ui/src/shared/touch_handle.c
 native_ui/touch_handle.h
 -
 cherry/memory.h
@@ -1688,7 +1680,7 @@ cherry/list.h
 cherry/stdio.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/view.c
+D:/manh/native_ui/src/shared/view.c
 native_ui/view.h
 -
 native_ui/view_layout_controller.h
@@ -1722,7 +1714,7 @@ cherry/map.h
 cherry/math/math.h
 -
 
-/home/manh/Documents/manh/native_ui/src/shared/view_controller.c
+D:/manh/native_ui/src/shared/view_controller.c
 native_ui/view_controller.h
 -
 native_ui/view.h
@@ -1740,18 +1732,64 @@ cherry/stdio.h
 cherry/map.h
 -
 
-/home/manh/Documents/manh/native_ui/src/web/custom/view_web.c
+D:/manh/native_ui/src/web/device_web.c
 cherry/platform.h
 -
+native_ui/device.h
+-
+cherry/string.h
+-
+cherry/memory.h
+-
+cherry/stdio.h
+-
+cherry/array.h
+-
+cherry/map.h
+-
+
+D:/manh/native_ui/src/web/font_web.c
+cherry/platform.h
+-
+native_ui/font.h
+-
+
+D:/manh/native_ui/src/web/image_web.c
+cherry/platform.h
+-
+native_ui/image.h
+-
+native_ui/file.h
+-
+cherry/memory.h
+-
+cherry/list.h
+-
+cherry/array.h
+-
+cherry/map.h
+-
+cherry/string.h
+-
+
+D:/manh/native_ui/src/web/view_web.c
+cherry/platform.h
+-
+emscripten.h
+-
+emscripten/emscripten.h
+-
 pthread.h
+-
+smartfox/data.h
+-
+cherry/memory.h
 -
 cherry/lock.h
 -
 cherry/list.h
 -
 cherry/stdio.h
--
-smartfox/data.h
 -
 cherry/bytes.h
 -
@@ -1761,8 +1799,18 @@ cherry/array.h
 -
 cherry/map.h
 -
-emscripten.h
+cherry/math/math.h
 -
 native_ui/view.h
+-
+native_ui/view_layout_controller.h
+-
+native_ui/align.h
+-
+native_ui/parser.h
+-
+native_ui/touch.h
+-
+native_ui/manager.h
 -
 

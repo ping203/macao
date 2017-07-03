@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,41 +6,41 @@
 
 #IncludeRegexTransform: 
 
-/home/manh/Documents/manh/cherry/xml/../include/cherry/ctype.h
+D:/manh/cherry/xml/../include/cherry/ctype.h
 ctype.h
 -
 
-/home/manh/Documents/manh/cherry/xml/../include/cherry/list.h
+D:/manh/cherry/xml/../include/cherry/list.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/cherry/xml/../include/cherry/map.h
+D:/manh/cherry/xml/../include/cherry/map.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/cherry/xml/../include/cherry/memory.h
+D:/manh/cherry/xml/../include/cherry/memory.h
 stddef.h
 -
 string.h
 -
 
-/home/manh/Documents/manh/cherry/xml/../include/cherry/platform.h
+D:/manh/cherry/xml/../include/cherry/platform.h
 TargetConditionals.h
-/home/manh/Documents/manh/cherry/xml/../include/cherry/TargetConditionals.h
+D:/manh/cherry/xml/../include/cherry/TargetConditionals.h
 
-/home/manh/Documents/manh/cherry/xml/../include/cherry/stdarg.h
+D:/manh/cherry/xml/../include/cherry/stdarg.h
 stdarg.h
 -
 
-/home/manh/Documents/manh/cherry/xml/../include/cherry/stddef.h
+D:/manh/cherry/xml/../include/cherry/stddef.h
 stddef.h
 -
 
-/home/manh/Documents/manh/cherry/xml/../include/cherry/stdint.h
+D:/manh/cherry/xml/../include/cherry/stdint.h
 stdint.h
 -
 
-/home/manh/Documents/manh/cherry/xml/../include/cherry/stdio.h
+D:/manh/cherry/xml/../include/cherry/stdio.h
 stdio.h
 -
 cherry/types.h
@@ -58,19 +58,19 @@ android/asset_manager.h
 android/asset_manager_jni.h
 -
 
-/home/manh/Documents/manh/cherry/xml/../include/cherry/stdlib.h
+D:/manh/cherry/xml/../include/cherry/stdlib.h
 stdlib.h
 -
 locale.h
 -
 
-/home/manh/Documents/manh/cherry/xml/../include/cherry/string.h
+D:/manh/cherry/xml/../include/cherry/string.h
 cherry/types.h
 -
 string.h
 -
 
-/home/manh/Documents/manh/cherry/xml/../include/cherry/types.h
+D:/manh/cherry/xml/../include/cherry/types.h
 cherry/stdint.h
 -
 cherry/stddef.h
@@ -84,15 +84,15 @@ cherry/platform.h
 intrin.h
 -
 
-/home/manh/Documents/manh/cherry/xml/../include/cherry/xml/types.h
+D:/manh/cherry/xml/../include/cherry/xml/types.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/cherry/xml/../include/cherry/xml/xml.h
+D:/manh/cherry/xml/../include/cherry/xml/xml.h
 cherry/xml/types.h
 -
 
-/home/manh/Documents/manh/cherry/xml/xml.c
+D:/manh/cherry/xml/xml.c
 cherry/xml/xml.h
 -
 cherry/stdio.h

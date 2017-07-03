@@ -1,7 +1,7 @@
 <touch key="touch_3d"/>
 <controller name="welcome_controller"/>
-<view width="match_parent" height="match_parent" type="relative" align="center">
-    <listview width="match_parent" height="match_parent" type="horizontal" align="center" touch="true" hash="main_list">
+<view width="match_parent" height="match_parent" type="relative" align="center" clip="true">
+    <listview width="match_parent" height="match_parent" type="horizontal" align="center" touch="true" hash="main_list" clip="true">
         <view width="140" height="match_parent" type="relative" align="center" clip="true">
             <image src="res/images/allground.png" width="1334" height="749" width="wrap_content" height="match_parent" align="center"/>
             <listview width="match_parent" height="match_parent" type="vertical" align="center" touch="true" intercept_horizontal="main_list">
