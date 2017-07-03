@@ -1,8 +1,8 @@
 div {
-        /*-webkit-backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
         -moz-backface-visibility: hidden;
         -ms-backface-visibility: hidden;
-        backface-visibility: hidden;*/
+        backface-visibility: hidden;
 }
 
 img{
@@ -18,9 +18,4 @@ img{
     -moz-user-drag: none;
     -o-user-drag: none;
     user-drag: none;
-
-    /*-webkit-backface-visibility: hidden;
-   -moz-backface-visibility: hidden;
-   -ms-backface-visibility: hidden;
-   backface-visibility: hidden;*/
 }

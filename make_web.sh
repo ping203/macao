@@ -17,7 +17,9 @@ mkdir -p build_web
 
 #copy file from res to data for preloading
 mkdir -p data
-cp -rf res data
+mkdir -p data/res
+cp -rf res/layout data/res
+cp res/config.json data/res
 
 #remove previous dependencies
 rm build_web/macao.*

@@ -485,6 +485,19 @@ view_helper.prototype.view_set_text = function(v, t)
         }
 }
 
+view_helper.prototype.request_alpha = function(v)
+{
+        var b = v.native_visible == 1 ? 1 : 0;
+        var r = v.native_alpha * b;
+        if(v.native_rotation.x != 0 || v.native_rotation.y != 0) {
+                r *= 0.999999;
+        }
+        if(r > 0) {
+                v.style["opacity"] = r + "";
+        }
+        else v.style["opacity"] = undefined;
+}
+
 view_helper.prototype.request_transform = function(v)
 {
         var xx = v.native_pos.x - v.native_size.width * v.native_anchor.x;
@@ -495,11 +508,13 @@ view_helper.prototype.request_transform = function(v)
                 + "rotateY(" + (v.native_rotation.y) + "deg) "
                 + "rotateZ(" + (v.native_rotation.z) + "deg) "
                 + "scale(" + v.native_scale.x + "," + v.native_scale.y + ") ";
+        console.log(t);
         v.style["transform"] = t;
         v.style["-webkit-transform"] = t;
         v.style["-ms-transform"] = t;
         v.style["-moz-transform"] = t;
         v.style["-o-transform"] = t;
+        this.request_alpha(v);
 }
 
 view_helper.prototype.view_calculate_size = function(v)
@@ -536,13 +551,13 @@ view_helper.prototype.view_set_position = function(v, x, y)
 {
         v.native_pos.x = x;
         v.native_pos.y = y;
-        // v.style.left = (x - v.native_size.width * v.native_anchor.x) + "px";
-        // v.style.top = (y - v.native_size.height * v.native_anchor.y) + "px";
         var xx = x - v.native_size.width * v.native_anchor.x;
         var yy = y - v.native_size.height * v.native_anchor.y;
 
-        var t = "translate3d(" + xx + "px," + yy +"px, 0px) "
-                + "rotateX(" + (v.native_rotation.x) + "deg) "
+        var t =
+        "translate3d(" + xx + "px," + yy +"px, 0px) "
+                +
+                "rotateX(" + (v.native_rotation.x) + "deg) "
                 + "rotateY(" + (v.native_rotation.y) + "deg) "
                 + "rotateZ(" + (v.native_rotation.z) + "deg) "
                 + "scale(" + v.native_scale.x + "," + v.native_scale.y + ") ";
@@ -612,12 +627,7 @@ view_helper.prototype.view_set_alpha = function(v, a)
 {
         v.native_alpha = a;
 
-        var b = v.native_visible == 1 ? 1 : 0;
-        var r = a * b;
-        if(r > 0) {
-                v.style["opacity"] = (a * b) + "";
-        }
-        else v.style["opacity"] = undefined;
+        this.request_alpha(v);
 }
 
 view_helper.prototype.view_set_visible = function(v, f)

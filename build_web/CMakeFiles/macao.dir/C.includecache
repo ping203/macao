@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-D:/manh/macao/src/exec.c
+/home/manh/Documents/manh/macao/src/exec.c
 macao/exec.h
 -
 cherry/string.h
@@ -18,37 +18,7 @@ native_ui/view.h
 native_ui/view_controller.h
 -
 
-D:/manh/macao/src/exec/mcwc.c
-macao/exec.h
--
-native_ui/view_controller.h
--
-native_ui/action.h
--
-native_ui/touch_handle.h
--
-native_ui/parser.h
--
-native_ui/preferences.h
--
-smartfox/data.h
--
-cherry/stdio.h
--
-native_ui/view.h
--
-cherry/math/math.h
--
-cherry/map.h
--
-cherry/array.h
--
-cherry/memory.h
--
-cherry/string.h
--
-
-D:/manh/macao/src/exec/root.c
+/home/manh/Documents/manh/macao/src/exec/mcwc.c
 macao/exec.h
 -
 native_ui/view_controller.h
@@ -78,7 +48,37 @@ cherry/memory.h
 cherry/string.h
 -
 
-D:/manh/macao/src/exec/trans_cube.c
+/home/manh/Documents/manh/macao/src/exec/root.c
+macao/exec.h
+-
+native_ui/view_controller.h
+-
+native_ui/action.h
+-
+native_ui/touch_handle.h
+-
+native_ui/parser.h
+-
+native_ui/preferences.h
+-
+smartfox/data.h
+-
+cherry/stdio.h
+-
+native_ui/view.h
+-
+cherry/math/math.h
+-
+cherry/map.h
+-
+cherry/array.h
+-
+cherry/memory.h
+-
+cherry/string.h
+-
+
+/home/manh/Documents/manh/macao/src/exec/trans_cube.c
 macao/exec.h
 -
 native_ui/view_controller.h
@@ -110,31 +110,31 @@ cherry/memory.h
 cherry/string.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/array.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/array.h
 cherry/types.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/list.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/list.h
 cherry/types.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/map.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/map.h
 cherry/types.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/math/mat3.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/math/mat3.h
 cherry/math/types.h
 -
 math.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/math/mat4.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/math/mat4.h
 cherry/math/types.h
 -
 math.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/math/math.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/math/math.h
 cherry/math/types.h
 -
 cherry/math/vec2.h
@@ -154,7 +154,7 @@ cherry/stdlib.h
 time.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/math/quat.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/math/quat.h
 cherry/math/mat4.h
 -
 cherry/math/vec4.h
@@ -162,51 +162,51 @@ cherry/math/vec4.h
 math.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/math/types.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/math/types.h
 cherry/types.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/math/vec2.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/math/vec2.h
 cherry/math/types.h
 -
 math.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/math/vec3.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/math/vec3.h
 cherry/math/types.h
 -
 math.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/math/vec4.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/math/vec4.h
 cherry/math/types.h
 -
 math.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/memory.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/memory.h
 stddef.h
 -
 string.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/platform.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/platform.h
 TargetConditionals.h
-D:/manh/macao/web/../../cherry/include/cherry/TargetConditionals.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/TargetConditionals.h
 
-D:/manh/macao/web/../../cherry/include/cherry/stdarg.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/stdarg.h
 stdarg.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/stddef.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/stddef.h
 stddef.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/stdint.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/stdint.h
 stdint.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/stdio.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/stdio.h
 stdio.h
 -
 cherry/types.h
@@ -224,19 +224,19 @@ android/asset_manager.h
 android/asset_manager_jni.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/stdlib.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/stdlib.h
 stdlib.h
 -
 locale.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/string.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/string.h
 cherry/types.h
 -
 string.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/types.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/types.h
 cherry/stdint.h
 -
 cherry/stddef.h
@@ -250,43 +250,43 @@ cherry/platform.h
 intrin.h
 -
 
-D:/manh/macao/web/../../cherry/include/cherry/xml/types.h
+/home/manh/Documents/manh/macao/web/../../cherry/include/cherry/xml/types.h
 cherry/types.h
 -
 
-D:/manh/macao/web/../../cherry/smartfox/include/smartfox/data.h
+/home/manh/Documents/manh/macao/web/../../cherry/smartfox/include/smartfox/data.h
 smartfox/types.h
 -
 
-D:/manh/macao/web/../../cherry/smartfox/include/smartfox/types.h
+/home/manh/Documents/manh/macao/web/../../cherry/smartfox/include/smartfox/types.h
 cherry/types.h
 -
 cherry/platform.h
 -
 
-D:/manh/macao/web/../../native_ui/include/native_ui/action.h
+/home/manh/Documents/manh/macao/web/../../native_ui/include/native_ui/action.h
 native_ui/types.h
 -
 
-D:/manh/macao/web/../../native_ui/include/native_ui/manager.h
+/home/manh/Documents/manh/macao/web/../../native_ui/include/native_ui/manager.h
 native_ui/types.h
 -
 
-D:/manh/macao/web/../../native_ui/include/native_ui/parser.h
+/home/manh/Documents/manh/macao/web/../../native_ui/include/native_ui/parser.h
 native_ui/types.h
 -
 cherry/xml/types.h
 -
 
-D:/manh/macao/web/../../native_ui/include/native_ui/preferences.h
+/home/manh/Documents/manh/macao/web/../../native_ui/include/native_ui/preferences.h
 native_ui/types.h
 -
 
-D:/manh/macao/web/../../native_ui/include/native_ui/touch_handle.h
+/home/manh/Documents/manh/macao/web/../../native_ui/include/native_ui/touch_handle.h
 native_ui/types.h
 -
 
-D:/manh/macao/web/../../native_ui/include/native_ui/types.h
+/home/manh/Documents/manh/macao/web/../../native_ui/include/native_ui/types.h
 cherry/types.h
 -
 cherry/math/types.h
@@ -296,25 +296,25 @@ pthread.h
 jni.h
 -
 
-D:/manh/macao/web/../../native_ui/include/native_ui/view.h
+/home/manh/Documents/manh/macao/web/../../native_ui/include/native_ui/view.h
 native_ui/types.h
 -
 
-D:/manh/macao/web/../../native_ui/include/native_ui/view_controller.h
+/home/manh/Documents/manh/macao/web/../../native_ui/include/native_ui/view_controller.h
 native_ui/types.h
 -
 
-D:/manh/macao/web/../include/macao/exec.h
+/home/manh/Documents/manh/macao/web/../include/macao/exec.h
 macao/types.h
 -
 
-D:/manh/macao/web/../include/macao/types.h
+/home/manh/Documents/manh/macao/web/../include/macao/types.h
 native_ui/types.h
 -
 smartfox/types.h
 -
 
-D:/manh/macao/web/main.c
+/home/manh/Documents/manh/macao/web/main.c
 emscripten.h
 -
 emscripten/html5.h
