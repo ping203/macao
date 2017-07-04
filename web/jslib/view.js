@@ -122,9 +122,7 @@ view_helper.prototype.process_down = function(e, x, y)
                                 this.ovl.addEventListener("touchcancel", function(e){
                                         self.touchcancel(e);
                                 }, false);
-                        }
-
-
+                        }                        
                         document.getElementById("root").appendChild(this.ovl);
                         this.ep.x = x- this.view_get_offset_window_left(this.ctg);
                         this.ep.y = y - this.view_get_offset_window_top(this.ctg);
@@ -157,6 +155,11 @@ view_helper.prototype.process_up = function(e, x, y)
                 v.y = this.ep.y + y - this.wp.y;
 
                 _js_nview_touch_ended(this.ctg.native_ptr, v.x, v.y);
+
+                if(this.ctg.native_type == native_type.TEXTFIELD) {
+                        this.ctg.custom_content.focus();
+                }
+
                 this.ctg = null;
                 this.tch = 0;
                 this.ovl.remove();
@@ -380,42 +383,55 @@ view_helper.prototype.image_alloc = function()
         v.custom_content.style["position"] = "absolute";
         v.custom_content.style["width"] = "100%";
         v.custom_content.style["height"] = "100%";
-        // v.custom_content.style["overflow-x"] = "hidden";
-        // v.custom_content.style["overflow-y"] = "hidden";
         v.custom_content.style["overflow"] = "hidden";
         v.appendChild(v.custom_content);
         this.view_set_clip(v, 1);
 
         var self = this;
         var view = v.custom_content;
-        if (window.PointerEvent) {
-                view.addEventListener("pointerdown", function(e){
-                        self.mousedown(e);
-                }, false);
-                view.addEventListener("pointermove", function(e){
-                        self.mousemove(e);
-                }, false);
-                view.addEventListener("pointerup", function(e){
-                        self.mouseup(e);
-                }, false);
-                view.addEventListener("pointerout", function(e){
-                        self.mousecancel(e);
-                }, false);
+        if(!touch_capable) {
+                if (window.PointerEvent) {
+                        view.addEventListener("pointerdown", function(e){
+                                self.mousedown(e);
+                        }, false);
+                        view.addEventListener("pointermove", function(e){
+                                self.mousemove(e);
+                        }, false);
+                        view.addEventListener("pointerup", function(e){
+                                self.mouseup(e);
+                        }, false);
+                        view.addEventListener("pointerout", function(e){
+                                self.mousecancel(e);
+                        }, false);
+                } else {
+                        view.addEventListener("mousedown", function(e){
+                                self.mousedown(e);
+                        }, false);
+                        view.addEventListener("mousemove", function(e){
+                                self.mousemove(e);
+                        }, false);
+                        view.addEventListener("mouseup", function(e){
+                                self.mouseup(e);
+                        }, false);
+                        view.addEventListener("mouseout", function(e){
+                                self.mousecancel(e);
+                        }, false);
+                }
+
         } else {
-                view.addEventListener("mousedown", function(e){
-                        self.mousedown(e);
+                view.addEventListener("touchstart", function(e){
+                        self.touchstart(e);
                 }, false);
-                view.addEventListener("mousemove", function(e){
-                        self.mousemove(e);
+                view.addEventListener("touchmove", function(e){
+                        self.touchmove(e);
                 }, false);
-                view.addEventListener("mouseup", function(e){
-                        self.mouseup(e);
+                view.addEventListener("touchend", function(e){
+                        self.touchup(e);
                 }, false);
-                view.addEventListener("mouseout", function(e){
-                        self.mousecancel(e);
+                view.addEventListener("touchcancel", function(e){
+                        self.touchcancel(e);
                 }, false);
         }
-
 
         return v;
 }
@@ -426,6 +442,118 @@ view_helper.prototype.label_alloc = function()
         v.native_type = native_type.LABEL;
         v.innerHTML = "";
         v.style["font-size"] = "12px";
+        return v;
+}
+
+view_helper.prototype.textfield_alloc = function()
+{
+        var v = this.base_alloc();
+        v.native_type = native_type.TEXTFIELD;
+        v.custom_content = document.createElement('input');
+        v.custom_content.style["position"] = "absolute";
+        v.custom_content.style["width"] = "100%";
+        v.custom_content.style["height"] = "100%";
+        v.custom_content.style["font-size"] = "20px";
+        v.custom_content.type = "text";
+        v.appendChild(v.custom_content);
+
+        /*
+         * if v's can_touch is 1 then stop propagating event to super parent
+         * to allow copy/paste/select on textfield
+         */
+        var self = this;
+        var view = v.custom_content;
+        if(!touch_capable) {
+                if (window.PointerEvent) {
+                        view.addEventListener("pointerdown", function(e){
+                                if(v.can_touch == 1) {
+                                        e.stopPropagation();
+                                } else {
+                                        self.mousedown(e);
+                                }
+                        }, false);
+                        view.addEventListener("pointermove", function(e){
+                                if(v.can_touch == 1) {
+                                        e.stopPropagation();
+                                } else {
+                                        self.mousemove(e);
+                                }
+                        }, false);
+                        view.addEventListener("pointerup", function(e){
+                                if(v.can_touch == 1) {
+                                        e.stopPropagation();
+                                } else {
+                                        self.mouseup(e);
+                                }
+                        }, false);
+                        view.addEventListener("pointerout", function(e){
+                                if(v.can_touch == 1) {
+                                        e.stopPropagation();
+                                } else {
+                                        self.mousecancel(e);
+                                }
+                        }, false);
+                } else {
+                        view.addEventListener("mousedown", function(e){
+                                if(v.can_touch == 1) {
+                                        e.stopPropagation();
+                                } else {
+                                        self.mousedown(e);
+                                }
+                        }, false);
+                        view.addEventListener("mousemove", function(e){
+                                if(v.can_touch == 1) {
+                                        e.stopPropagation();
+                                } else {
+                                        self.mousemove(e);
+                                }
+                        }, false);
+                        view.addEventListener("mouseup", function(e){
+                                if(v.can_touch == 1) {
+                                        e.stopPropagation();
+                                } else {
+                                        self.mouseup(e);
+                                }
+                        }, false);
+                        view.addEventListener("mouseout", function(e){
+                                if(v.can_touch == 1) {
+                                        e.stopPropagation();
+                                } else {
+                                        self.mousecancel(e);
+                                }
+                        }, false);
+                }
+
+        } else {
+                view.addEventListener("touchstart", function(e){
+                        if(v.can_touch == 1) {
+                                e.stopPropagation();
+                        } else {
+                                self.touchstart(e);
+                        }
+                }, false);
+                view.addEventListener("touchmove", function(e){
+                        if(v.can_touch == 1) {
+                                e.stopPropagation();
+                        } else {
+                                self.touchmove(e);
+                        }
+                }, false);
+                view.addEventListener("touchend", function(e){
+                        if(v.can_touch == 1) {
+                                e.stopPropagation();
+                        } else {
+                                self.touchup(e);
+                        }
+                }, false);
+                view.addEventListener("touchcancel", function(e){
+                        if(v.can_touch == 1) {
+                                e.stopPropagation();
+                        } else {
+                                self.touchcancel(e);
+                        }
+                }, false);
+        }
         return v;
 }
 
@@ -503,12 +631,13 @@ view_helper.prototype.request_transform = function(v)
         var xx = v.native_pos.x - v.native_size.width * v.native_anchor.x;
         var yy = v.native_pos.y - v.native_size.height * v.native_anchor.y;
 
-        var t = "translate3d(" + xx + "px," + yy +"px, 0px) "
-                + "rotateX(" + (v.native_rotation.x) + "deg) "
+        var t =
+                "translate3d(" + xx + "px," + yy +"px, 0) " +
+                "rotateX(" + (v.native_rotation.x) + "deg) "
                 + "rotateY(" + (v.native_rotation.y) + "deg) "
                 + "rotateZ(" + (v.native_rotation.z) + "deg) "
-                + "scale(" + v.native_scale.x + "," + v.native_scale.y + ") ";
-        console.log(t);
+                + "scale(" + v.native_scale.x + "," + v.native_scale.y + ") "
+                ;
         v.style["transform"] = t;
         v.style["-webkit-transform"] = t;
         v.style["-ms-transform"] = t;
@@ -551,21 +680,7 @@ view_helper.prototype.view_set_position = function(v, x, y)
 {
         v.native_pos.x = x;
         v.native_pos.y = y;
-        var xx = x - v.native_size.width * v.native_anchor.x;
-        var yy = y - v.native_size.height * v.native_anchor.y;
-
-        var t =
-        "translate3d(" + xx + "px," + yy +"px, 0px) "
-                +
-                "rotateX(" + (v.native_rotation.x) + "deg) "
-                + "rotateY(" + (v.native_rotation.y) + "deg) "
-                + "rotateZ(" + (v.native_rotation.z) + "deg) "
-                + "scale(" + v.native_scale.x + "," + v.native_scale.y + ") ";
-        v.style["transform"] = t;
-        v.style["-webkit-transform"] = t;
-        v.style["-ms-transform"] = t;
-        v.style["-moz-transform"] = t;
-        v.style["-o-transform"] = t;
+        this.request_transform(v);
 }
 
 view_helper.prototype.view_set_rotation = function(v, x, y, z)
@@ -644,19 +759,20 @@ view_helper.prototype.view_set_visible = function(v, f)
 view_helper.prototype.view_set_clip = function(v, b)
 {
         if(b == 1) {
-                // v.style["overflow-x"] = "hidden";
-                // v.style["overflow-y"] = "hidden";
                 v.style["overflow"] = "hidden";
         } else {
                 v.style["overflow"] = "initital";
-                // v.style["overflow-x"] = "initial";
-                // v.style["overflow-y"] = "initial";
         }
 }
 
 view_helper.prototype.view_set_user_interaction = function(v, e)
 {
         v.can_touch = e;
+        if(v.can_touch == 1) {
+                v.style["pointer-events"] = "visible";
+        } else {
+                v.style["pointer-events"] = "none";
+        }
 }
 
 view_helper.prototype.view_remove_from_parent = function(v)

@@ -35,6 +35,7 @@
         </view>
         <view width="match_parent" padding_left="100" height="match_parent" type="relative" align="center" clip="true">
             <link src="res/layout/transition/cube.xml"/>
+            <!-- <textfield align="center" width="500" height="50" touch="true"></textfield> -->
             <!--<listview width="match_parent" height="match_parent" type="horizontal"-->
                 <!--anchor_x="0.5" anchor_y="1.0" rotation_x="81"  margin_top="-301.19994"-->
                 <!--align="center" touch="true" hash="list_game_1" >-->

@@ -3,193 +3,16 @@
                 <link href="config.css" type="text/css" rel="stylesheet" />
                 <script src="jslib/config.js"></script>
                 <script src="jslib/view.js"></script>
+                <meta name="viewport" content="width=device-width,  maximum-scale=1.0, user-scalable=no"/>
         </head>
-        <body style="overflow:hidden">
-                <!-- <script>
-                var sp = {
-                        x : 0,
-                        y : 0
-                };
-
-                var wp = {
-                        x : 0,
-                        y : 0
-                };
-
-                var touch = 0;
-
-                var bg = {
-                        x : 0,
-                        y : 0
-                };
-
-                var mv = {
-                        x : 0,
-                        y : 0
-                };
-
-                var off = {
-                        x : 0,
-                        y : 0
-                };
-
-                var ctg = null;
-                var ft = null;
-
-                var vh = new view_helper();
-
-                function testStart(evt)
-                {
-                        var v = vh.view_alloc();
-
-                        vh.view_set_size(v, 200, 200);
-                        vh.view_set_position(v, 200,200);
-                        vh.view_set_anchor(v, 0.5, 0.5);
-                        vh.view_set_color(v, 1, 0, 0, 0);
-                        vh.view_set_border(v, 25);
-                        vh.view_set_border_color(v, 0, 1, 0, 0);
-                        vh.view_set_alpha(v, 0.5);
-
-                        var v2 = vh.image_alloc();
-                        // vh.view_set_text(v2, "Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World ");
-                        vh.view_set_image(v2, "anhchup.png");
-                        vh.view_set_size(v2, 350, 400);
-                        vh.view_set_position(v2, 200, 200);
-                        vh.view_set_anchor(v2, 0.5, 0.5);
-                        vh.view_set_color(v2, 0, 1, 1, 0);
-                        vh.view_set_text_color(v2, 0, 0, 0, 0);
-                        vh.view_set_border(v2, 25);
-                        vh.view_set_clip(v2, 1);
-                        vh.view_set_text_align(v2, 2);
-                        vh.view_set_alpha(v2, 0.85);
-                        vh.view_set_rotation(v2, 45, 0, 0);
-                        document.getElementById("root").appendChild(v);
-                        vh.view_add_child(v, v2);
-                        vh.view_set_visible(v, 0);
-                        vh.view_set_visible(v, 1);
-                        vh.view_set_user_interaction(v, 1);
-                        evt.stopPropagation();
-                }
-
-                function testEnd(evt) {
-                        evt.stopPropagation();
-                }
-
-                function handleStart(evt) {
-                        _test_native_code();
-                        var tt = document.getElementById("text");
-                        console.log("tt size : " + tt.offsetWidth + ", " + tt.offsetHeight);
-                        tt.innerHTML = "oaidushgfoai duhfoiuasdfh uiahdsfoui ashdoif ahsdoui hfads";
-                        console.log("tt size : " + tt.offsetWidth + ", " + tt.offsetHeight);
-                        var target = evt.target;
-
-                        var nv = helper.find_view(target);
-
-                        console.log(nv);
-
-                        if(ctg != null) {
-                                target = ctg;
-                        } else {
-                                console.log(target);
-                                console.log("target size : " + target.offsetWidth + ", " + target.offsetHeight);
-                                ctg = target;
-                                ft = document.createElement('div');
-                                ft.style["position"] = "absolute";
-                                ft.style["width"] = "100%";
-                                ft.style["height"] = "100%";
-                                ft.addEventListener("mousedown", handleStart, false);
-                                ft.addEventListener("mouseup", handleEnd, false);
-                                ft.addEventListener("mouseout", handleCancel, false);
-                                ft.addEventListener("mousemove", handleMove, false);
-                                document.getElementById("root").appendChild(ft);
-                        }
-                        sp.x = evt.pageX - target.offsetLeft;
-                        sp.y = evt.pageY - target.offsetTop;
-                        wp.x = evt.pageX;
-                        wp.y = evt.pageY;
-
-                        bg.x = sp.x;
-                        bg.y = sp.y;
-                        mv.x = sp.x;
-                        mv.y = sp.y;
-                        touch = 1;
-                }
-                function handleMove(evt) {
-                        if(ctg == null) return;
-                        var target = ctg;
-                        var v = {};
-                        v.x = sp.x + evt.pageX - wp.x;
-                        v.y = sp.y + evt.pageY - wp.y;
-
-                        off.x = v.x - mv.x;
-                        off.y = v.y - mv.y;
-
-                        mv.x = v.x;
-                        mv.y = v.y;
-
-                        if(touch == 1) {
-                                target.style.left = (target.offsetLeft + off.x) + 'px';
-                                target.style.top = (target.offsetTop + off.y) + 'px';
-                                //target.style["transform"] = "perspective(600px) " + "rotateX(" + (target.offsetLeft + off.x) + "deg)";
-                        }
-                }
-                function handleEnd(evt) {
-                        console.log("up");
-                        if(ft != null) {
-                                touch = 0;
-                                ctg = null;
-                                ft.remove();
-                                ft = null;
-                        }
-
-                }
-                function handleCancel(evt) {
-                        if(evt.target == ft) {
-                                console.log('cancel');
-                                touch = 0;
-                                ctg = null;
-                                if(ft != null) {
-                                        ft.remove();
-                                        ft = null;
-                                }
-                        }
-                }
-                </script> -->
-
+        <body id="body" style="overflow:hidden;">
                 <div class="emscripten_border" style="display:none">
                         <canvas class="emscripten" id="canvas" style="display:none" oncontextmenu="event.preventDefault()"></canvas>
                 </div>
-
                 <div id="root" style="
                         position:absolute;
                         width : 100%;
-                        height : 100%;
-                ">
-
-                        <!-- <div id="div" style="
-                                position: absolute;">
-                                <div id="img" style="
-                                        position: absolute;
-                                        overflow-y: hidden;
-                                        overflow-x: hidden;
-                                        border-radius: 25px;
-                                        clip: rect(0px, 200px, 200px, 0px);
-                                        width:200px;
-                                        height:200px;">
-                                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg"
-                                                style="overflow:auto; position: absolute">
-                                </div>
-                        </div>
-                        <input id="input" style="position:absolute; width: 500px; height:50px; border-radius: 10px;
-                                border-style:solid; border-width:0px;
-                                background-color: #FF0000;
-                                font-size: 20px" type="password">
-                        </input>
-                        <div id="text" class="noselect" style="position:absolute;">
-                                Test Text
-                        </div> -->
-
-                </div>
+                        height : 100%;"/>
                 <script type='text/javascript'>
                         var Module = {
                                 preRun: [],
@@ -242,7 +65,14 @@
                         var script = document.createElement('script');
                         script.src = "macao.js";
                         document.body.appendChild(script);
+                        /*
+                         * body margin has to be 0.5 to prevent blurry-effect on IOS's browsers
+                         */
+                        document.getElementById("body").style["margin"] = "0.5";
 
+                        /*
+                         * resize game on window size changed
+                         */
                         window.addEventListener('resize', function(event){
                                 if( _macao_resize != undefined && _macao_resize != null) {
                                         var root = document.getElementById("root");

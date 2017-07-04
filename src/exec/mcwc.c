@@ -55,5 +55,5 @@ static void on_removed(struct nexec *p)
 
 static void touch_3d(struct nexec *p, struct nview *sender, u8 type)
 {
-        
+
 }
