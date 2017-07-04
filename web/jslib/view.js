@@ -70,6 +70,7 @@ view_helper.prototype.find_view = function(v)
 
 view_helper.prototype.process_down = function(e, x, y)
 {
+        e.preventDefault();
         if(this.ctg == null) {
                 this.ctg = this.find_view(e.target);
                 if(this.ctg != null) {
@@ -122,7 +123,7 @@ view_helper.prototype.process_down = function(e, x, y)
                                 this.ovl.addEventListener("touchcancel", function(e){
                                         self.touchcancel(e);
                                 }, false);
-                        }                        
+                        }
                         document.getElementById("root").appendChild(this.ovl);
                         this.ep.x = x- this.view_get_offset_window_left(this.ctg);
                         this.ep.y = y - this.view_get_offset_window_top(this.ctg);
@@ -137,6 +138,7 @@ view_helper.prototype.process_down = function(e, x, y)
 view_helper.prototype.process_move = function(e, x, y)
 {
         if(this.tch == 1 && this.ctg != null) {
+                e.preventDefault();
                 var v = {};
                 v.x = this.ep.x + x - this.wp.x;
                 v.y = this.ep.y + y - this.wp.y;
