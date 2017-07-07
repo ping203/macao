@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/manh/Documents/manh/cherry/xml/xml.c" "/home/manh/Documents/manh/macao/build_web/xml/CMakeFiles/xml.dir/xml.c.o"
+  "D:/manh/cherry/xml/xml.c" "D:/manh/macao/build_web/xml/CMakeFiles/xml.dir/xml.c.o"
   )
 set(CMAKE_C_COMPILER_ID "Clang")
 
@@ -15,12 +15,12 @@ set(CMAKE_TARGET_DEFINITIONS_C
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "/home/manh/Documents/manh/cherry/xml/../include"
+  "D:/manh/cherry/xml/../include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/manh/Documents/manh/macao/build_web/kernel/CMakeFiles/kernel.dir/DependInfo.cmake"
+  "D:/manh/macao/build_web/kernel/CMakeFiles/kernel.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -1,3 +1,39 @@
+/*
+ * Copyright (C) 2017 Manh Tran
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+/*
+ * IE does not support remove ! failed browser
+ */
+if(Element.prototype.remove) {
+
+} else {
+        Element.prototype.remove = function() {
+            if(this.parentElement != undefined && this.parentElement != null) this.parentElement.removeChild(this);
+        }
+        NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+            for(var i = this.length - 1; i >= 0; i--) {
+                if(this[i] && this[i].parentElement) {
+                    this[i].parentElement.removeChild(this[i]);
+                }
+            }
+        }
+
+}
+
+/*
+ * check if device supports touch screen
+ */
 var touch_capable = 'ontouchstart' in window ||
          window.DocumentTouch && document instanceof window.DocumentTouch ||
          navigator.maxTouchPoints > 0 ||
@@ -283,6 +319,12 @@ view_helper.prototype.base_alloc = function()
         view.style["width"]     = "0px";
         view.style["height"]     = "0px";
 
+        view.style["-khtml-backface-visibility"] = "hidden";
+        view.style["-webkit-backface-visibility"] = "hidden";
+        view.style["-moz-backface-visibility"] = "hidden";
+        view.style["-ms-backface-visibility"] = "hidden";
+        view.style["backface-visibility"] = "hidden";
+
         view.style["perspective"] = "1000px";
         view.style["-webkit-perspective"] = "1000px";
 
@@ -386,6 +428,20 @@ view_helper.prototype.image_alloc = function()
         v.custom_content.style["width"] = "100%";
         v.custom_content.style["height"] = "100%";
         v.custom_content.style["overflow"] = "hidden";
+
+        v.custom_content.style["-khtml-user-select"] = "none";
+        v.custom_content.style["-o-user-select"] = "none";
+        v.custom_content.style["-moz-user-select"] = "none";
+        v.custom_content.style["-webkit-user-select"] = "none";
+        v.custom_content.style["user-select"] = "none";
+        v.custom_content.style["pointer-events"] = "none";
+
+        v.custom_content.style["-webkit-user-drag"] = "none";
+        v.custom_content.style["-khtml-user-drag"] = "none";
+        v.custom_content.style["-moz-user-drag"] = "none";
+        v.custom_content.style["-o-user-drag"] = "none";
+        v.custom_content.style["user-drag"] = "none";
+
         v.appendChild(v.custom_content);
         this.view_set_clip(v, 1);
 
@@ -620,6 +676,9 @@ view_helper.prototype.request_alpha = function(v)
         var b = v.native_visible == 1 ? 1 : 0;
         var r = v.native_alpha * b;
         if(v.native_rotation.x != 0 || v.native_rotation.y != 0) {
+                /*
+                 * opacity have to be lower than 1 to enable depth-test when rotating around X or Y axis
+                 */
                 r *= 0.999999;
         }
         if(r > 0) {
@@ -628,6 +687,10 @@ view_helper.prototype.request_alpha = function(v)
         else v.style["opacity"] = undefined;
 }
 
+/*
+ * Use transform translate to change element position.
+ * Set element style left/top will drop performance significanly
+ */
 view_helper.prototype.request_transform = function(v)
 {
         var xx = v.native_pos.x - v.native_size.width * v.native_anchor.x;
@@ -697,7 +760,7 @@ view_helper.prototype.view_set_anchor = function(v, x, y)
 {
         v.native_anchor.x = x;
         v.native_anchor.y = y;
-        var or = (x * 100) + "%" + (y * 100) + "%";
+        var or = (x * 100) + "% " + (y * 100) + "%";
         v.style["transform-origin"] = or;
         v.style["-webkit-transform-origin"] = or;
         v.style["-moz-transform-origin"] = or;
@@ -752,7 +815,7 @@ view_helper.prototype.view_set_visible = function(v, f)
         v.native_visible = f;
         this.view_set_alpha(v, v.native_alpha);
         if(f == 1) {
-                v.style["display"] = "initial";
+                v.style["display"] = "inline";
         } else {
                 v.style["display"] = "none";
         }

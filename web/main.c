@@ -1,3 +1,16 @@
+/*
+ * Copyright (C) 2017 Manh Tran
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
 #include <emscripten.h>
 #include <emscripten/html5.h>
 #include <cherry/stdio.h>
@@ -49,6 +62,20 @@ int main(int argc, char **argv)
                 _macao_resize(rt.offsetWidth, rt.offsetHeight);
         }, root->ptr);
 
-        emscripten_set_main_loop(do_frame, 0, 1);
+        EM_ASM(
+                var fs = require('fs');
+              FS.mkdir('/work');
+              FS.mount(NODEFS, {root : '.'}, '/work');
+        );
+
+        //emscripten_wget("data.txt", "/work/data.txt");
+
+        struct string *f = file_read_string("/work/data.txt", FILE_INNER);
+
+        debug("%s\n", f->ptr);
+
+        string_free(f);
+
+        emscripten_set_main_loop(do_frame, 60, 1);
         return 0;
 }
