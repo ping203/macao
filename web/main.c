@@ -24,7 +24,9 @@
 #include <native_ui/view_controller.h>
 #include <smartfox/data.h>
 #include <macao/exec.h>
+#include <ftw.h>
 
+struct string *__root_directory__ = NULL;
 static struct nview *root = NULL;
 
 EMSCRIPTEN_KEEPALIVE
@@ -37,11 +39,30 @@ void macao_resize(int width, int height)
 
 static void do_frame()
 {
-        nmanager_update(nmanager_shared(), 1.0f / 60);
+        if(root) nmanager_update(nmanager_shared(), 1.0f / 60);
 }
 
-int main(int argc, char **argv)
+int unlink_cb(const char *fpath, const struct stat *sb, int typeflag, struct FTW *ftwbuf)
 {
+    remove(fpath);
+
+    return 0;
+}
+
+
+EMSCRIPTEN_KEEPALIVE
+static void macao_start()
+{
+        /*
+         * clear cache
+         */
+        struct string *cache = string_alloc_chars(qskey(__root_directory__));
+        string_cat(cache, qlkey("/"));
+        char *ver = file_get_version_directory();
+        string_cat(cache, ver, strlen(ver));
+        nftw(cache->ptr, unlink_cb, 64, FTW_DEPTH | FTW_PHYS);
+        string_free(cache);
+
         nexec_set_fnf(mc_nexec_alloc);
         root = nview_alloc();
         nview_set_layout_type(root, NATIVE_UI_LAYOUT_RELATIVE);
@@ -61,21 +82,22 @@ int main(int argc, char **argv)
                 rt.appendChild(obj);
                 _macao_resize(rt.offsetWidth, rt.offsetHeight);
         }, root->ptr);
+}
 
+int main(int argc, char **argv)
+{
+        __root_directory__ = string_alloc_chars(qlkey("/macao"));
+        file_set_version_directory(qlkey("v1"));
         EM_ASM(
-                var fs = require('fs');
-              FS.mkdir('/work');
-              FS.mount(NODEFS, {root : '.'}, '/work');
+                FS.mkdir('/macao');
+                FS.mount(IDBFS, {}, '/macao');
+
+                FS.syncfs(true, function (err) {
+                        assert(!err);
+                        _macao_start();
+                });
         );
-
-        //emscripten_wget("data.txt", "/work/data.txt");
-
-        struct string *f = file_read_string("/work/data.txt", FILE_INNER);
-
-        debug("%s\n", f->ptr);
-
-        string_free(f);
-
         emscripten_set_main_loop(do_frame, 60, 1);
+
         return 0;
 }

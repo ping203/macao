@@ -57,6 +57,7 @@ kernel/CMakeFiles/kernel.dir/deallocator.c.o: D:/manh/cherry/kernel/../include/c
 kernel/CMakeFiles/kernel.dir/deallocator.c.o: D:/manh/cherry/kernel/../include/cherry/types.h
 kernel/CMakeFiles/kernel.dir/deallocator.c.o: D:/manh/cherry/kernel/deallocator.c
 
+kernel/CMakeFiles/kernel.dir/file.c.o: D:/manh/cherry/kernel/../include/cherry/memory.h
 kernel/CMakeFiles/kernel.dir/file.c.o: D:/manh/cherry/kernel/../include/cherry/platform.h
 kernel/CMakeFiles/kernel.dir/file.c.o: D:/manh/cherry/kernel/../include/cherry/stdarg.h
 kernel/CMakeFiles/kernel.dir/file.c.o: D:/manh/cherry/kernel/../include/cherry/stddef.h
@@ -165,6 +166,8 @@ kernel/CMakeFiles/kernel.dir/time.c.o: D:/manh/cherry/kernel/../include/cherry/t
 kernel/CMakeFiles/kernel.dir/time.c.o: D:/manh/cherry/kernel/../include/cherry/types.h
 kernel/CMakeFiles/kernel.dir/time.c.o: D:/manh/cherry/kernel/time.c
 
+kernel/CMakeFiles/kernel.dir/web/file_web.c.o: D:/manh/cherry/kernel/../include/cherry/array.h
+kernel/CMakeFiles/kernel.dir/web/file_web.c.o: D:/manh/cherry/kernel/../include/cherry/map.h
 kernel/CMakeFiles/kernel.dir/web/file_web.c.o: D:/manh/cherry/kernel/../include/cherry/memory.h
 kernel/CMakeFiles/kernel.dir/web/file_web.c.o: D:/manh/cherry/kernel/../include/cherry/platform.h
 kernel/CMakeFiles/kernel.dir/web/file_web.c.o: D:/manh/cherry/kernel/../include/cherry/stdarg.h

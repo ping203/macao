@@ -55,7 +55,7 @@ file(GLOB_RECURSE SOURCES "../src/*.c")
 
 set(CMAKE_EXECUTABLE_SUFFIX ".html")
 #set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -s TOTAL_MEMORY=134217728 --use-preload-plugins --preload-file ../data@")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -s ASYNCIFY=1 --use-preload-plugins --preload-file ../data@")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -s EMTERPRETIFY=1 -s EMTERPRETIFY_ASYNC=1 -s ASSERTIONS=2")
 add_executable(macao main.c ${SOURCES})
 add_dependencies(macao ${PROJECT_LINK_LIBS})
 target_link_libraries(macao ${PROJECT_LINK_LIBS})

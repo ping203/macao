@@ -245,6 +245,8 @@ cherry/stdio.h
 -
 cherry/string.h
 -
+cherry/memory.h
+-
 
 D:/manh/cherry/kernel/linux/file_linux.c
 cherry/platform.h
@@ -346,6 +348,18 @@ cherry/stdio.h
 cherry/string.h
 -
 cherry/memory.h
+-
+cherry/array.h
+-
+cherry/map.h
+-
+unistd.h
+-
+sys/stat.h
+-
+emscripten.h
+-
+emscripten/html5.h
 -
 
 D:/manh/cherry/kernel/windows/file_windows.c

@@ -1,0 +1,5 @@
+<touch key="open"/>
+<controller name="root_view_controller"/>
+<view width="match_parent" height="match_parent" type="relative" align="center" hash="first_image" clip="true">
+        <link src="res/layout/welcome/welcome.xml" />
+</view>

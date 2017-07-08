@@ -1,0 +1,91 @@
+<touch key="touch_3d"/>
+<controller name="transition_cube_controller"/>
+<view width="match_parent" height="match_parent" type="relative" align="center" color="#000000">
+        <view width="match_parent" height="match_parent" align="center" type="relative" clip="true" hash="cube_4" visible="false">
+            <listview width="match_parent" height="match_parent" type="horizontal"
+                align="center" touch="true" hash="list_game_4" >
+                <view type="size_vertical" width="wrap_content" height="match_parent" align="center">
+                    <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                    <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                </view>
+                <view type="size_vertical" width="wrap_content" height="match_parent" align="center">
+                    <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                    <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                </view>
+                <view type="size_vertical" width="wrap_content" height="match_parent" align="center">
+                    <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                    <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                </view>
+                <view type="size_vertical" width="wrap_content" height="match_parent" align="center">
+                    <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                    <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                </view>
+            </listview>
+        </view>
+        <view width="match_parent" height="match_parent" align="center" type="relative" clip="true" hash="cube_3" visible="false">
+                <listview width="match_parent" height="match_parent" type="horizontal"
+                    align="center" touch="true" hash="list_game_3" >
+                    <view type="size_vertical" width="wrap_content" height="match_parent" align="center">
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                    </view>
+                    <view type="size_vertical" width="wrap_content" height="match_parent" align="center">
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                    </view>
+                    <view type="size_vertical" width="wrap_content" height="match_parent" align="center">
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                    </view>
+                    <view type="size_vertical" width="wrap_content" height="match_parent" align="center">
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                    </view>
+                </listview>
+        </view>
+        <view width="match_parent" height="match_parent" align="center" type="relative" clip="true" hash="cube_2" visible="false">
+                <listview width="match_parent" height="match_parent" type="horizontal"
+                    align="center" touch="true" hash="list_game_2" >
+                    <view type="size_vertical" width="wrap_content" height="match_parent" align="center">
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                    </view>
+                    <view type="size_vertical" width="wrap_content" height="match_parent" align="center">
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                    </view>
+                    <view type="size_vertical" width="wrap_content" height="match_parent" align="center">
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                    </view>
+                    <view type="size_vertical" width="wrap_content" height="match_parent" align="center">
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                    </view>
+                </listview>
+        </view>
+        <view width="match_parent" height="match_parent" type="relative" align="center" clip="true" hash="cube_1">
+                <listview width="match_parent" height="match_parent" type="horizontal"
+                align="center" touch="true" hash="list_game_1" >
+                    <view type="size_vertical" width="wrap_content" height="match_parent" align="center">
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                    </view>
+                    <view type="size_vertical" width="wrap_content" height="match_parent" align="center">
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                    </view>
+                    <view type="size_vertical" width="wrap_content" height="match_parent" align="center">
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                    </view>
+                    <view type="size_vertical" width="wrap_content" height="match_parent" align="center">
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                        <image src="res/images/anhchup.png" width="692" height="435" align="center" width="wrap_content" height="fill_parent"/>
+                    </view>
+                </listview>
+        </view>
+    <view width="match_parent" height="match_parent" align="center" touch="true" touch_delegate="touch_3d">
+
+    </view>
+</view>
