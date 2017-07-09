@@ -318,6 +318,8 @@ view_helper.prototype.base_alloc = function()
         view.style["position"] = "absolute";
         view.style["width"]     = "0px";
         view.style["height"]     = "0px";
+        view.style["display"]   = "block";
+        view.style["will-change"] = "transform, opacity";
 
         view.style["-khtml-backface-visibility"] = "hidden";
         view.style["-webkit-backface-visibility"] = "hidden";
@@ -425,9 +427,11 @@ view_helper.prototype.image_alloc = function()
         v.native_type           = native_type.IMAGE;
         v.custom_content        = document.createElement('img');
         v.custom_content.style["position"] = "absolute";
+        v.custom_content.style["display"]   = "block";
         v.custom_content.style["width"] = "100%";
         v.custom_content.style["height"] = "100%";
         v.custom_content.style["overflow"] = "hidden";
+        v.custom_content.style["transform"] = "rotate(0.01deg)";
 
         v.custom_content.style["-khtml-user-select"] = "none";
         v.custom_content.style["-o-user-select"] = "none";
@@ -693,13 +697,24 @@ view_helper.prototype.request_alpha = function(v)
  */
 view_helper.prototype.request_transform = function(v)
 {
-        var xx = v.native_pos.x - v.native_size.width * v.native_anchor.x;
-        var yy = v.native_pos.y - v.native_size.height * v.native_anchor.y;
+        var w = v.native_size.width;
+        var h = v.native_size.height;
+        w = w < 0 ? 0 : w;
+        h = h < 0 ? 0 : h;
+        var xx =  Math.round(v.native_pos.x - w * v.native_anchor.x);
+        var yy =  Math.round(v.native_pos.y - h * v.native_anchor.y);
+
+        v.style.left = xx + "px";
+        v.style.top = yy + "px";
 
         var t =
-                "translate3d(" + xx + "px," + yy +"px, 0) " +
+                // "translate(" + xx + "px," + yy + "px) "
+                // "translate3d(" + xx + "px," + yy +"px, 0px) " +
                 "rotateX(" + (v.native_rotation.x) + "deg) "
                 + "rotateY(" + (v.native_rotation.y) + "deg) "
+                /*
+                 * rotate z a bit makes firefox running faster !!!
+                 */
                 + "rotateZ(" + (v.native_rotation.z) + "deg) "
                 + "scale(" + v.native_scale.x + "," + v.native_scale.y + ") "
                 ;
@@ -728,17 +743,19 @@ view_helper.prototype.view_calculate_size = function(v)
 
 view_helper.prototype.view_set_size = function(v, w, h)
 {
-        v.native_size.width     = w;
-        v.native_size.height    = h;
-        v.style["max-width"]    = w + "px";
-        v.style["width"]        = w + "px";
-        if(v.native_type == native_type.LABEL) {
-                v.style["height"]    = "auto";
-                this.view_calculate_size(v);
-        } else {
-                v.style["height"]       = h + "px";
+        if(v.native_size.width != w || v.native_size.height != h) {
+                v.native_size.width     = w;
+                v.native_size.height    = h;
+                v.style["max-width"]    = w + "px";
+                v.style["width"]        = w + "px";
+                if(v.native_type == native_type.LABEL) {
+                        v.style["height"]    = "auto";
+                        this.view_calculate_size(v);
+                } else {
+                        v.style["height"]       = h + "px";
+                }
+                this.view_set_position(v, v.native_pos.x, v.native_pos.y);
         }
-        this.view_set_position(v, v.native_pos.x, v.native_pos.y);
 }
 
 view_helper.prototype.view_set_position = function(v, x, y)
@@ -815,9 +832,12 @@ view_helper.prototype.view_set_visible = function(v, f)
         v.native_visible = f;
         this.view_set_alpha(v, v.native_alpha);
         if(f == 1) {
-                v.style["display"] = "inline";
+                // v.style["display"] = "inline";
+                v.style["display"]   = "block";
+                // v.style["visibility"] = "visible";
         } else {
                 v.style["display"] = "none";
+                // v.style["visibility"] = "hidden";
         }
 }
 
