@@ -16,3 +16,4 @@ del data /Q /S
 xcopy build_web\macao.data web /Y
 xcopy build_web\macao.js web /Y
 xcopy build_web\macao.html.mem web /Y
+xcopy res web\v1\res /E /Y /I

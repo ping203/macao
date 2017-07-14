@@ -25,6 +25,8 @@ struct nexec *mc_nexec_alloc(char *name, size_t len)
                 return mcwc_exec_alloc();
         } else if(strcmp(name, "transition_cube_controller") == 0) {
                 return mc_trans_cube_exec_alloc();
+        } else if(strcmp(name, "slot_controller") == 0) {
+                return mc_slot_exec_alloc();
         }
         return NULL;
 }

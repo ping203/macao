@@ -21,6 +21,26 @@ extern "C" {
 #include <native_ui/types.h>
 #include <smartfox/types.h>
 
+#define SET_STRING(str) {       \
+        .len = sizeof(str) - 1, \
+        .ptr = str              \
+};
+
+enum game_state {
+        GAME_NONE,
+        GAME_CONNECTING_TO_LOGIN,
+        GAME_LOGINING,
+        GAME_LOGINED
+};
+
+enum app_type {
+        APP_WEB = 0,
+        APP_JAVA = 1,
+        APP_ANDROID = 2,
+        APP_IOS = 3,
+        APP_WINPHONE = 4
+};
+
 #ifdef __cplusplus
 }
 #endif

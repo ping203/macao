@@ -11,21 +11,7 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  */
-#include <macao/exec.h>
-#include <native_ui/view_controller.h>
-#include <native_ui/action.h>
-#include <native_ui/touch_handle.h>
-#include <native_ui/parser.h>
-#include <native_ui/preferences.h>
-#include <native_ui/manager.h>
-#include <smartfox/data.h>
-#include <cherry/stdio.h>
-#include <native_ui/view.h>
-#include <cherry/math/math.h>
-#include <cherry/map.h>
-#include <cherry/array.h>
-#include <cherry/memory.h>
-#include <cherry/string.h>
+#include "game.h"
 
 static void on_linked(struct nexec *p);
 static void on_removed(struct nexec *p);

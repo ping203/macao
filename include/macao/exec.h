@@ -36,6 +36,8 @@ struct nexec *mcwc_exec_alloc();
 
 struct nexec *mc_trans_cube_exec_alloc();
 
+struct nexec *mc_slot_exec_alloc();
+
 #ifdef __cplusplus
 }
 #endif
