@@ -239,212 +239,226 @@ struct game *game_alloc()
         p->touching = 0;
         p->current_angle = 0;
 
-        create_game_1(p);
-        create_game_2(p);
+        // create_game_1(p);
+        // create_game_2(p);
 
         test_node = node_alloc(p->manager_game);
         node_set_origin(test_node, (union vec3){0.5, 0.5, 0.5});
         node_set_position(test_node, (union vec3){video_width/2, video_height/2, -video_height/2});
+        // node_set_position(test_node, (union vec3){video_width/2, video_height/2, 0});
 
-        {
-                struct node *layout     = node_alloc(p->manager_game);
-                node_add_child(test_node, layout);
-                node_set_origin(layout, (union vec3){0.5, 0.5, 0.5});
-                node_set_position(layout, (union vec3){0, 0, 0});
+        // {
+                // struct node *layout     = node_alloc(p->manager_game);
+                // node_add_child(test_node, layout);
+                // node_set_origin(layout, (union vec3){0.5, 0.5, 0.5});
+                // node_set_position(layout, (union vec3){0, 0, 0});
+                //
+                // {
+                //         struct node *child = node_alloc(p->manager_game);
+                //         struct texture_frame *frame = texture_frame_alloc(texture_alloc_file("res/images/macao/table-poker.png", FILE_INNER));
+                //         node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_NORMAL);
+                //         float width = video_width * 4/6;
+                //         node_set_size(child, (union vec3){width, child->original_size.y / child->original_size.x * width, 1});
+                //         node_set_position(child, (union vec3){0, 0, video_height/2});
+                //         node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+                //         node_add_child(layout, child);
+                //         node_set_bright(child, 1.25);
+                //         texture_frame_free(frame);
+                // }
 
-                {
-                        struct node *child = node_alloc(p->manager_game);
-                        struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
-                        node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
-                        node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
-                        node_set_position(child, (union vec3){-video_width/2 + video_width/4, -video_height/2 + video_height/4, video_height/2});
-                        node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-                        node_add_child(layout, child);
-                        union vec2 offset = (union vec2){0, 0};
-                        texture_frame_free(frame);
-                }
-                {
-                        struct node *child = node_alloc(p->manager_game);
-                        struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
-                        node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
-                        node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
-                        node_set_position(child, (union vec3){video_width/4, video_height/4, video_height/2});
-                        node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-                        node_add_child(layout, child);
-                        union vec2 offset = (union vec2){video_width/2, video_height/2};
-                        texture_frame_free(frame);
-                }
-                {
-                        struct node *child = node_alloc(p->manager_game);
-                        struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_2_pass));
-                        node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
-                        node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
-                        node_set_position(child, (union vec3){-video_width/2 + video_width/4, video_height/4, video_height/2});
-                        node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-                        node_add_child(layout, child);
-                        texture_frame_free(frame);
-                }
-                {
-                        struct node *child = node_alloc(p->manager_game);
-                        struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_2_pass));
-                        node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
-                        node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
-                        node_set_position(child, (union vec3){video_width/4, -video_height/2 + video_height/4, video_height/2});
-                        node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-                        node_add_child(layout, child);
-                        texture_frame_free(frame);
-                }
-        }
-        {
-                struct node *layout     = node_alloc(p->manager_game);
-                node_add_child(test_node, layout);
-                node_set_origin(layout, (union vec3){0.5, 0.5, 0.5});
-                node_set_position(layout, (union vec3){0, 0, 0});
-
-                {
-                        struct node *child = node_alloc(p->manager_game);
-                        struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
-                        node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
-                        node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
-                        node_set_position(child, (union vec3){-video_width/2 + video_width/4, -video_height/2 + video_height/4, video_height/2});
-                        node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-                        node_add_child(layout, child);
-                        union vec2 offset = (union vec2){0, 0};
-                        texture_frame_free(frame);
-                }
-                {
-                        struct node *child = node_alloc(p->manager_game);
-                        struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
-                        node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
-                        node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
-                        node_set_position(child, (union vec3){video_width/4, video_height/4, video_height/2});
-                        node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-                        node_add_child(layout, child);
-                        union vec2 offset = (union vec2){video_width/2, video_height/2};
-                        texture_frame_free(frame);
-                }
-                {
-                        struct node *child = node_alloc(p->manager_game);
-                        struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_2_pass));
-                        node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
-                        node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
-                        node_set_position(child, (union vec3){-video_width/2 + video_width/4, video_height/4, video_height/2});
-                        node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-                        node_add_child(layout, child);
-                        texture_frame_free(frame);
-                }
-                {
-                        struct node *child = node_alloc(p->manager_game);
-                        struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_2_pass));
-                        node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
-                        node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
-                        node_set_position(child, (union vec3){video_width/4, -video_height/2 + video_height/4, video_height/2});
-                        node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-                        node_add_child(layout, child);
-                        texture_frame_free(frame);
-                }
-                node_set_rotation(layout, quat_angle_axis(DEG_TO_RAD(90), (float[3]){1, 0, 0}));
-        }
-        {
-                struct node *layout     = node_alloc(p->manager_game);
-                node_add_child(test_node, layout);
-                node_set_origin(layout, (union vec3){0.5, 0.5, 0.5});
-                node_set_position(layout, (union vec3){0, 0, 0});
-
-                {
-                        struct node *child = node_alloc(p->manager_game);
-                        struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
-                        node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
-                        node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
-                        node_set_position(child, (union vec3){-video_width/2 + video_width/4, -video_height/2 + video_height/4, video_height/2});
-                        node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-                        node_add_child(layout, child);
-                        union vec2 offset = (union vec2){0, 0};
-                        texture_frame_free(frame);
-                }
-                {
-                        struct node *child = node_alloc(p->manager_game);
-                        struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
-                        node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
-                        node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
-                        node_set_position(child, (union vec3){video_width/4, video_height/4, video_height/2});
-                        node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-                        node_add_child(layout, child);
-                        union vec2 offset = (union vec2){video_width/2, video_height/2};
-                        texture_frame_free(frame);
-                }
-                {
-                        struct node *child = node_alloc(p->manager_game);
-                        struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_2_pass));
-                        node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
-                        node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
-                        node_set_position(child, (union vec3){-video_width/2 + video_width/4, video_height/4, video_height/2});
-                        node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-                        node_add_child(layout, child);
-                        texture_frame_free(frame);
-                }
-                {
-                        struct node *child = node_alloc(p->manager_game);
-                        struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_2_pass));
-                        node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
-                        node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
-                        node_set_position(child, (union vec3){video_width/4, -video_height/2 + video_height/4, video_height/2});
-                        node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-                        node_add_child(layout, child);
-                        texture_frame_free(frame);
-                }
-                node_set_rotation(layout, quat_angle_axis(DEG_TO_RAD(180), (float[3]){1, 0, 0}));
-        }
-        {
-                struct node *layout     = node_alloc(p->manager_game);
-                node_add_child(test_node, layout);
-                node_set_origin(layout, (union vec3){0.5, 0.5, 0.5});
-                node_set_position(layout, (union vec3){0, 0, 0});
-
-                {
-                        struct node *child = node_alloc(p->manager_game);
-                        struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
-                        node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
-                        node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
-                        node_set_position(child, (union vec3){-video_width/2 + video_width/4, -video_height/2 + video_height/4, video_height/2});
-                        node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-                        node_add_child(layout, child);
-                        union vec2 offset = (union vec2){0, 0};
-                        texture_frame_free(frame);
-                }
-                {
-                        struct node *child = node_alloc(p->manager_game);
-                        struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
-                        node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
-                        node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
-                        node_set_position(child, (union vec3){video_width/4, video_height/4, video_height/2});
-                        node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-                        node_add_child(layout, child);
-                        union vec2 offset = (union vec2){video_width/2, video_height/2};
-                        texture_frame_free(frame);
-                }
-                {
-                        struct node *child = node_alloc(p->manager_game);
-                        struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_2_pass));
-                        node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
-                        node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
-                        node_set_position(child, (union vec3){-video_width/2 + video_width/4, video_height/4, video_height/2});
-                        node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-                        node_add_child(layout, child);
-                        texture_frame_free(frame);
-                }
-                {
-                        struct node *child = node_alloc(p->manager_game);
-                        struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_2_pass));
-                        node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
-                        node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
-                        node_set_position(child, (union vec3){video_width/4, -video_height/2 + video_height/4, video_height/2});
-                        node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-                        node_add_child(layout, child);
-                        texture_frame_free(frame);
-                }
-                node_set_rotation(layout, quat_angle_axis(DEG_TO_RAD(270), (float[3]){1, 0, 0}));
-        }
+                // {
+                //         struct node *child = node_alloc(p->manager_game);
+                //         struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
+                //         node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
+                //         node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
+                //         node_set_position(child, (union vec3){-video_width/2 + video_width/4, -video_height/2 + video_height/4, video_height/2});
+                //         node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+                //         node_add_child(layout, child);
+                //         union vec2 offset = (union vec2){0, 0};
+                //         texture_frame_free(frame);
+                // }
+        //         {
+        //                 struct node *child = node_alloc(p->manager_game);
+        //                 struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
+        //                 node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
+        //                 node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
+        //                 node_set_position(child, (union vec3){video_width/4, video_height/4, video_height/2});
+        //                 node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+        //                 node_add_child(layout, child);
+        //                 union vec2 offset = (union vec2){video_width/2, video_height/2};
+        //                 texture_frame_free(frame);
+        //         }
+        //         {
+        //                 struct node *child = node_alloc(p->manager_game);
+        //                 struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_2_pass));
+        //                 node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
+        //                 node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
+        //                 node_set_position(child, (union vec3){-video_width/2 + video_width/4, video_height/4, video_height/2});
+        //                 node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+        //                 node_add_child(layout, child);
+        //                 texture_frame_free(frame);
+        //         }
+        //         {
+        //                 struct node *child = node_alloc(p->manager_game);
+        //                 struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_2_pass));
+        //                 node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
+        //                 node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
+        //                 node_set_position(child, (union vec3){video_width/4, -video_height/2 + video_height/4, video_height/2});
+        //                 node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+        //                 node_add_child(layout, child);
+        //                 texture_frame_free(frame);
+        //         }
+        // }
+        // {
+        //         struct node *layout     = node_alloc(p->manager_game);
+        //         node_add_child(test_node, layout);
+        //         node_set_origin(layout, (union vec3){0.5, 0.5, 0.5});
+        //         node_set_position(layout, (union vec3){0, 0, 0});
+        //
+        //         {
+        //                 struct node *child = node_alloc(p->manager_game);
+        //                 struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
+        //                 node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
+        //                 node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
+        //                 node_set_position(child, (union vec3){-video_width/2 + video_width/4, -video_height/2 + video_height/4, video_height/2});
+        //                 node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+        //                 node_add_child(layout, child);
+        //                 union vec2 offset = (union vec2){0, 0};
+        //                 texture_frame_free(frame);
+        //         }
+        //         {
+        //                 struct node *child = node_alloc(p->manager_game);
+        //                 struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
+        //                 node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
+        //                 node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
+        //                 node_set_position(child, (union vec3){video_width/4, video_height/4, video_height/2});
+        //                 node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+        //                 node_add_child(layout, child);
+        //                 union vec2 offset = (union vec2){video_width/2, video_height/2};
+        //                 texture_frame_free(frame);
+        //         }
+        //         {
+        //                 struct node *child = node_alloc(p->manager_game);
+        //                 struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_2_pass));
+        //                 node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
+        //                 node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
+        //                 node_set_position(child, (union vec3){-video_width/2 + video_width/4, video_height/4, video_height/2});
+        //                 node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+        //                 node_add_child(layout, child);
+        //                 texture_frame_free(frame);
+        //         }
+        //         {
+        //                 struct node *child = node_alloc(p->manager_game);
+        //                 struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_2_pass));
+        //                 node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
+        //                 node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
+        //                 node_set_position(child, (union vec3){video_width/4, -video_height/2 + video_height/4, video_height/2});
+        //                 node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+        //                 node_add_child(layout, child);
+        //                 texture_frame_free(frame);
+        //         }
+        //         node_set_rotation(layout, quat_angle_axis(DEG_TO_RAD(90), (float[3]){1, 0, 0}));
+        // }
+        // {
+        //         struct node *layout     = node_alloc(p->manager_game);
+        //         node_add_child(test_node, layout);
+        //         node_set_origin(layout, (union vec3){0.5, 0.5, 0.5});
+        //         node_set_position(layout, (union vec3){0, 0, 0});
+        //
+        //         {
+        //                 struct node *child = node_alloc(p->manager_game);
+        //                 struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
+        //                 node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
+        //                 node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
+        //                 node_set_position(child, (union vec3){-video_width/2 + video_width/4, -video_height/2 + video_height/4, video_height/2});
+        //                 node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+        //                 node_add_child(layout, child);
+        //                 union vec2 offset = (union vec2){0, 0};
+        //                 texture_frame_free(frame);
+        //         }
+        //         {
+        //                 struct node *child = node_alloc(p->manager_game);
+        //                 struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
+        //                 node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
+        //                 node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
+        //                 node_set_position(child, (union vec3){video_width/4, video_height/4, video_height/2});
+        //                 node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+        //                 node_add_child(layout, child);
+        //                 union vec2 offset = (union vec2){video_width/2, video_height/2};
+        //                 texture_frame_free(frame);
+        //         }
+        //         {
+        //                 struct node *child = node_alloc(p->manager_game);
+        //                 struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_2_pass));
+        //                 node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
+        //                 node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
+        //                 node_set_position(child, (union vec3){-video_width/2 + video_width/4, video_height/4, video_height/2});
+        //                 node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+        //                 node_add_child(layout, child);
+        //                 texture_frame_free(frame);
+        //         }
+        //         {
+        //                 struct node *child = node_alloc(p->manager_game);
+        //                 struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_2_pass));
+        //                 node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
+        //                 node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
+        //                 node_set_position(child, (union vec3){video_width/4, -video_height/2 + video_height/4, video_height/2});
+        //                 node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+        //                 node_add_child(layout, child);
+        //                 texture_frame_free(frame);
+        //         }
+        //         node_set_rotation(layout, quat_angle_axis(DEG_TO_RAD(180), (float[3]){1, 0, 0}));
+        // }
+        // {
+        //         struct node *layout     = node_alloc(p->manager_game);
+        //         node_add_child(test_node, layout);
+        //         node_set_origin(layout, (union vec3){0.5, 0.5, 0.5});
+        //         node_set_position(layout, (union vec3){0, 0, 0});
+        //
+        //         {
+        //                 struct node *child = node_alloc(p->manager_game);
+        //                 struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
+        //                 node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
+        //                 node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
+        //                 node_set_position(child, (union vec3){-video_width/2 + video_width/4, -video_height/2 + video_height/4, video_height/2});
+        //                 node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+        //                 node_add_child(layout, child);
+        //                 union vec2 offset = (union vec2){0, 0};
+        //                 texture_frame_free(frame);
+        //         }
+        //         {
+        //                 struct node *child = node_alloc(p->manager_game);
+        //                 struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
+        //                 node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
+        //                 node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
+        //                 node_set_position(child, (union vec3){video_width/4, video_height/4, video_height/2});
+        //                 node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+        //                 node_add_child(layout, child);
+        //                 union vec2 offset = (union vec2){video_width/2, video_height/2};
+        //                 texture_frame_free(frame);
+        //         }
+        //         {
+        //                 struct node *child = node_alloc(p->manager_game);
+        //                 struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_2_pass));
+        //                 node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
+        //                 node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
+        //                 node_set_position(child, (union vec3){-video_width/2 + video_width/4, video_height/4, video_height/2});
+        //                 node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+        //                 node_add_child(layout, child);
+        //                 texture_frame_free(frame);
+        //         }
+        //         {
+        //                 struct node *child = node_alloc(p->manager_game);
+        //                 struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_2_pass));
+        //                 node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
+        //                 node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
+        //                 node_set_position(child, (union vec3){video_width/4, -video_height/2 + video_height/4, video_height/2});
+        //                 node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+        //                 node_add_child(layout, child);
+        //                 texture_frame_free(frame);
+        //         }
+        //         node_set_rotation(layout, quat_angle_axis(DEG_TO_RAD(270), (float[3]){1, 0, 0}));
+        // }
 
 
         // {
@@ -546,8 +560,8 @@ void game_render(struct game *p)
         // render_pass_end();
 
         render_pass_begin(p->main_pass, p->frame);
-        // node_render(test_node, p->frame);
-        node_render(game_1, p->frame);
+        node_render(test_node, p->frame);
+        // node_render(game_1, p->frame);
         render_pass_end();
 
         p->frame++;

@@ -63,11 +63,11 @@ CMAKE_BINARY_DIR = D:/manh/macao/build_web
 # Target rules for target CMakeFiles/macao.dir
 
 # All Build rule for target.
-CMakeFiles/macao.dir/all: gfx/CMakeFiles/gfx.dir/all
 CMakeFiles/macao.dir/all: smartfox/CMakeFiles/smartfox.dir/all
+CMakeFiles/macao.dir/all: gfx/CMakeFiles/gfx.dir/all
+CMakeFiles/macao.dir/all: native_ui/CMakeFiles/native_ui.dir/all
 CMakeFiles/macao.dir/all: kernel/CMakeFiles/kernel.dir/all
 CMakeFiles/macao.dir/all: xml/CMakeFiles/xml.dir/all
-CMakeFiles/macao.dir/all: native_ui/CMakeFiles/native_ui.dir/all
 	$(MAKE) -f CMakeFiles/macao.dir/build.make CMakeFiles/macao.dir/depend
 	$(MAKE) -f CMakeFiles/macao.dir/build.make CMakeFiles/macao.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:/manh/macao/build_web/CMakeFiles --progress-num=64,65,66,67 "Built target macao"
