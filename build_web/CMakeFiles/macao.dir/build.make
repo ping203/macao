@@ -207,10 +207,60 @@ CMakeFiles/macao.dir/D_/manh/macao/src/exec/trans_cube.c.o.provides: CMakeFiles/
 CMakeFiles/macao.dir/D_/manh/macao/src/exec/trans_cube.c.o.provides.build: CMakeFiles/macao.dir/D_/manh/macao/src/exec/trans_cube.c.o
 
 
+CMakeFiles/macao.dir/D_/manh/macao/src/game.c.o: CMakeFiles/macao.dir/flags.make
+CMakeFiles/macao.dir/D_/manh/macao/src/game.c.o: CMakeFiles/macao.dir/includes_C.rsp
+CMakeFiles/macao.dir/D_/manh/macao/src/game.c.o: D:/manh/macao/src/game.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:/manh/macao/build_web/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/macao.dir/D_/manh/macao/src/game.c.o"
+	"C:/Program Files/Emscripten/emscripten/1.35.0/emcc.bat" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/macao.dir/D_/manh/macao/src/game.c.o   -c D:/manh/macao/src/game.c
+
+CMakeFiles/macao.dir/D_/manh/macao/src/game.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/macao.dir/D_/manh/macao/src/game.c.i"
+	"C:/Program Files/Emscripten/emscripten/1.35.0/emcc.bat" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/manh/macao/src/game.c > CMakeFiles/macao.dir/D_/manh/macao/src/game.c.i
+
+CMakeFiles/macao.dir/D_/manh/macao/src/game.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/macao.dir/D_/manh/macao/src/game.c.s"
+	"C:/Program Files/Emscripten/emscripten/1.35.0/emcc.bat" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/manh/macao/src/game.c -o CMakeFiles/macao.dir/D_/manh/macao/src/game.c.s
+
+CMakeFiles/macao.dir/D_/manh/macao/src/game.c.o.requires:
+
+.PHONY : CMakeFiles/macao.dir/D_/manh/macao/src/game.c.o.requires
+
+CMakeFiles/macao.dir/D_/manh/macao/src/game.c.o.provides: CMakeFiles/macao.dir/D_/manh/macao/src/game.c.o.requires
+	$(MAKE) -f CMakeFiles/macao.dir/build.make CMakeFiles/macao.dir/D_/manh/macao/src/game.c.o.provides.build
+.PHONY : CMakeFiles/macao.dir/D_/manh/macao/src/game.c.o.provides
+
+CMakeFiles/macao.dir/D_/manh/macao/src/game.c.o.provides.build: CMakeFiles/macao.dir/D_/manh/macao/src/game.c.o
+
+
+CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.o: CMakeFiles/macao.dir/flags.make
+CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.o: CMakeFiles/macao.dir/includes_C.rsp
+CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.o: D:/manh/macao/src/game_setup.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:/manh/macao/build_web/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.o"
+	"C:/Program Files/Emscripten/emscripten/1.35.0/emcc.bat" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.o   -c D:/manh/macao/src/game_setup.c
+
+CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.i"
+	"C:/Program Files/Emscripten/emscripten/1.35.0/emcc.bat" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/manh/macao/src/game_setup.c > CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.i
+
+CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.s"
+	"C:/Program Files/Emscripten/emscripten/1.35.0/emcc.bat" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/manh/macao/src/game_setup.c -o CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.s
+
+CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.o.requires:
+
+.PHONY : CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.o.requires
+
+CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.o.provides: CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.o.requires
+	$(MAKE) -f CMakeFiles/macao.dir/build.make CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.o.provides.build
+.PHONY : CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.o.provides
+
+CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.o.provides.build: CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.o
+
+
 CMakeFiles/macao.dir/D_/manh/macao/src/net.c.o: CMakeFiles/macao.dir/flags.make
 CMakeFiles/macao.dir/D_/manh/macao/src/net.c.o: CMakeFiles/macao.dir/includes_C.rsp
 CMakeFiles/macao.dir/D_/manh/macao/src/net.c.o: D:/manh/macao/src/net.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:/manh/macao/build_web/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/macao.dir/D_/manh/macao/src/net.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:/manh/macao/build_web/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/macao.dir/D_/manh/macao/src/net.c.o"
 	"C:/Program Files/Emscripten/emscripten/1.35.0/emcc.bat" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/macao.dir/D_/manh/macao/src/net.c.o   -c D:/manh/macao/src/net.c
 
 CMakeFiles/macao.dir/D_/manh/macao/src/net.c.i: cmake_force
@@ -240,6 +290,8 @@ macao_OBJECTS = \
 "CMakeFiles/macao.dir/D_/manh/macao/src/exec/root.c.o" \
 "CMakeFiles/macao.dir/D_/manh/macao/src/exec/slot.c.o" \
 "CMakeFiles/macao.dir/D_/manh/macao/src/exec/trans_cube.c.o" \
+"CMakeFiles/macao.dir/D_/manh/macao/src/game.c.o" \
+"CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.o" \
 "CMakeFiles/macao.dir/D_/manh/macao/src/net.c.o"
 
 # External object files for target macao
@@ -251,17 +303,20 @@ macao.html: CMakeFiles/macao.dir/D_/manh/macao/src/exec/mcwc.c.o
 macao.html: CMakeFiles/macao.dir/D_/manh/macao/src/exec/root.c.o
 macao.html: CMakeFiles/macao.dir/D_/manh/macao/src/exec/slot.c.o
 macao.html: CMakeFiles/macao.dir/D_/manh/macao/src/exec/trans_cube.c.o
+macao.html: CMakeFiles/macao.dir/D_/manh/macao/src/game.c.o
+macao.html: CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.o
 macao.html: CMakeFiles/macao.dir/D_/manh/macao/src/net.c.o
 macao.html: CMakeFiles/macao.dir/build.make
 macao.html: kernel/libkernel.a
 macao.html: xml/libxml.a
+macao.html: gfx/libgfx.a
 macao.html: native_ui/libnative_ui.a
 macao.html: smartfox/libsmartfox.a
 macao.html: xml/libxml.a
 macao.html: kernel/libkernel.a
 macao.html: CMakeFiles/macao.dir/linklibs.rsp
 macao.html: CMakeFiles/macao.dir/objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:/manh/macao/build_web/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable macao.html"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:/manh/macao/build_web/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C executable macao.html"
 	"C:/Program Files/Emscripten/emscripten/1.35.0/emcc.bat"  -s EMTERPRETIFY=1 -s EMTERPRETIFY_ASYNC=1 -s ASSERTIONS=2 -DNDEBUG -O3  -O3 @CMakeFiles/macao.dir/objects1.rsp  -o macao.html @CMakeFiles/macao.dir/linklibs.rsp
 
 # Rule to build all files generated by this target.
@@ -275,6 +330,8 @@ CMakeFiles/macao.dir/requires: CMakeFiles/macao.dir/D_/manh/macao/src/exec/mcwc.
 CMakeFiles/macao.dir/requires: CMakeFiles/macao.dir/D_/manh/macao/src/exec/root.c.o.requires
 CMakeFiles/macao.dir/requires: CMakeFiles/macao.dir/D_/manh/macao/src/exec/slot.c.o.requires
 CMakeFiles/macao.dir/requires: CMakeFiles/macao.dir/D_/manh/macao/src/exec/trans_cube.c.o.requires
+CMakeFiles/macao.dir/requires: CMakeFiles/macao.dir/D_/manh/macao/src/game.c.o.requires
+CMakeFiles/macao.dir/requires: CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.o.requires
 CMakeFiles/macao.dir/requires: CMakeFiles/macao.dir/D_/manh/macao/src/net.c.o.requires
 
 .PHONY : CMakeFiles/macao.dir/requires

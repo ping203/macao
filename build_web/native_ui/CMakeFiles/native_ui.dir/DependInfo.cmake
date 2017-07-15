@@ -81,6 +81,8 @@ set(CMAKE_C_COMPILER_ID "Clang")
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
   "APP_DEBUG=1"
+  "GFX=OGL"
+  "IMAGE_TYPE=IMAGE_SDL2"
   )
 
 # The include file search paths:

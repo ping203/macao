@@ -26,6 +26,8 @@ set(CMAKE_C_COMPILER_ID "Clang")
 set(CMAKE_TARGET_DEFINITIONS_C
   "APP_DEBUG=1"
   "EMSCRIPTEN"
+  "GFX=OGL"
+  "IMAGE_TYPE=IMAGE_SDL2"
   )
 
 # The include file search paths:

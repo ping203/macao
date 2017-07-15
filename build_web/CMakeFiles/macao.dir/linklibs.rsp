@@ -1,1 +1,1 @@
-kernel/libkernel.a xml/libxml.a native_ui/libnative_ui.a smartfox/libsmartfox.a xml/libxml.a kernel/libkernel.a -lm -lpthread 
+kernel/libkernel.a xml/libxml.a gfx/libgfx.a native_ui/libnative_ui.a smartfox/libsmartfox.a xml/libxml.a kernel/libkernel.a -lm -lpthread 

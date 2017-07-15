@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:030f59a8e1e1ef6a4f05ff6f03847919:f4cf07a0aaa9ac1c0cb1d6f522cec0ea:011ab7ae4cdc3a1a87a5325f152acdde$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="effect_pack.png" width="1024" height="1024">
+    <sprite n="background_1.png" x="1" y="1" w="512" h="512" pX="0.5" pY="0.5"/>
+    <sprite n="collect_circle.png" x="1" y="515" w="256" h="256" pX="0.5" pY="0.5"/>
+</TextureAtlas>

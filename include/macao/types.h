@@ -20,6 +20,7 @@ extern "C" {
 
 #include <native_ui/types.h>
 #include <smartfox/types.h>
+#include <cherry/graphic/types.h>
 
 #define SET_STRING(str) {       \
         .len = sizeof(str) - 1, \
@@ -40,6 +41,43 @@ enum app_type {
         APP_IOS = 3,
         APP_WINPHONE = 4
 };
+
+struct game {
+        union {
+                struct {
+                        struct node_manager     *manager_game;
+                        struct node_manager     *manager_hud;
+                };
+                struct node_manager             *manager[2];
+        };
+        union {
+                struct {
+                        struct camera           *game_camera;
+                        struct camera           *hud_camera;
+                };
+                struct camera                   *camera[2];
+        };
+        union {
+                struct {
+                        struct render_pass      *main_pass;
+                        struct render_pass      *game_1_pass;
+                        struct render_pass      *game_2_pass;
+                };
+                struct render_pass              *pass[3];
+        };
+        union {
+                struct {
+                        struct light            *game_light;
+                };
+                struct light                    *light[1];
+        };
+
+        u8                                      frame;
+        u8                                      touching;
+        float                                   current_angle;
+        union vec2                              last_touch;
+};
+
 
 #ifdef __cplusplus
 }

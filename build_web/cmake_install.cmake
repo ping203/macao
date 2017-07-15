@@ -31,6 +31,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("D:/manh/macao/build_web/kernel/cmake_install.cmake")
   include("D:/manh/macao/build_web/xml/cmake_install.cmake")
+  include("D:/manh/macao/build_web/gfx/cmake_install.cmake")
   include("D:/manh/macao/build_web/smartfox/cmake_install.cmake")
   include("D:/manh/macao/build_web/native_ui/cmake_install.cmake")
 

@@ -176,6 +176,15 @@ OPENGL:UNINITIALIZED=true
 OUT:UNINITIALIZED=build_web
 
 //Value Computed by CMake
+gfx_BINARY_DIR:STATIC=D:/manh/macao/build_web/gfx
+
+//Dependencies for the target
+gfx_LIB_DEPENDS:STATIC=general;kernel;general;xml;general;m;
+
+//Value Computed by CMake
+gfx_SOURCE_DIR:STATIC=D:/manh/cherry/gfx
+
+//Value Computed by CMake
 kernel_BINARY_DIR:STATIC=D:/manh/macao/build_web/kernel
 
 //Dependencies for the target
@@ -292,7 +301,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

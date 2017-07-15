@@ -150,6 +150,19 @@ xml/fast:
 .PHONY : xml/fast
 
 #=============================================================================
+# Target rules for targets named gfx
+
+# Build rule for target.
+gfx: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gfx
+.PHONY : gfx
+
+# fast build rule for target.
+gfx/fast:
+	$(MAKE) -f gfx/CMakeFiles/gfx.dir/build.make gfx/CMakeFiles/gfx.dir/build
+.PHONY : gfx/fast
+
+#=============================================================================
 # Target rules for targets named smartfox
 
 # Build rule for target.
@@ -310,6 +323,60 @@ D_/manh/macao/src/exec/trans_cube.c.s:
 	$(MAKE) -f CMakeFiles/macao.dir/build.make CMakeFiles/macao.dir/D_/manh/macao/src/exec/trans_cube.c.s
 .PHONY : D_/manh/macao/src/exec/trans_cube.c.s
 
+D_/manh/macao/src/game.o: D_/manh/macao/src/game.c.o
+
+.PHONY : D_/manh/macao/src/game.o
+
+# target to build an object file
+D_/manh/macao/src/game.c.o:
+	$(MAKE) -f CMakeFiles/macao.dir/build.make CMakeFiles/macao.dir/D_/manh/macao/src/game.c.o
+.PHONY : D_/manh/macao/src/game.c.o
+
+D_/manh/macao/src/game.i: D_/manh/macao/src/game.c.i
+
+.PHONY : D_/manh/macao/src/game.i
+
+# target to preprocess a source file
+D_/manh/macao/src/game.c.i:
+	$(MAKE) -f CMakeFiles/macao.dir/build.make CMakeFiles/macao.dir/D_/manh/macao/src/game.c.i
+.PHONY : D_/manh/macao/src/game.c.i
+
+D_/manh/macao/src/game.s: D_/manh/macao/src/game.c.s
+
+.PHONY : D_/manh/macao/src/game.s
+
+# target to generate assembly for a file
+D_/manh/macao/src/game.c.s:
+	$(MAKE) -f CMakeFiles/macao.dir/build.make CMakeFiles/macao.dir/D_/manh/macao/src/game.c.s
+.PHONY : D_/manh/macao/src/game.c.s
+
+D_/manh/macao/src/game_setup.o: D_/manh/macao/src/game_setup.c.o
+
+.PHONY : D_/manh/macao/src/game_setup.o
+
+# target to build an object file
+D_/manh/macao/src/game_setup.c.o:
+	$(MAKE) -f CMakeFiles/macao.dir/build.make CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.o
+.PHONY : D_/manh/macao/src/game_setup.c.o
+
+D_/manh/macao/src/game_setup.i: D_/manh/macao/src/game_setup.c.i
+
+.PHONY : D_/manh/macao/src/game_setup.i
+
+# target to preprocess a source file
+D_/manh/macao/src/game_setup.c.i:
+	$(MAKE) -f CMakeFiles/macao.dir/build.make CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.i
+.PHONY : D_/manh/macao/src/game_setup.c.i
+
+D_/manh/macao/src/game_setup.s: D_/manh/macao/src/game_setup.c.s
+
+.PHONY : D_/manh/macao/src/game_setup.s
+
+# target to generate assembly for a file
+D_/manh/macao/src/game_setup.c.s:
+	$(MAKE) -f CMakeFiles/macao.dir/build.make CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.s
+.PHONY : D_/manh/macao/src/game_setup.c.s
+
 D_/manh/macao/src/net.o: D_/manh/macao/src/net.c.o
 
 .PHONY : D_/manh/macao/src/net.o
@@ -375,6 +442,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... kernel"
 	@echo "... xml"
+	@echo "... gfx"
 	@echo "... smartfox"
 	@echo "... native_ui"
 	@echo "... D_/manh/macao/src/exec.o"
@@ -392,6 +460,12 @@ help:
 	@echo "... D_/manh/macao/src/exec/trans_cube.o"
 	@echo "... D_/manh/macao/src/exec/trans_cube.i"
 	@echo "... D_/manh/macao/src/exec/trans_cube.s"
+	@echo "... D_/manh/macao/src/game.o"
+	@echo "... D_/manh/macao/src/game.i"
+	@echo "... D_/manh/macao/src/game.s"
+	@echo "... D_/manh/macao/src/game_setup.o"
+	@echo "... D_/manh/macao/src/game_setup.i"
+	@echo "... D_/manh/macao/src/game_setup.s"
 	@echo "... D_/manh/macao/src/net.o"
 	@echo "... D_/manh/macao/src/net.i"
 	@echo "... D_/manh/macao/src/net.s"

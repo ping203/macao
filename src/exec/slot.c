@@ -217,14 +217,14 @@ static void on_linked(struct nexec *p)
         struct smartfox_client *cli = sfs_client_shared();
         smartfox_client_add_listener(cli, &d->sfs_listener);
 
-        /*
-         * quick login
-         */
-        struct smart_connect_input *sci = smart_connect_input_alloc();
-        string_cat(sci->host, qlkey("117.0.33.17"));
-        sci->port = 8889;
-        smartfox_client_send(cli, &sci->head);
-        game_set_state(GAME_CONNECTING_TO_LOGIN);
+        // /*
+        //  * quick login
+        //  */
+        // struct smart_connect_input *sci = smart_connect_input_alloc();
+        // string_cat(sci->host, qlkey("117.0.33.17"));
+        // sci->port = 8889;
+        // smartfox_client_send(cli, &sci->head);
+        // game_set_state(GAME_CONNECTING_TO_LOGIN);
 }
 
 static void on_removed(struct nexec *p)

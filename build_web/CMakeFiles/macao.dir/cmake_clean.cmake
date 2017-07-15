@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/macao.dir/D_/manh/macao/src/exec/root.c.o"
   "CMakeFiles/macao.dir/D_/manh/macao/src/exec/slot.c.o"
   "CMakeFiles/macao.dir/D_/manh/macao/src/exec/trans_cube.c.o"
+  "CMakeFiles/macao.dir/D_/manh/macao/src/game.c.o"
+  "CMakeFiles/macao.dir/D_/manh/macao/src/game_setup.c.o"
   "CMakeFiles/macao.dir/D_/manh/macao/src/net.c.o"
   "macao.pdb"
   "macao.html"

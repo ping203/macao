@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:ac022591b6a9d43d4c0ec9a17b141de5:eb3246d282c7b50ad87507f3f2da72ba:459905e359d75eca4ab616707aef41ba$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="card.png" width="1024" height="1024">
+    <sprite n="arrow.png" x="29" y="978" w="30" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="card_0.png" x="1" y="654" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_1.png" x="1" y="762" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_2.png" x="101" y="217" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_3.png" x="265" y="865" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_4.png" x="365" y="109" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_5.png" x="453" y="325" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_6.png" x="529" y="757" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_7.png" x="529" y="865" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_8.png" x="625" y="1" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_9.png" x="541" y="109" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_10.png" x="1" y="870" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_11.png" x="89" y="654" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_12.png" x="97" y="537" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_13.png" x="89" y="762" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_14.png" x="89" y="870" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_15.png" x="177" y="645" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_16.png" x="177" y="753" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_17.png" x="177" y="861" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_18.png" x="101" y="1" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_19.png" x="101" y="109" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_20.png" x="101" y="325" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_21.png" x="185" y="433" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_22.png" x="189" y="1" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_23.png" x="189" y="109" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_24.png" x="189" y="217" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_25.png" x="189" y="325" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_26.png" x="265" y="541" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_27.png" x="273" y="433" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_28.png" x="265" y="649" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_29.png" x="265" y="757" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_30.png" x="277" y="1" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_31.png" x="277" y="109" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_32.png" x="277" y="217" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_33.png" x="277" y="325" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_34.png" x="353" y="541" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_35.png" x="361" y="433" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_36.png" x="353" y="649" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_37.png" x="353" y="757" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_38.png" x="353" y="865" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_39.png" x="365" y="1" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_40.png" x="365" y="217" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_41.png" x="365" y="325" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_42.png" x="441" y="541" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_43.png" x="449" y="433" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_44.png" x="441" y="649" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_45.png" x="441" y="757" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_46.png" x="441" y="865" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_47.png" x="453" y="1" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_48.png" x="453" y="109" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_49.png" x="453" y="217" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_50.png" x="529" y="541" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_51.png" x="537" y="433" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_52.png" x="529" y="649" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="card_effect_0.png" x="1" y="1" w="98" h="132" pX="0.5" pY="0.5"/>
+    <sprite n="card_effect_1.png" x="1" y="135" w="98" h="132" pX="0.5" pY="0.5"/>
+    <sprite n="card_effect_2.png" x="1" y="269" w="98" h="132" pX="0.5" pY="0.5"/>
+    <sprite n="card_effect_3.png" x="1" y="403" w="98" h="132" pX="0.5" pY="0.5"/>
+    <sprite n="card_mark.png" x="541" y="217" w="86" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="carddealing.png" x="1" y="978" w="26" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="stroke_card.png" x="1" y="537" w="94" h="115" pX="0.5" pY="0.5"/>
+</TextureAtlas>

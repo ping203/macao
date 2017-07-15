@@ -1,3 +1,4 @@
 <controller name="slot_controller"/>
 <view>
+        <image src="res/images/anhchup.png" width="692" height="435" align="center"/>
 </view>

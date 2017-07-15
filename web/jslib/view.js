@@ -432,7 +432,6 @@ view_helper.prototype.image_alloc = function()
         v.custom_content.style["height"] = "100%";
         v.custom_content.style["overflow"] = "hidden";
         v.custom_content.style["transform"] = "rotate(0.01deg)";
-        v.custom_content.style["background"] = "rgb(100, 0, 0)";
 
         v.custom_content.style["-khtml-user-select"] = "none";
         v.custom_content.style["-o-user-select"] = "none";

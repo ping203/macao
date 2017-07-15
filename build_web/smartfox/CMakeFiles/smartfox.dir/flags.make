@@ -4,7 +4,7 @@
 # compile C with C:/Program Files/Emscripten/emscripten/1.35.0/emcc.bat
 C_FLAGS = -DNDEBUG -O3   -Wno-incompatible-pointer-types -Wno-incompatible-pointer-types
 
-C_DEFINES = -DAPP_DEBUG=1
+C_DEFINES = -DAPP_DEBUG=1 -DGFX=OGL -DIMAGE_TYPE=IMAGE_SDL2
 
 C_INCLUDES = @CMakeFiles/smartfox.dir/includes_C.rsp
 

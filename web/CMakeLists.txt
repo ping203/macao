@@ -33,6 +33,12 @@ if (${USER_BUILD_IOS} MATCHES "true")
         set(CMAKE_OSX_ARCHITECTURES "$(ARCHS_STANDARD)")
 endif()
 
+if(${OPENGL} MATCHES "true")
+        add_definitions(-DGFX=OGL -DIMAGE_TYPE=IMAGE_SDL2)
+else(${METAL} MATCHES "true")
+        add_definitions(-DGFX=MTL -DIMAGE_TYPE=IMAGE_OBJC)
+endif()
+
 if(${APP_DEBUG} MATCHES "true")
         add_definitions(-DAPP_DEBUG=1)
 else()
@@ -41,6 +47,7 @@ endif()
 
 add_subdirectory(../../cherry/kernel ../${OUT}/kernel)
 add_subdirectory(../../cherry/xml ../${OUT}/xml)
+add_subdirectory(../../cherry/gfx ../${OUT}/gfx)
 add_subdirectory(../../cherry/smartfox ../${OUT}/smartfox)
 add_subdirectory(../../native_ui ../${OUT}/native_ui)
 
@@ -49,7 +56,7 @@ include_directories(../../cherry/smartfox/include)
 include_directories(../../native_ui/include)
 include_directories(../include)
 
-set(PROJECT_LINK_LIBS kernel xml native_ui smartfox)
+set(PROJECT_LINK_LIBS kernel xml gfx native_ui smartfox)
 
 file(GLOB_RECURSE SOURCES "../src/*.c")
 

@@ -18,6 +18,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/CMake/share/cmake-3.8/Modules/Compiler/GNU.cmake"
   "C:/Program Files/Emscripten/emscripten/1.35.0/cmake/Modules/CMakeSystemSpecificInformation.cmake"
   "C:/Program Files/Emscripten/emscripten/1.35.0/cmake/Modules/Platform/Emscripten.cmake"
+  "D:/manh/cherry/gfx/CMakeLists.txt"
   "D:/manh/cherry/kernel/CMakeLists.txt"
   "D:/manh/cherry/smartfox/CMakeLists.txt"
   "D:/manh/cherry/xml/CMakeLists.txt"
@@ -38,6 +39,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "kernel/CMakeFiles/CMakeDirectoryInformation.cmake"
   "xml/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "gfx/CMakeFiles/CMakeDirectoryInformation.cmake"
   "smartfox/CMakeFiles/CMakeDirectoryInformation.cmake"
   "native_ui/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
@@ -47,6 +49,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/macao.dir/DependInfo.cmake"
   "kernel/CMakeFiles/kernel.dir/DependInfo.cmake"
   "xml/CMakeFiles/xml.dir/DependInfo.cmake"
+  "gfx/CMakeFiles/gfx.dir/DependInfo.cmake"
   "smartfox/CMakeFiles/smartfox.dir/DependInfo.cmake"
   "native_ui/CMakeFiles/native_ui.dir/DependInfo.cmake"
   )
