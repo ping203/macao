@@ -107,11 +107,11 @@ static void macao_start()
                 var cv = document.getElementById("canvas");
                 var w = root.offsetWidth;
                 var h = root.offsetHeight;
-                var sf = window.devicePixelRatio;
+                var sf = window.devicePixelRatio || 1;
                 cv.width = w * sf;
                 cv.height = h * sf;
-                cv.style["width"] = (w) + "px";
-                cv.style["height"] = (h) + "px";
+                cv.style.width = w + "px";
+                cv.style.height = h + "px";
                 _macao_resize(w * sf, h * sf);
         }, root->ptr);
 }
