@@ -1,13 +1,26 @@
+<!DOCTYPE html>
 <html>
-        <head>
-        </head>
-        <body id="root">
-                <script>
-                var v = document.createElement('input');
-                v.style["position"] = "absolute";
-                v.style["font-size"] = "20px";
-                v.type = "text";
-                document.getElementById("root").appendChild(v);
-                </script>
-        </body>
+<head>
+    <title>WebWorker image preloading</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+</head>
+<body>
+<div id="output"></div>
+<script id="imgloader" type="javascript/worker">
+self.onmessage = function (e) {
+        console.log(e);
+};
+</script>
+<script>
+    URL = window.URL || window.webkitURL,
+    url = URL.createObjectURL(
+        new Blob(
+            [document.getElementById('imgloader').textContent],
+            { type: "text/javascript" }
+        )
+    ),
+    worker = new Worker(url);
+    worker.postMessage('test');
+</script>
+</body>
 </html>

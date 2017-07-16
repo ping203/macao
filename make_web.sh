@@ -20,6 +20,7 @@ mkdir -p data
 mkdir -p data/res
 cp -rf res/layout data/res
 cp res/config.json data/res
+cp -rf res web/v1
 
 #remove previous dependencies
 rm build_web/macao.*

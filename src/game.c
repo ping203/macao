@@ -248,35 +248,36 @@ struct game *game_alloc()
         // node_set_position(test_node, (union vec3){video_width/2, video_height/2, 0});
 
         // {
-                // struct node *layout     = node_alloc(p->manager_game);
-                // node_add_child(test_node, layout);
-                // node_set_origin(layout, (union vec3){0.5, 0.5, 0.5});
-                // node_set_position(layout, (union vec3){0, 0, 0});
-                //
-                // {
-                //         struct node *child = node_alloc(p->manager_game);
-                //         struct texture_frame *frame = texture_frame_alloc(texture_alloc_file("res/images/macao/table-poker.png", FILE_INNER));
-                //         node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_NORMAL);
-                //         float width = video_width * 4/6;
-                //         node_set_size(child, (union vec3){width, child->original_size.y / child->original_size.x * width, 1});
-                //         node_set_position(child, (union vec3){0, 0, video_height/2});
-                //         node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-                //         node_add_child(layout, child);
-                //         node_set_bright(child, 1.25);
-                //         texture_frame_free(frame);
-                // }
-
-                // {
-                //         struct node *child = node_alloc(p->manager_game);
-                //         struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
-                //         node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
-                //         node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
-                //         node_set_position(child, (union vec3){-video_width/2 + video_width/4, -video_height/2 + video_height/4, video_height/2});
-                //         node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-                //         node_add_child(layout, child);
-                //         union vec2 offset = (union vec2){0, 0};
-                //         texture_frame_free(frame);
-                // }
+        //         struct node *layout     = node_alloc(p->manager_game);
+        //         node_add_child(test_node, layout);
+        //         node_set_origin(layout, (union vec3){0.5, 0.5, 0.5});
+        //         node_set_position(layout, (union vec3){0, 0, 0});
+        //
+        //         // {
+        //         //         struct node *child = node_alloc(p->manager_game);
+        //         //         struct texture_frame *frame = texture_frame_alloc(texture_alloc_file("res/images/macao/table-poker.png", FILE_INNER));
+        //         //         node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_NORMAL);
+        //         //         float width = video_width * 4/6;
+        //         //         node_set_size(child, (union vec3){width, child->original_size.y / child->original_size.x * width, 1});
+        //         //         node_set_position(child, (union vec3){0, 0, video_height/2});
+        //         //         node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+        //         //         node_add_child(layout, child);
+        //         //         node_set_bright(child, 1.25);
+        //         //         texture_frame_free(frame);
+        //         //         node_set_rotation(child, quat_angle_axis(DEG_TO_RAD(-30), (float[3]){0, 0, 1}));
+        //         // }
+        //
+        //         {
+        //                 struct node *child = node_alloc(p->manager_game);
+        //                 struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
+        //                 node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_FBO);
+        //                 node_set_size(child, (union vec3){video_width/2, video_height/2, 1});
+        //                 node_set_position(child, (union vec3){-video_width/2 + video_width/4, -video_height/2 + video_height/4, video_height/2});
+        //                 node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+        //                 node_add_child(layout, child);
+        //                 union vec2 offset = (union vec2){0, 0};
+        //                 texture_frame_free(frame);
+        //         }
         //         {
         //                 struct node *child = node_alloc(p->manager_game);
         //                 struct texture_frame *frame = texture_frame_alloc(render_pass_texture_get_texture(p->game_1_pass));
@@ -464,7 +465,7 @@ struct game *game_alloc()
         // {
         //         struct node *n = node_alloc(p->manager_game);
         //         node_set_origin(n, (union vec3){0.5, 0.5, 0.0});
-        //         node_set_position(n, (union vec3){video_width/2, video_height/2, 0});
+        //         node_set_position(n, (union vec3){0,0, video_height/2});
         //
         //         struct xml_element *xml = xml_parse("res/plist/string.xml", FILE_INNER);
         //         struct xml_element *message = xml_find(xml, "string", 0);
@@ -481,32 +482,33 @@ struct game *game_alloc()
         //         string_cat_string(s, message->value);
         //         node_show_text(n, SHADER_3D_TEXTURE_COLOR,
         //                 s->ptr, s->len,
-        //                 "res/font/cjk/font_regular_24/font_regular_24.fnt",
+        //                 "res/font/cjk/font_regular_48/font_regular_48.fnt",
         //                 FILE_INNER,
-        //                 sizeof("res/font/cjk/font_regular_24/font_regular_24.fnt")-1,
+        //                 sizeof("res/font/cjk/font_regular_48/font_regular_48.fnt")-1,
         //                 video_width-20,
-        //                 24,
+        //                 48,
         //                 TEXT_ALIGN_LEFT);
         //         xml_free(xml);
         //         string_free(s);
         //         node_add_child(test_node, n);
         // }
-        //
-        // int i;
-        // for_i(i, 10) {
-        //         struct node *child = node_alloc(p->manager_game);
-        //         node_show_spine(child, SHADER_3D_TEXTURE_COLOR, "res/spine/raptor.skel", FILE_INNER, "res/spine/raptor.atlas", FILE_INNER, 0.05);
-        //         node_spine_set_animation(child, 0, "walk", 1);
-        //         node_spine_add_animation(child, 1, "gungrab", 0, 2);
-        //
-        //         node_set_origin(child, (union vec3){0, 0, 0});
-        //         node_set_position(child, (union vec3){rand_rf(0, video_width), rand_rf(0, video_height), 0});
-        //         float size = rand_rf(1.0, 5.0);
-        //         node_set_size(child, (union vec3){size, size, 1});
-        //         node_add_child(test_node, child);
-        //
-        //         node_spine_run_animation(child);
-        // }
+
+        int i;
+        for_i(i, 1) {
+                struct node *child = node_alloc(p->manager_game);
+                node_show_spine(child, SHADER_3D_TEXTURE_COLOR, "res/spine/raptor.skel", FILE_INNER, "res/spine/raptor.atlas", FILE_INNER, 0.05);
+                node_spine_set_animation(child, 0, "walk", 1);
+                node_spine_add_animation(child, 1, "gungrab", 0, 2);
+
+                node_set_origin(child, (union vec3){0, 0, 0});
+                // node_set_position(child, (union vec3){rand_rf(-video_width/2, video_width/2), rand_rf(-video_height/2, video_height/2), video_height/2});
+                node_set_position(child, (union vec3){0, 0, video_height/2});
+                float size = rand_rf(0.5, 3.0);
+                node_set_size(child, (union vec3){size, size, 1});
+                node_add_child(test_node, child);
+
+                node_spine_run_animation(child);
+        }
         return p;
 }
 
@@ -679,13 +681,29 @@ void game_free(struct game *p)
 
 void game_resize(struct game *p, int width, int height)
 {
-        // video_width = width;
-        // video_height = height;
-        // union mat4 project      = mat4_new_ortho(
-        //         0, video_width,
-        //         0, video_height,
-        //         0, 2
-        // );
-        // camera_set_project(p->game_camera, project);
-        // camera_set_project(p->hud_camera, project);
+        video_width = width;
+        video_height = height;
+
+        union mat4 project      = mat4_new_perspective(
+                DEG_TO_RAD(45),
+                (float)video_width / (float)video_height,
+                100,
+                100000
+        );
+
+        union mat4 lookat       = mat4_new_look_at(
+                video_width/2, video_height/2, video_height/2 / tanf(DEG_TO_RAD(45.0/2)),
+                video_width/2, video_height/2, 0,
+                0, 1, 0
+        );
+        camera_set_project(p->game_camera, project);
+        camera_set_lookat(p->game_camera, lookat);
+
+        project      = mat4_new_ortho(
+                0, video_width,
+                0, video_height,
+                0, 2
+        );
+
+        camera_set_project(p->hud_camera, project);
 }

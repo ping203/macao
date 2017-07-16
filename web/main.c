@@ -19,6 +19,7 @@
 #include <emscripten/html5.h>
 #include <cherry/stdio.h>
 #include <cherry/list.h>
+#include <cherry/array.h>
 #include <cherry/map.h>
 #include <cherry/string.h>
 #include <cherry/memory.h>
@@ -45,6 +46,7 @@ struct touch_event {
 static struct game *game = NULL;
 static struct list_head touch_list;
 static spin_lock lock;
+static int resized = 0;
 
 
 EMSCRIPTEN_KEEPALIVE
@@ -54,10 +56,12 @@ void macao_resize(int width, int height)
                 nview_set_size(root, (union vec2){(float)width, (float)height});
                 nview_set_position(root, (union vec2){root->size.width / 2, root->size.height/2});
                 nview_update_layout(root);
+                resized = 1;
 
                 video_width = width;
                 video_height = height;
-                glViewport(0, 0, video_width, video_height);
+                glViewport(0, 0, video_width , video_height);
+                if(game) game_resize(game, video_width, video_height);
         }
 }
 
@@ -97,9 +101,18 @@ static void macao_start()
 
         EM_ASM_({
                 var obj =  __shared_object_get($0);
-                var rt = document.getElementById("root");
-                rt.appendChild(obj);
-                _macao_resize(rt.offsetWidth, rt.offsetHeight);
+                var root = document.getElementById("root");
+                root.appendChild(obj);
+
+                var cv = document.getElementById("canvas");
+                var w = root.offsetWidth;
+                var h = root.offsetHeight;
+                var sf = window.devicePixelRatio;
+                cv.width = w * sf;
+                cv.height = h * sf;
+                cv.style["width"] = (w) + "px";
+                cv.style["height"] = (h) + "px";
+                _macao_resize(w * sf, h * sf);
         }, root->ptr);
 }
 
@@ -223,6 +236,8 @@ void do_frame()
         struct list_head *head = NULL;
         struct touch_event *te;
 
+        if(!resized) return;
+
         if(!game) {
                 game = game_alloc();
         }
@@ -243,8 +258,6 @@ get_touch:
                 head = NULL;
                 goto get_touch;
         }
-        // debug("run game\n");
-        // debug("\n");
         /*
          * update game
          */
@@ -275,6 +288,7 @@ int main(int argc, char **argv)
                 EM_ASM(
                         FS.mkdir('/macao');
                         FS.mount(IDBFS, {}, '/macao');
+
 
                         FS.syncfs(true, function (err) {
                                 _macao_start();
