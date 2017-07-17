@@ -63,7 +63,6 @@ native_image.prototype.load = function(f)
         var data = 'data:image/png;base64,'+encode(str);
         var self = this;
         this.image.onload = function() {
-                console.log("ok");
                 self.width = self.image.width;
                 self.height = self.image.height;
         };
@@ -84,6 +83,5 @@ native_image.prototype.load_texture = function()
 {
         var canvas = document.getElementById("canvas");
         gl = canvas.getContext("experimental-webgl");
-
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, this.image);
 }

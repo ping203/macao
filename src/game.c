@@ -248,24 +248,24 @@ struct game *game_alloc()
         // node_set_position(test_node, (union vec3){video_width/2, video_height/2, 0});
 
         // {
-        //         struct node *layout     = node_alloc(p->manager_game);
-        //         node_add_child(test_node, layout);
-        //         node_set_origin(layout, (union vec3){0.5, 0.5, 0.5});
-        //         node_set_position(layout, (union vec3){0, 0, 0});
-        //
-        //         // {
-        //         //         struct node *child = node_alloc(p->manager_game);
-        //         //         struct texture_frame *frame = texture_frame_alloc(texture_alloc_file("res/images/macao/table-poker.png", FILE_INNER));
-        //         //         node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_NORMAL);
-        //         //         float width = video_width * 4/6;
-        //         //         node_set_size(child, (union vec3){width, child->original_size.y / child->original_size.x * width, 1});
-        //         //         node_set_position(child, (union vec3){0, 0, video_height/2});
-        //         //         node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
-        //         //         node_add_child(layout, child);
-        //         //         node_set_bright(child, 1.25);
-        //         //         texture_frame_free(frame);
-        //         //         node_set_rotation(child, quat_angle_axis(DEG_TO_RAD(-30), (float[3]){0, 0, 1}));
-        //         // }
+                struct node *layout     = node_alloc(p->manager_game);
+                node_add_child(test_node, layout);
+                node_set_origin(layout, (union vec3){0.5, 0.5, 0.5});
+                node_set_position(layout, (union vec3){0, 0, 0});
+
+                {
+                        struct node *child = node_alloc(p->manager_game);
+                        struct texture_frame *frame = texture_frame_alloc(texture_alloc_file("res/images/macao/table-poker.png", FILE_INNER));
+                        node_show_sprite(child, SHADER_3D_TEXTURE_COLOR, frame, 1, GFX_SPRITE_NORMAL);
+                        float width = video_width /2;
+                        node_set_size(child, (union vec3){width, child->original_size.y / child->original_size.x * width, 1});
+                        node_set_position(child, (union vec3){0, 0, video_height/2});
+                        node_set_origin(child, (union vec3){0.5, 0.5, 0.5});
+                        node_add_child(layout, child);
+                        node_set_bright(child, 1.25);
+                        texture_frame_free(frame);
+                        // node_set_rotation(child, quat_angle_axis(DEG_TO_RAD(-30), (float[3]){0, 0, 1}));
+                }
         //
         //         {
         //                 struct node *child = node_alloc(p->manager_game);
@@ -464,21 +464,13 @@ struct game *game_alloc()
 
         // {
         //         struct node *n = node_alloc(p->manager_game);
-        //         node_set_origin(n, (union vec3){0.5, 0.5, 0.0});
+        //         node_add_child(test_node, n);
+        //         node_set_origin(n, (union vec3){0.5, 0.5, 0});
         //         node_set_position(n, (union vec3){0,0, video_height/2});
         //
         //         struct xml_element *xml = xml_parse("res/plist/string.xml", FILE_INNER);
         //         struct xml_element *message = xml_find(xml, "string", 0);
         //         struct string * s = string_alloc(0);
-        //         string_cat_string(s, message->value);
-        //         string_cat_string(s, message->value);
-        //         string_cat_string(s, message->value);
-        //         string_cat_string(s, message->value);
-        //         string_cat_string(s, message->value);
-        //         string_cat_string(s, message->value);
-        //         string_cat_string(s, message->value);
-        //         string_cat_string(s, message->value);
-        //         string_cat_string(s, message->value);
         //         string_cat_string(s, message->value);
         //         node_show_text(n, SHADER_3D_TEXTURE_COLOR,
         //                 s->ptr, s->len,
@@ -490,25 +482,25 @@ struct game *game_alloc()
         //                 TEXT_ALIGN_LEFT);
         //         xml_free(xml);
         //         string_free(s);
-        //         node_add_child(test_node, n);
+        //
         // }
 
-        int i;
-        for_i(i, 1) {
-                struct node *child = node_alloc(p->manager_game);
-                node_show_spine(child, SHADER_3D_TEXTURE_COLOR, "res/spine/raptor.skel", FILE_INNER, "res/spine/raptor.atlas", FILE_INNER, 0.05);
-                node_spine_set_animation(child, 0, "walk", 1);
-                node_spine_add_animation(child, 1, "gungrab", 0, 2);
-
-                node_set_origin(child, (union vec3){0, 0, 0});
-                // node_set_position(child, (union vec3){rand_rf(-video_width/2, video_width/2), rand_rf(-video_height/2, video_height/2), video_height/2});
-                node_set_position(child, (union vec3){0, 0, video_height/2});
-                float size = rand_rf(0.5, 3.0);
-                node_set_size(child, (union vec3){size, size, 1});
-                node_add_child(test_node, child);
-
-                node_spine_run_animation(child);
-        }
+        // int i;
+        // for_i(i, 1) {
+        //         struct node *child = node_alloc(p->manager_game);
+        //         node_show_spine(child, SHADER_3D_TEXTURE_COLOR, "res/spine/raptor.skel", FILE_INNER, "res/spine/raptor.atlas", FILE_INNER, 0.05);
+        //         node_spine_set_animation(child, 0, "walk", 1);
+        //         node_spine_add_animation(child, 1, "gungrab", 0, 2);
+        //
+        //         node_set_origin(child, (union vec3){0, 0, 0});
+        //         // node_set_position(child, (union vec3){rand_rf(-video_width/2, video_width/2), rand_rf(-video_height/2, video_height/2), video_height/2});
+        //         node_set_position(child, (union vec3){0, 0, video_height/2});
+        //         float size = rand_rf(0.5, 3.0);
+        //         node_set_size(child, (union vec3){size, size, 1});
+        //         node_add_child(test_node, child);
+        //
+        //         node_spine_run_animation(child);
+        // }
         return p;
 }
 

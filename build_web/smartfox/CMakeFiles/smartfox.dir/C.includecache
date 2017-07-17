@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,23 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/manh/Documents/manh/cherry/smartfox/../include/cherry/array.h
+D:/manh/cherry/smartfox/../include/cherry/array.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/../include/cherry/bytes.h
+D:/manh/cherry/smartfox/../include/cherry/bytes.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/../include/cherry/ctype.h
+D:/manh/cherry/smartfox/../include/cherry/ctype.h
 ctype.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/../include/cherry/list.h
+D:/manh/cherry/smartfox/../include/cherry/list.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/../include/cherry/lock.h
+D:/manh/cherry/smartfox/../include/cherry/lock.h
 cherry/types.h
 -
 errno.h
@@ -30,33 +30,33 @@ errno.h
 Windows.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/../include/cherry/map.h
+D:/manh/cherry/smartfox/../include/cherry/map.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/../include/cherry/memory.h
+D:/manh/cherry/smartfox/../include/cherry/memory.h
 stddef.h
 -
 string.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/../include/cherry/platform.h
+D:/manh/cherry/smartfox/../include/cherry/platform.h
 TargetConditionals.h
-/home/manh/Documents/manh/cherry/smartfox/../include/cherry/TargetConditionals.h
+D:/manh/cherry/smartfox/../include/cherry/TargetConditionals.h
 
-/home/manh/Documents/manh/cherry/smartfox/../include/cherry/stdarg.h
+D:/manh/cherry/smartfox/../include/cherry/stdarg.h
 stdarg.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/../include/cherry/stddef.h
+D:/manh/cherry/smartfox/../include/cherry/stddef.h
 stddef.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/../include/cherry/stdint.h
+D:/manh/cherry/smartfox/../include/cherry/stdint.h
 stdint.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/../include/cherry/stdio.h
+D:/manh/cherry/smartfox/../include/cherry/stdio.h
 stdio.h
 -
 cherry/types.h
@@ -74,19 +74,19 @@ android/asset_manager.h
 android/asset_manager_jni.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/../include/cherry/stdlib.h
+D:/manh/cherry/smartfox/../include/cherry/stdlib.h
 stdlib.h
 -
 locale.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/../include/cherry/string.h
+D:/manh/cherry/smartfox/../include/cherry/string.h
 cherry/types.h
 -
 string.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/../include/cherry/types.h
+D:/manh/cherry/smartfox/../include/cherry/types.h
 cherry/stdint.h
 -
 cherry/stddef.h
@@ -100,45 +100,45 @@ cherry/platform.h
 intrin.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/../include/cherry/xml/types.h
+D:/manh/cherry/smartfox/../include/cherry/xml/types.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/../include/cherry/xml/xml.h
+D:/manh/cherry/smartfox/../include/cherry/xml/xml.h
 cherry/xml/types.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/include/smartfox/data.h
+D:/manh/cherry/smartfox/include/smartfox/data.h
 smartfox/types.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/include/smartfox/data_linux.h
+D:/manh/cherry/smartfox/include/smartfox/data_linux.h
 smartfox/data.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/include/smartfox/data_web.h
+D:/manh/cherry/smartfox/include/smartfox/data_web.h
 smartfox/data.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/include/smartfox/network_data.h
+D:/manh/cherry/smartfox/include/smartfox/network_data.h
 smartfox/types.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/include/smartfox/room.h
+D:/manh/cherry/smartfox/include/smartfox/room.h
 smartfox/types.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/include/smartfox/smartfox.h
+D:/manh/cherry/smartfox/include/smartfox/smartfox.h
 smartfox/types.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/include/smartfox/types.h
+D:/manh/cherry/smartfox/include/smartfox/types.h
 cherry/types.h
 -
 cherry/platform.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/src/android/room_android.c
+D:/manh/cherry/smartfox/src/android/room_android.c
 cherry/platform.h
 -
 cherry/memory.h
@@ -148,7 +148,7 @@ cherry/string.h
 smartfox/room.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/src/android/smartfox_android.c
+D:/manh/cherry/smartfox/src/android/smartfox_android.c
 cherry/platform.h
 -
 smartfox/smartfox.h
@@ -176,7 +176,7 @@ cherry/map.h
 cherry/xml/xml.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/src/linux/room_linux.c
+D:/manh/cherry/smartfox/src/linux/room_linux.c
 cherry/platform.h
 -
 cherry/memory.h
@@ -186,7 +186,7 @@ cherry/string.h
 smartfox/room.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/src/linux/smartfox_linux.c
+D:/manh/cherry/smartfox/src/linux/smartfox_linux.c
 cherry/platform.h
 -
 smartfox/smartfox.h
@@ -212,7 +212,7 @@ cherry/bytes.h
 cherry/list.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/src/shared/data.c
+D:/manh/cherry/smartfox/src/shared/data.c
 smartfox/data.h
 -
 cherry/memory.h
@@ -228,7 +228,7 @@ cherry/bytes.h
 cherry/stdio.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/src/shared/data_json.c
+D:/manh/cherry/smartfox/src/shared/data_json.c
 smartfox/data.h
 -
 cherry/memory.h
@@ -248,7 +248,7 @@ cherry/stdlib.h
 cherry/ctype.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/src/shared/network_data.c
+D:/manh/cherry/smartfox/src/shared/network_data.c
 smartfox/network_data.h
 -
 cherry/memory.h
@@ -262,7 +262,7 @@ cherry/string.h
 smartfox/data.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/src/shared/room.c
+D:/manh/cherry/smartfox/src/shared/room.c
 smartfox/room.h
 -
 cherry/memory.h
@@ -270,7 +270,7 @@ cherry/memory.h
 cherry/string.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/src/shared/smartfox.c
+D:/manh/cherry/smartfox/src/shared/smartfox.c
 smartfox/smartfox.h
 -
 smartfox/network_data.h
@@ -298,7 +298,7 @@ cherry/bytes.h
 cherry/stdio.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/src/web/room_web.c
+D:/manh/cherry/smartfox/src/web/room_web.c
 cherry/platform.h
 -
 cherry/memory.h
@@ -310,7 +310,7 @@ smartfox/room.h
 emscripten.h
 -
 
-/home/manh/Documents/manh/cherry/smartfox/src/web/smartfox_web.c
+D:/manh/cherry/smartfox/src/web/smartfox_web.c
 cherry/platform.h
 -
 smartfox/smartfox.h

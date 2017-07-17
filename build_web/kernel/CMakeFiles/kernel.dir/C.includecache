@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,37 +6,37 @@
 
 #IncludeRegexTransform: 
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/array.h
+D:/manh/cherry/kernel/../include/cherry/array.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/bytes.h
+D:/manh/cherry/kernel/../include/cherry/bytes.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/crypt/md5.h
+D:/manh/cherry/kernel/../include/cherry/crypt/md5.h
 cherry/crypt/types.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/crypt/types.h
+D:/manh/cherry/kernel/../include/cherry/crypt/types.h
 cherry/types.h
 -
 cherry/stdint.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/ctype.h
+D:/manh/cherry/kernel/../include/cherry/ctype.h
 ctype.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/deallocator.h
+D:/manh/cherry/kernel/../include/cherry/deallocator.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/list.h
+D:/manh/cherry/kernel/../include/cherry/list.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/lock.h
+D:/manh/cherry/kernel/../include/cherry/lock.h
 cherry/types.h
 -
 errno.h
@@ -44,23 +44,23 @@ errno.h
 Windows.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/map.h
+D:/manh/cherry/kernel/../include/cherry/map.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/math/mat3.h
+D:/manh/cherry/kernel/../include/cherry/math/mat3.h
 cherry/math/types.h
 -
 math.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/math/mat4.h
+D:/manh/cherry/kernel/../include/cherry/math/mat4.h
 cherry/math/types.h
 -
 math.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/math/math.h
+D:/manh/cherry/kernel/../include/cherry/math/math.h
 cherry/math/types.h
 -
 cherry/math/vec2.h
@@ -80,7 +80,7 @@ cherry/stdlib.h
 time.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/math/quat.h
+D:/manh/cherry/kernel/../include/cherry/math/quat.h
 cherry/math/mat4.h
 -
 cherry/math/vec4.h
@@ -88,55 +88,55 @@ cherry/math/vec4.h
 math.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/math/types.h
+D:/manh/cherry/kernel/../include/cherry/math/types.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/math/vec2.h
+D:/manh/cherry/kernel/../include/cherry/math/vec2.h
 cherry/math/types.h
 -
 math.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/math/vec3.h
+D:/manh/cherry/kernel/../include/cherry/math/vec3.h
 cherry/math/types.h
 -
 math.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/math/vec4.h
+D:/manh/cherry/kernel/../include/cherry/math/vec4.h
 cherry/math/types.h
 -
 math.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/memory.h
+D:/manh/cherry/kernel/../include/cherry/memory.h
 stddef.h
 -
 string.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/platform.h
+D:/manh/cherry/kernel/../include/cherry/platform.h
 TargetConditionals.h
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/TargetConditionals.h
+D:/manh/cherry/kernel/../include/cherry/TargetConditionals.h
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/pool.h
+D:/manh/cherry/kernel/../include/cherry/pool.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/stdarg.h
+D:/manh/cherry/kernel/../include/cherry/stdarg.h
 stdarg.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/stddef.h
+D:/manh/cherry/kernel/../include/cherry/stddef.h
 stddef.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/stdint.h
+D:/manh/cherry/kernel/../include/cherry/stdint.h
 stdint.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/stdio.h
+D:/manh/cherry/kernel/../include/cherry/stdio.h
 stdio.h
 -
 cherry/types.h
@@ -154,27 +154,27 @@ android/asset_manager.h
 android/asset_manager_jni.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/stdlib.h
+D:/manh/cherry/kernel/../include/cherry/stdlib.h
 stdlib.h
 -
 locale.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/string.h
+D:/manh/cherry/kernel/../include/cherry/string.h
 cherry/types.h
 -
 string.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/thread_pool.h
+D:/manh/cherry/kernel/../include/cherry/thread_pool.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/time.h
+D:/manh/cherry/kernel/../include/cherry/time.h
 cherry/types.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/../include/cherry/types.h
+D:/manh/cherry/kernel/../include/cherry/types.h
 cherry/stdint.h
 -
 cherry/stddef.h
@@ -188,7 +188,7 @@ cherry/platform.h
 intrin.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/android/file_android.c
+D:/manh/cherry/kernel/android/file_android.c
 cherry/platform.h
 -
 cherry/stdio.h
@@ -204,7 +204,7 @@ unistd.h
 sys/stat.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/array.c
+D:/manh/cherry/kernel/array.c
 cherry/array.h
 -
 cherry/memory.h
@@ -212,13 +212,13 @@ cherry/memory.h
 string.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/bytes.c
+D:/manh/cherry/kernel/bytes.c
 cherry/bytes.h
 -
 cherry/memory.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/crypt/md5.c
+D:/manh/cherry/kernel/crypt/md5.c
 cherry/crypt/md5.h
 -
 cherry/string.h
@@ -230,7 +230,7 @@ cherry/stdio.h
 cherry/stdint.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/deallocator.c
+D:/manh/cherry/kernel/deallocator.c
 cherry/deallocator.h
 -
 cherry/list.h
@@ -238,7 +238,7 @@ cherry/list.h
 cherry/memory.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/file.c
+D:/manh/cherry/kernel/file.c
 cherry/platform.h
 -
 cherry/stdio.h
@@ -248,7 +248,7 @@ cherry/string.h
 cherry/memory.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/linux/file_linux.c
+D:/manh/cherry/kernel/linux/file_linux.c
 cherry/platform.h
 -
 cherry/stdio.h
@@ -258,7 +258,7 @@ cherry/string.h
 cherry/memory.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/map.c
+D:/manh/cherry/kernel/map.c
 cherry/map.h
 -
 cherry/array.h
@@ -270,11 +270,11 @@ cherry/memory.h
 cherry/stdio.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/math.c
+D:/manh/cherry/kernel/math.c
 cherry/math/math.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/memory.c
+D:/manh/cherry/kernel/memory.c
 cherry/memory.h
 -
 cherry/pool.h
@@ -296,7 +296,7 @@ pthread.h
 cherry/lock.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/string.c
+D:/manh/cherry/kernel/string.c
 cherry/string.h
 -
 cherry/memory.h
@@ -308,7 +308,7 @@ cherry/array.h
 cherry/ctype.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/thread_pool.c
+D:/manh/cherry/kernel/thread_pool.c
 cherry/thread_pool.h
 -
 cherry/memory.h
@@ -324,7 +324,7 @@ pthread.h
 unistd.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/time.c
+D:/manh/cherry/kernel/time.c
 cherry/time.h
 -
 cherry/string.h
@@ -340,7 +340,7 @@ sys/time.h
 cherry/math/math.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/web/file_web.c
+D:/manh/cherry/kernel/web/file_web.c
 cherry/platform.h
 -
 cherry/stdio.h
@@ -362,7 +362,7 @@ emscripten.h
 emscripten/html5.h
 -
 
-/home/manh/Documents/manh/cherry/kernel/windows/file_windows.c
+D:/manh/cherry/kernel/windows/file_windows.c
 cherry/platform.h
 -
 cherry/stdio.h
